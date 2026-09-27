@@ -1,0 +1,460 @@
+{
+  "metadata": {
+    "skill_name": "football-predictor",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-06-11T06:01:10Z",
+    "evals_run": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 512.9,
+        "tokens": 68984,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Zawiera tabel\u0119 1X2 z procentami dla obu dru\u017cyn i remisu",
+          "passed": true,
+          "evidence": "Tabela 1X2: Lech 53.6% / Remis 23.6% / Rak\u00f3w 22.6%"
+        },
+        {
+          "text": "Podaje 'fair odds' (kursy uczciwe) obok prawdopodobie\u0144stw",
+          "passed": true,
+          "evidence": "Kolumna 'Kurs uczciwy' we wszystkich tabelach (1.87 / 4.24 / 4.42 itd.)"
+        },
+        {
+          "text": "Zawiera prawdopodobie\u0144stwa over/under goli i/lub BTTS",
+          "passed": true,
+          "evidence": "Tabela Bramki: Over 1.5/2.5/3.5, BTTS Tak/Nie z procentami i kursami"
+        },
+        {
+          "text": "Zawiera oszacowanie liczby ro\u017cnych (przedzia\u0142 lub warto\u015b\u0107)",
+          "passed": true,
+          "evidence": "Sekcja Ro\u017cne: \u0142\u0105cznie zakres 7-12, \u015brednio ~9.0, plus over/under 8.5/9.5/10.5"
+        },
+        {
+          "text": "Zawiera oszacowanie kartek/faul\u00f3w",
+          "passed": true,
+          "evidence": "Sekcja Faule i kartki: szacunek 3.5-5.5 \u017c\u00f3\u0142tych \u0142\u0105cznie, ryzyko czerwonej"
+        },
+        {
+          "text": "Transparentnie zaznacza, \u017ce sezon si\u0119 zako\u0144czy\u0142 i nie ma jeszcze potwierdzonego terminu meczu, zamiast zmy\u015bla\u0107 dat\u0119/wynik",
+          "passed": true,
+          "evidence": "Ca\u0142a sekcja 'Wa\u017cna uwaga wst\u0119pna - status meczu' wyja\u015bnia brak potwierdzonego terminu"
+        },
+        {
+          "text": "Ko\u0144czy si\u0119 not\u0105 o charakterze informacyjnym / odpowiedzialnej grze",
+          "passed": true,
+          "evidence": "Standardowa nota disclaimer na ko\u0144cu raportu"
+        },
+        {
+          "text": "Pokazuje uzasadnienie/metodologi\u0119 wyliczenia oczekiwanych goli (lambda) lub r\u00f3wnowa\u017cne wyja\u015bnienie sk\u0105d wzi\u0119\u0142y si\u0119 liczby",
+          "passed": true,
+          "evidence": "Sekcja 'Model bazowy' z pe\u0142nym wyliczeniem si\u0142y ataku/obrony i lambda=1.75/1.05"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 389.8,
+        "tokens": 58835,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Zawiera tabel\u0119 1X2 z procentami dla obu dru\u017cyn i remisu",
+          "passed": true,
+          "evidence": "Tabela 1X2: Arsenal 41.5% / Remis 26.2% / City 32.2%"
+        },
+        {
+          "text": "Podaje 'fair odds' (kursy uczciwe) obok prawdopodobie\u0144stw",
+          "passed": true,
+          "evidence": "Kolumna 'Kurs uczciwy' we wszystkich tabelach"
+        },
+        {
+          "text": "Zawiera oszacowanie liczby ro\u017cnych (przedzia\u0142 lub warto\u015b\u0107) dla obu dru\u017cyn lub \u0142\u0105cznie",
+          "passed": true,
+          "evidence": "Arsenal ~4.7, City ~3.9, \u0142\u0105cznie ~8.5-8.6, plus over/under 8.5/9.5/10.5"
+        },
+        {
+          "text": "Zawiera oszacowanie liczby strza\u0142\u00f3w na bramk\u0119 (shots on target)",
+          "passed": true,
+          "evidence": "Arsenal ~4.9 celnych/mecz, City ~5.5 celnych/mecz, \u0142\u0105cznie ~9-11 celnych"
+        },
+        {
+          "text": "Transparentnie zaznacza, \u017ce sezon si\u0119 zako\u0144czy\u0142 i nie ma jeszcze potwierdzonego terminu meczu, zamiast zmy\u015bla\u0107 dat\u0119/wynik",
+          "passed": true,
+          "evidence": "Ca\u0142a sekcja 'Wa\u017cna uwaga' wyja\u015bnia brak meczu PL i traktuje Community Shield jako substytut"
+        },
+        {
+          "text": "Ko\u0144czy si\u0119 not\u0105 o charakterze informacyjnym / odpowiedzialnej grze",
+          "passed": true,
+          "evidence": "Standardowa nota disclaimer na ko\u0144cu raportu"
+        },
+        {
+          "text": "Pokazuje uzasadnienie/metodologi\u0119 wyliczenia oczekiwanych goli (lambda) lub r\u00f3wnowa\u017cne wyja\u015bnienie sk\u0105d wzi\u0119\u0142y si\u0119 liczby",
+          "passed": true,
+          "evidence": "Sekcja 'Model bazowy' z wyliczeniem si\u0142y ataku/obrony, korektami jako\u015bciowymi i lambda=1.40/1.20"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 168.7,
+        "tokens": 40549,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Poprawnie identyfikuje, \u017ce taki mecz (Polska-Niemcy w el. M\u015a 2026) faktycznie nie istnieje/nie odby\u0142 si\u0119, zamiast zmy\u015bla\u0107 dane o nieistniej\u0105cym meczu",
+          "passed": true,
+          "evidence": "Tytu\u0142 i sekcja 'Kr\u00f3tka odpowied\u017a' wprost stwierdzaj\u0105, \u017ce taki mecz nie istnieje"
+        },
+        {
+          "text": "Nie podaje sfabrykowanych prawdopodobie\u0144stw/wynik\u00f3w dla nieistniej\u0105cego meczu",
+          "passed": true,
+          "evidence": "Sekcja 'Dlaczego nie zgaduj\u0119 liczb' - explicit refusal to invent lambda/probabilities"
+        },
+        {
+          "text": "Wyja\u015bnia co faktycznie wydarzy\u0142o si\u0119 w kwalifikacjach (los Polski i Niemiec)",
+          "passed": true,
+          "evidence": "Punkty 1-4: r\u00f3\u017cne grupy, bara\u017ce Polski (Albania 2:1, fina\u0142 ze Szwecj\u0105 2:3), Niemcy zakwalifikowane bezpo\u015brednio"
+        },
+        {
+          "text": "Proponuje sensowne alternatywy (np. inny mecz, analiza historyczna H2H)",
+          "passed": true,
+          "evidence": "Sekcja 'Co mog\u0119 zaproponowa\u0107 zamiast tego' - mecz z Bo\u015bni\u0105, retrospektywa H2H Polska-Niemcy, inny mecz"
+        },
+        {
+          "text": "Ko\u0144czy si\u0119 not\u0105 o charakterze informacyjnym / odpowiedzialnej grze",
+          "passed": true,
+          "evidence": "Standardowa nota disclaimer przed sekcj\u0105 Meta note"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 128.4,
+        "tokens": 35267,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Poprawnie identyfikuje, \u017ce Ekstraklasa jest w przerwie mi\u0119dzysezonowej i nie ma 'najbli\u017cszej kolejki' do przegl\u0105du, zamiast zmy\u015bla\u0107 mecze",
+          "passed": true,
+          "evidence": "Sekcja 'Kr\u00f3tka informacja: brak aktywnej kolejki do zaprognozowania' z pe\u0142nym uzasadnieniem dat"
+        },
+        {
+          "text": "Nie wymy\u015bla fikcyjnych par meczowych ani dat",
+          "passed": true,
+          "evidence": "Explicit: 'nie chcia\u0142em zmy\u015bla\u0107 par meczowych ani wynik\u00f3w'"
+        },
+        {
+          "text": "Wyja\u015bnia kiedy realnie pojawi si\u0119 nast\u0119pna kolejka i co u\u017cytkownik mo\u017ce zrobi\u0107 w mi\u0119dzyczasie",
+          "passed": true,
+          "evidence": "Start sezonu 24-25 lipca 2026, plus 4 konkretne opcje dalszych krok\u00f3w"
+        },
+        {
+          "text": "Proponuje sensowne alternatywy (np. inna liga, analiza ostatniej kolejki, sparingi)",
+          "passed": true,
+          "evidence": "Opcje: poczeka\u0107 do lipca, analiza 34. kolejki, sparingi, inna liga"
+        },
+        {
+          "text": "Ko\u0144czy si\u0119 not\u0105 o charakterze informacyjnym / odpowiedzialnej grze",
+          "passed": true,
+          "evidence": "Standardowa nota disclaimer przed sekcj\u0105 Meta note"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5,
+        "passed": 4,
+        "failed": 4,
+        "total": 8,
+        "time_seconds": 167.4,
+        "tokens": 32662,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Zawiera tabel\u0119 1X2 z procentami dla obu dru\u017cyn i remisu",
+          "passed": false,
+          "evidence": "Brak tabeli z procentami 1X2 - jedynie tabela 'typ\u00f3w' (1X / Over 2.5 / BTS / Over 8.5 / Over 3.5) bez rozbicia na prawdopodobie\u0144stwa wygranej/remisu/przegranej"
+        },
+        {
+          "text": "Podaje 'fair odds' (kursy uczciwe) obok prawdopodobie\u0144stw",
+          "passed": false,
+          "evidence": "Brak jakichkolwiek kurs\u00f3w (fair odds) w raporcie"
+        },
+        {
+          "text": "Zawiera prawdopodobie\u0144stwa over/under goli i/lub BTTS",
+          "passed": true,
+          "evidence": "Over 2.5 ~60-65%, BTS ~60%"
+        },
+        {
+          "text": "Zawiera oszacowanie liczby ro\u017cnych (przedzia\u0142 lub warto\u015b\u0107)",
+          "passed": true,
+          "evidence": "9-11 \u0142\u0105cznie (Lech 5-6, Rak\u00f3w 3-5)"
+        },
+        {
+          "text": "Zawiera oszacowanie kartek/faul\u00f3w",
+          "passed": true,
+          "evidence": "4-6 \u017c\u00f3\u0142tych kartek, ryzyko czerwonej ~10-15%"
+        },
+        {
+          "text": "Transparentnie zaznacza, \u017ce sezon si\u0119 zako\u0144czy\u0142 i nie ma jeszcze potwierdzonego terminu meczu, zamiast zmy\u015bla\u0107 dat\u0119/wynik",
+          "passed": true,
+          "evidence": "Sekcja 'Wa\u017cna uwaga dot. terminu meczu' na pocz\u0105tku"
+        },
+        {
+          "text": "Ko\u0144czy si\u0119 not\u0105 o charakterze informacyjnym / odpowiedzialnej grze",
+          "passed": false,
+          "evidence": "Brak disclaimera o odpowiedzialnej grze - raport ko\u0144czy si\u0119 sekcj\u0105 \u0179r\u00f3d\u0142a"
+        },
+        {
+          "text": "Pokazuje uzasadnienie/metodologi\u0119 wyliczenia oczekiwanych goli (lambda) lub r\u00f3wnowa\u017cne wyja\u015bnienie sk\u0105d wzi\u0119\u0142y si\u0119 liczby",
+          "passed": false,
+          "evidence": "Brak jakiegokolwiek modelu/metodologii - liczby podane jako gotowe szacunki bez wyja\u015bnienia jak powsta\u0142y"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5714,
+        "passed": 4,
+        "failed": 3,
+        "total": 7,
+        "time_seconds": 113.5,
+        "tokens": 24176,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Zawiera tabel\u0119 1X2 z procentami dla obu dru\u017cyn i remisu",
+          "passed": true,
+          "evidence": "Tabela 'Szanse na wygran\u0105': gospodarz 40-45%, remis 25-28%, go\u015b\u0107 28-33%"
+        },
+        {
+          "text": "Podaje 'fair odds' (kursy uczciwe) obok prawdopodobie\u0144stw",
+          "passed": false,
+          "evidence": "Brak jakichkolwiek kurs\u00f3w (fair odds) w raporcie"
+        },
+        {
+          "text": "Zawiera oszacowanie liczby ro\u017cnych (przedzia\u0142 lub warto\u015b\u0107) dla obu dru\u017cyn lub \u0142\u0105cznie",
+          "passed": true,
+          "evidence": "9-10 ro\u017cnych \u0142\u0105cznie"
+        },
+        {
+          "text": "Zawiera oszacowanie liczby strza\u0142\u00f3w na bramk\u0119 (shots on target)",
+          "passed": true,
+          "evidence": "8-11 strza\u0142\u00f3w na bramk\u0119 \u0142\u0105cznie"
+        },
+        {
+          "text": "Transparentnie zaznacza, \u017ce sezon si\u0119 zako\u0144czy\u0142 i nie ma jeszcze potwierdzonego terminu meczu, zamiast zmy\u015bla\u0107 dat\u0119/wynik",
+          "passed": true,
+          "evidence": "Sekcja 'Wa\u017cna uwaga dotycz\u0105ca terminarza' na pocz\u0105tku"
+        },
+        {
+          "text": "Ko\u0144czy si\u0119 not\u0105 o charakterze informacyjnym / odpowiedzialnej grze",
+          "passed": false,
+          "evidence": "Brak disclaimera - raport ko\u0144czy si\u0119 sekcj\u0105 \u0179r\u00f3d\u0142a"
+        },
+        {
+          "text": "Pokazuje uzasadnienie/metodologi\u0119 wyliczenia oczekiwanych goli (lambda) lub r\u00f3wnowa\u017cne wyja\u015bnienie sk\u0105d wzi\u0119\u0142y si\u0119 liczby",
+          "passed": false,
+          "evidence": "Brak modelu/metodologii - procenty i liczby podane bez wyja\u015bnienia oblicze\u0144"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8,
+        "passed": 4,
+        "failed": 1,
+        "total": 5,
+        "time_seconds": 105.0,
+        "tokens": 25602,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Poprawnie identyfikuje, \u017ce taki mecz (Polska-Niemcy w el. M\u015a 2026) faktycznie nie istnieje/nie odby\u0142 si\u0119, zamiast zmy\u015bla\u0107 dane o nieistniej\u0105cym meczu",
+          "passed": true,
+          "evidence": "Tytu\u0142 i sekcja 'Najwa\u017cniejsza informacja' stwierdzaj\u0105 wprost, \u017ce takiego meczu nie by\u0142o i nie b\u0119dzie"
+        },
+        {
+          "text": "Nie podaje sfabrykowanych prawdopodobie\u0144stw/wynik\u00f3w dla nieistniej\u0105cego meczu",
+          "passed": true,
+          "evidence": "Brak jakichkolwiek wymy\u015blonych liczb dla meczu Polska-Niemcy"
+        },
+        {
+          "text": "Wyja\u015bnia co faktycznie wydarzy\u0142o si\u0119 w kwalifikacjach (los Polski i Niemiec)",
+          "passed": true,
+          "evidence": "Sekcja 'Co faktycznie si\u0119 wydarzy\u0142o' - bara\u017ce, pora\u017cka ze Szwecj\u0105 2:3, Niemcy w Grupie E"
+        },
+        {
+          "text": "Proponuje sensowne alternatywy (np. inny mecz, analiza historyczna H2H)",
+          "passed": true,
+          "evidence": "Sekcja 'Propozycje alternatyw' - 4 konkretne opcje w tym H2H"
+        },
+        {
+          "text": "Ko\u0144czy si\u0119 not\u0105 o charakterze informacyjnym / odpowiedzialnej grze",
+          "passed": false,
+          "evidence": "Raport ko\u0144czy si\u0119 sekcj\u0105 \u0179r\u00f3d\u0142a, brak noty o odpowiedzialnej grze"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8,
+        "passed": 4,
+        "failed": 1,
+        "total": 5,
+        "time_seconds": 99.7,
+        "tokens": 26027,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Poprawnie identyfikuje, \u017ce Ekstraklasa jest w przerwie mi\u0119dzysezonowej i nie ma 'najbli\u017cszej kolejki' do przegl\u0105du, zamiast zmy\u015bla\u0107 mecze",
+          "passed": true,
+          "evidence": "Sekcja 'Kr\u00f3tka informacja' wyja\u015bnia, \u017ce sezon zako\u0144czony i trwa przerwa letnia"
+        },
+        {
+          "text": "Nie wymy\u015bla fikcyjnych par meczowych ani dat",
+          "passed": true,
+          "evidence": "Brak wymy\u015blonych par meczowych - tylko fakty o zako\u0144czonym sezonie"
+        },
+        {
+          "text": "Wyja\u015bnia kiedy realnie pojawi si\u0119 nast\u0119pna kolejka i co u\u017cytkownik mo\u017ce zrobi\u0107 w mi\u0119dzyczasie",
+          "passed": true,
+          "evidence": "Nowy sezon 24-26 lipca 2026, runda 1 - 25 lipca, plus 3 propozycje dalszych krok\u00f3w"
+        },
+        {
+          "text": "Proponuje sensowne alternatywy (np. inna liga, analiza ostatniej kolejki, sparingi)",
+          "passed": true,
+          "evidence": "Propozycje: poczeka\u0107 do lipca, sparingi, inna liga aktualnie graj\u0105ca"
+        },
+        {
+          "text": "Ko\u0144czy si\u0119 not\u0105 o charakterze informacyjnym / odpowiedzialnej grze",
+          "passed": false,
+          "evidence": "Raport ko\u0144czy si\u0119 sekcj\u0105 \u0179r\u00f3d\u0142a, brak noty o odpowiedzialnej grze"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 299.95,
+        "stddev": 182.6442,
+        "min": 128.4,
+        "max": 512.9
+      },
+      "tokens": {
+        "mean": 50908.75,
+        "stddev": 15721.8411,
+        "min": 35267,
+        "max": 68984
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.6679,
+        "stddev": 0.1554,
+        "min": 0.5,
+        "max": 0.8
+      },
+      "time_seconds": {
+        "mean": 121.4,
+        "stddev": 31.189,
+        "min": 99.7,
+        "max": 167.4
+      },
+      "tokens": {
+        "mean": 27116.75,
+        "stddev": 3780.645,
+        "min": 24176,
+        "max": 32662
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.33",
+      "time_seconds": "+178.5",
+      "tokens": "+23792"
+    }
+  },
+  "notes": []
+}

@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "Zawiera tabelę 1X2 z procentami dla obu drużyn i remisu",
+      "passed": true,
+      "evidence": "Tabela 1X2: Arsenal 41.5% / Remis 26.2% / City 32.2%"
+    },
+    {
+      "text": "Podaje 'fair odds' (kursy uczciwe) obok prawdopodobieństw",
+      "passed": true,
+      "evidence": "Kolumna 'Kurs uczciwy' we wszystkich tabelach"
+    },
+    {
+      "text": "Zawiera oszacowanie liczby rożnych (przedział lub wartość) dla obu drużyn lub łącznie",
+      "passed": true,
+      "evidence": "Arsenal ~4.7, City ~3.9, łącznie ~8.5-8.6, plus over/under 8.5/9.5/10.5"
+    },
+    {
+      "text": "Zawiera oszacowanie liczby strzałów na bramkę (shots on target)",
+      "passed": true,
+      "evidence": "Arsenal ~4.9 celnych/mecz, City ~5.5 celnych/mecz, łącznie ~9-11 celnych"
+    },
+    {
+      "text": "Transparentnie zaznacza, że sezon się zakończył i nie ma jeszcze potwierdzonego terminu meczu, zamiast zmyślać datę/wynik",
+      "passed": true,
+      "evidence": "Cała sekcja 'Ważna uwaga' wyjaśnia brak meczu PL i traktuje Community Shield jako substytut"
+    },
+    {
+      "text": "Kończy się notą o charakterze informacyjnym / odpowiedzialnej grze",
+      "passed": true,
+      "evidence": "Standardowa nota disclaimer na końcu raportu"
+    },
+    {
+      "text": "Pokazuje uzasadnienie/metodologię wyliczenia oczekiwanych goli (lambda) lub równoważne wyjaśnienie skąd wzięły się liczby",
+      "passed": true,
+      "evidence": "Sekcja 'Model bazowy' z wyliczeniem siły ataku/obrony, korektami jakościowymi i lambda=1.40/1.20"
+    }
+  ],
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 7,
+    "failed": 0,
+    "total": 7
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "skill_name": "football-predictor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Zrób mi pełną analizę najbliższego meczu Lech Poznań - Raków Częstochowa. Interesuje mnie wynik, gole, rożne i kartki.",
+      "expected_output": "Pełny raport (szablon 'pojedynczy mecz') z kontekstem formy obu drużyn, H2H, kontuzjami, modelem oczekiwanych goli (lambda) ORAZ równoległym pełnym modelem oczekiwanych rożnych (lambda_rożne), tabelami 1X2, przewagi rożnej i over/under rożnych, dokładnych wyników, over/under+BTTS dla goli, oszacowaniem kartek, oraz disclaimerem na końcu.",
+      "assertions": [
+        "Zawiera tabelę 1X2 z procentami dla obu drużyn i remisu",
+        "Podaje 'fair odds' (kursy uczciwe) obok prawdopodobieństw",
+        "Zawiera prawdopodobieństwa over/under goli i/lub BTTS",
+        "Zawiera pełny model rożnych: oczekiwaną liczbę (lambda) rożnych dla obu drużyn z krótkim uzasadnieniem, plus prawdopodobieństwo przewagi rożnej i/lub over/under dla progu (np. 9.5) - nie tylko pojedynczy przedział bez metodologii",
+        "Rożne są przedstawione z podobnym naciskiem/rygorem co gole i wynik meczu, a nie jako dodatek na końcu raportu",
+        "Zawiera oszacowanie kartek/faulów",
+        "Transparentnie zaznacza, że sezon się zakończył i nie ma jeszcze potwierdzonego terminu meczu, zamiast zmyślać datę/wynik",
+        "Kończy się notą o charakterze informacyjnym / odpowiedzialnej grze",
+        "Pokazuje uzasadnienie/metodologię wyliczenia oczekiwanych goli (lambda) i oczekiwanych rożnych (lambda_rożne) lub równoważne wyjaśnienie skąd wzięły się liczby"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Mam najbliższy mecz Arsenal - Manchester City w Premier League. Jakie są szanse na wygraną, ile może być rożnych i strzałów na bramkę?",
+      "expected_output": "Pełny raport z naciskiem na 1X2 i pełny model rożnych (lambda_rożne + prawdopodobieństwa przewagi/over-under), plus strzały/strzały celne jako statystyka drugorzędna, oparty na aktualnych statystykach sezonowych obu drużyn z FBref/FootyStats/Sofascore, z fair odds i disclaimerem.",
+      "assertions": [
+        "Zawiera tabelę 1X2 z procentami dla obu drużyn i remisu",
+        "Podaje 'fair odds' (kursy uczciwe) obok prawdopodobieństw",
+        "Zawiera pełny model rożnych analogiczny do goli: lambda_rożne dla obu drużyn z uzasadnieniem oraz prawdopodobieństwo przewagi rożnej i/lub over/under dla progu rożnych, nie tylko przedział bez metodologii",
+        "Zawiera oszacowanie liczby strzałów na bramkę (shots on target)",
+        "Transparentnie zaznacza, że sezon się zakończył i nie ma jeszcze potwierdzonego terminu meczu, zamiast zmyślać datę/wynik",
+        "Kończy się notą o charakterze informacyjnym / odpowiedzialnej grze",
+        "Pokazuje uzasadnienie/metodologię wyliczenia oczekiwanych goli (lambda) lub równoważne wyjaśnienie skąd wzięły się liczby"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Polska gra z Niemcami w eliminacjach do Mistrzostw Świata - jakie są szanse na wynik, ile goli realnie się spodziewać i jakie jest ryzyko kartek?",
+      "expected_output": "W rzeczywistości taki mecz nie istnieje (Polska i Niemcy nie były w tej samej grupie el. MŚ 2026). Dobra odpowiedź sprostowuje fałszywą przesłankę zamiast zmyślać dane, wyjaśnia co faktycznie się wydarzyło i proponuje sensowne alternatywy.",
+      "assertions": [
+        "Poprawnie identyfikuje, że taki mecz (Polska-Niemcy w el. MŚ 2026) faktycznie nie istnieje/nie odbył się, zamiast zmyślać dane o nieistniejącym meczu",
+        "Nie podaje sfabrykowanych prawdopodobieństw/wyników dla nieistniejącego meczu",
+        "Wyjaśnia co faktycznie wydarzyło się w kwalifikacjach (los Polski i Niemiec)",
+        "Proponuje sensowne alternatywy (np. inny mecz, analiza historyczna H2H)",
+        "Kończy się notą o charakterze informacyjnym / odpowiedzialnej grze"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Zrób mi przegląd najbliższej kolejki Ekstraklasy - chciałbym dla każdego meczu mieć szybko 1X2, prawdopodobieństwo over 2.5 i szacunek rożnych.",
+      "expected_output": "W okolicy daty testu Ekstraklasa jest w przerwie międzysezonowej, więc 'najbliższa kolejka' nie istnieje. Dobra odpowiedź zaznacza to wprost, nie zmyśla meczów i proponuje alternatywy (np. poczekać na terminarz, przeanalizować ostatnią kolejkę, zaproponować inną ligę).",
+      "assertions": [
+        "Poprawnie identyfikuje, że Ekstraklasa jest w przerwie międzysezonowej i nie ma 'najbliższej kolejki' do przeglądu, zamiast zmyślać mecze",
+        "Nie wymyśla fikcyjnych par meczowych ani dat",
+        "Wyjaśnia kiedy realnie pojawi się następna kolejka i co użytkownik może zrobić w międzyczasie",
+        "Proponuje sensowne alternatywy (np. inna liga, analiza ostatniej kolejki, sparingi)",
+        "Kończy się notą o charakterze informacyjnym / odpowiedzialnej grze"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Real Madryt gra w najbliższej rundzie Pucharu Króla z niżej notowanym rywalem z niższej ligi - jakie są szanse na awans i ile może być rożnych?",
+      "expected_output": "Raport wg szablonu 'mecz turniejowy/pucharowy' z sekcją o stawce meczu, jasnym zaznaczeniem prawdopodobnej rotacji składu Realu, normalizacją modelu goli/rożnych między różnymi poziomami ligowymi (szerszy przedział niepewności), oraz - jeśli runda nie dopuszcza remisu - tabelą prawdopodobieństwa awansu obok/zamiast klasycznego 1X2. Pełny model rożnych z lambda.",
+      "assertions": [
+        "Weryfikuje i podaje aktualny format rundy (czy remis prowadzi do dogrywki/karnych czy jest inaczej rozstrzygany), zamiast zakładać format z pamięci",
+        "Wspomina rotację składu jako istotny czynnik jakościowy dla faworyta, a nie tylko średnie sezonowe",
+        "Zaznacza, że drużyny pochodzą z różnych poziomów ligowych i model bazowy (lambda goli/rożnych) wymaga normalizacji/szerszego przedziału niepewności, zamiast liczyć je tak jakby grały w tej samej lidze",
+        "Jeśli runda nie dopuszcza remisu, zawiera tabelę/sekcję 'prawdopodobieństwo awansu' uwzględniającą dogrywkę/karne, a nie tylko standardowe 1X2",
+        "Zawiera pełny model rożnych (lambda dla obu drużyn z uzasadnieniem, nie tylko przedział)",
+        "Nie zmyśla nazwy konkretnego rywala/terminu, jeśli nie udało się ich potwierdzić - zaznacza to wprost",
+        "Kończy się notą o charakterze informacyjnym / odpowiedzialnej grze"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Jakie są szanse na wygraną i ile będzie rożnych w najbliższym meczu Chelsea w EFL Cup (Carabao Cup)?",
+      "expected_output": "Raport wg szablonu 'mecz turniejowy/pucharowy' z aktualnym regulaminem rundy EFL Cup (dogrywka/karne vs. inny format), uwzględnieniem typowej dla tych rozgrywek rotacji składu czołowego klubu Premier League, pełnym modelem rożnych i - jeśli brak możliwości remisu - prawdopodobieństwem awansu.",
+      "assertions": [
+        "Sprawdza i podaje aktualnie obowiązujący regulamin danej rundy EFL Cup/Carabao Cup zamiast zakładać z pamięci stały format",
+        "Wspomina prawdopodobną rotację składu (rezerwowi/młodzież) jako czynnik obniżający pewność modelu opartego na sezonowych średnich pierwszego składu",
+        "Zawiera pełny model rożnych (lambda dla obu drużyn z uzasadnieniem, prawdopodobieństwo przewagi rożnej i/lub over/under)",
+        "Jeśli runda nie dopuszcza remisu, prezentuje prawdopodobieństwo awansu (90 min + dogrywka/karne), a nie tylko klasyczne 1X2",
+        "Nie zmyśla konkretnego przeciwnika/terminu meczu, jeśli nie udało się go potwierdzić - zaznacza to wprost zamiast fabrykować",
+        "Kończy się notą o charakterze informacyjnym / odpowiedzialnej grze"
+      ],
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Zrób analizę najbliższego meczu LA Galaxy w MLS - szanse na wygraną, gole i rożne.",
+      "expected_output": "Pełny raport (szablon 'pojedynczy mecz' lub 'mecz turniejowy' jeśli to playoff) oparty na danych specyficznych dla MLS (American Soccer Analysis dla xG, MLSsoccer.com dla tabel/terminarza), z modelem goli i pełnym modelem rożnych, oraz uwzględnieniem kontekstu typowego dla MLS (kalendarz luty/marzec-grudzień, brak spadków, ewentualna sztuczna nawierzchnia, przeloty międzystrefowe).",
+      "assertions": [
+        "Korzysta z danych/źródeł adekwatnych dla MLS (np. American Soccer Analysis, MLSsoccer.com), a nie tylko europejskich serwisów bez pokrycia MLS",
+        "Zawiera tabelę 1X2 z procentami i fair odds",
+        "Zawiera pełny model rożnych (lambda dla obu drużyn z uzasadnieniem, nie tylko przedział)",
+        "Uwzględnia przynajmniej jeden kontekstowy czynnik specyficzny dla MLS (kalendarz sezonu, brak promocji/spadku, nawierzchnia, dystans/podróż międzystrefowa) tam gdzie to istotne dla meczu",
+        "Nie zmyśla konkretnego przeciwnika/terminu meczu, jeśli nie udało się go potwierdzić - zaznacza to wprost",
+        "Kończy się notą o charakterze informacyjnym / odpowiedzialnej grze"
+      ],
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "Zrób analizę najbliższego meczu Atletico Madryt - Athletic Bilbao w La Liga, ale skup się szczególnie na fauliach - które zawodniki najczęściej faulują, kto jest zagrożony zawieszeniem, i czy to coś zmienia w prognozie wyniku.",
+      "expected_output": "Pełny raport (szablon 'pojedynczy mecz') z sekcją fauli i kartek rozbitą na warstwę drużynową ORAZ indywidualną (konkretni zawodnicy z wysokim wskaźnikiem fauli/90, zawodnicy najczęściej faulowani, zawodnicy blisko zawieszenia), oraz jawnym wskazaniem, czy i jak profil dyscyplinarny wpłynął na korektę lambda w modelu bazowym goli, a nie tylko jako izolowana tabelka na końcu.",
+      "assertions": [
+        "Zawiera drużynowy model fauli (oczekiwana liczba fauli obu drużyn, nie tylko gołe średnie sezonowe)",
+        "Zawiera analizę na poziomie zawodnika: wskazuje konkretnych (lub jasno opisanych, jeśli nazwiska nie udało się potwierdzić) zawodników z wysokim wskaźnikiem fauli popełnionych/90 min",
+        "Wskazuje zawodników najczęściej faulowanych (faule sprowokowane) jako źródło zagrożenia z rzutów wolnych",
+        "Sprawdza i komentuje dystans do zawieszenia za kartki dla kluczowych zawodników, jeśli ta informacja jest dostępna",
+        "Jawnie łączy wnioski z analizy fauli/dyscypliny z modelem bazowym (np. czy skorygowano lambda goli z powodu ryzyka kartki/asekuracyjnej gry kluczowego zawodnika), a nie tylko raportuje faule jako osobną, niepowiązaną statystykę",
+        "Zawiera tabelę 1X2 z procentami i fair odds",
+        "Zawiera pełny model rożnych (lambda dla obu drużyn z uzasadnieniem)",
+        "Nie zmyśla nazwisk zawodników ani statystyk, których nie udało się znaleźć - zaznacza to wprost",
+        "Kończy się notą o charakterze informacyjnym / odpowiedzialnej grze"
+      ],
+      "files": []
+    }
+  ]
+}

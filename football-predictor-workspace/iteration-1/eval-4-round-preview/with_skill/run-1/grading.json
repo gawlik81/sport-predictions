@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Poprawnie identyfikuje, że Ekstraklasa jest w przerwie międzysezonowej i nie ma 'najbliższej kolejki' do przeglądu, zamiast zmyślać mecze",
+      "passed": true,
+      "evidence": "Sekcja 'Krótka informacja: brak aktywnej kolejki do zaprognozowania' z pełnym uzasadnieniem dat"
+    },
+    {
+      "text": "Nie wymyśla fikcyjnych par meczowych ani dat",
+      "passed": true,
+      "evidence": "Explicit: 'nie chciałem zmyślać par meczowych ani wyników'"
+    },
+    {
+      "text": "Wyjaśnia kiedy realnie pojawi się następna kolejka i co użytkownik może zrobić w międzyczasie",
+      "passed": true,
+      "evidence": "Start sezonu 24-25 lipca 2026, plus 4 konkretne opcje dalszych kroków"
+    },
+    {
+      "text": "Proponuje sensowne alternatywy (np. inna liga, analiza ostatniej kolejki, sparingi)",
+      "passed": true,
+      "evidence": "Opcje: poczekać do lipca, analiza 34. kolejki, sparingi, inna liga"
+    },
+    {
+      "text": "Kończy się notą o charakterze informacyjnym / odpowiedzialnej grze",
+      "passed": true,
+      "evidence": "Standardowa nota disclaimer przed sekcją Meta note"
+    }
+  ],
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5
+  }
+}

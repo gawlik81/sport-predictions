@@ -1,0 +1,62 @@
+{
+  "skill_name": "esports-predictor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Zrób mi pełną analizę najbliższego meczu Vitality - NAVI w CS2. Interesuje mnie zwycięzca, handicap map i total rund na mapach.",
+      "expected_output": "Pełny raport (szablon 'pojedynczy mecz') z potwierdzonym turniejem i formatem, składami, formą, przewidywanym veto i p_map per mapa, tabelą zwycięzcy serii, dokładnego wyniku, handicapu mapowego/total map, oraz pełnym modelem total rund per mapa (cs-map, ct-bias, korekta na ekonomię), z fair odds i disclaimerem.",
+      "assertions": [
+        "Weryfikuje turniej, termin i format serii (BO1/BO3/BO5) zamiast zakładać je z pamięci; jeśli meczu nie da się potwierdzić, mówi to wprost",
+        "Podaje aktualne składy obu drużyn i sprawdza stand-iny/zmiany składu",
+        "Zawiera przewidywane veto i p_map osobno dla każdej prawdopodobnej mapy",
+        "Zawiera tabelę zwycięzcy serii i dokładnego wyniku serii z fair odds",
+        "Zawiera handicap mapowy (-1.5/+1.5) i total map",
+        "Zawiera total rund per mapa z modelu rundowego (oczekiwana liczba rund, over/under, handicap rundowy lub dogrywka) z uzasadnieniem, a nie tylko przedział",
+        "Stosuje lub opisuje korektę na ekonomię (model zawyża total rund)",
+        "Kończy się notą o charakterze informacyjnym / odpowiedzialnej grze",
+        "Zapisuje raport do pliku w katalogu analizy/"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "T1 vs Gen.G w najbliższym BO5 - jakie szanse, ile map i ile killi na grę?",
+      "expected_output": "Raport LoL z p_gry opartym na formie/statystykach (GD@15, win rate stron, patch), weryfikacją formatu (fearless draft), tabelą zwycięzcy serii i dokładnego wyniku BO5, total map (3.5/4.5), handicapem mapowym, oraz O/U killi i czasu gry z modelu totals, z fair odds i disclaimerem.",
+      "assertions": [
+        "Ustala realny turniej i termin meczu lub zaznacza wprost, że nie udało się go potwierdzić",
+        "Sprawdza, czy obowiązuje fearless draft, i uwzględnia to w analizie gier 4-5",
+        "Zawiera zwycięzcę serii i dokładny wynik BO5 (3-0, 3-1, 3-2...) z fair odds",
+        "Zawiera total map (3.5 i/lub 4.5) oraz handicap mapowy",
+        "Zawiera O/U killi na grę z oczekiwaną wartością i uzasadnieniem",
+        "Uwzględnia patch i stronę (blue/red) jako czynniki p_gry",
+        "Kończy się notą o charakterze informacyjnym / odpowiedzialnej grze"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Daj mi przegląd dzisiejszych meczów w Dota 2 na największym trwającym turnieju i top 5 typów.",
+      "expected_output": "Przegląd dnia (szablon 2): ustalony realny turniej i terminarz dnia, format (BO2/BO3), skrócona analiza per seria z p_gry, zwycięzcą, handicapem/totalem map i killami, oraz ranking top 5 z fair odds >1.15, bez totali opartych na szacunkach z rankingu, z disclaimerem.",
+      "assertions": [
+        "Ustala realny turniej i mecze danego dnia, nie zmyśla terminarza",
+        "Uwzględnia format BO2 (możliwy remis 1-1), jeśli dotyczy",
+        "Każda seria ma zwycięzcę i handicap/total map z fair odds",
+        "Ranking top 5 zawiera wyłącznie typy z fair odds powyżej 1.15",
+        "Dla faworytów w top 5 sprawdza stand-iny/zmiany składu",
+        "Kończy się notą o charakterze informacyjnym / odpowiedzialnej grze"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Nebula Wolves grają dziś finał IEM z Kraken Esports Gdańsk - jakie mają szanse?",
+      "expected_output": "Drużyny i taki finał najpewniej nie istnieją. Dobra odpowiedź sprawdza to researchem, stwierdza wprost, że nie udało się potwierdzić drużyn ani meczu, nie zmyśla statystyk i proponuje alternatywę (np. analizę rzeczywistego finału IEM, jeśli się odbywa).",
+      "assertions": [
+        "Nie zmyśla statystyk, składów ani prawdopodobieństw dla niepotwierdzonego meczu",
+        "Wprost informuje, że nie udało się potwierdzić drużyn/meczu",
+        "Proponuje sensowną alternatywę (rzeczywisty mecz/turniej)"
+      ],
+      "files": []
+    }
+  ]
+}

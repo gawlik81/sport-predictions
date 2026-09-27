@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Poprawnie identyfikuje, że Ekstraklasa jest w przerwie międzysezonowej i nie ma 'najbliższej kolejki' do przeglądu, zamiast zmyślać mecze",
+      "passed": true,
+      "evidence": "Sekcja 'Krótka informacja' wyjaśnia, że sezon zakończony i trwa przerwa letnia"
+    },
+    {
+      "text": "Nie wymyśla fikcyjnych par meczowych ani dat",
+      "passed": true,
+      "evidence": "Brak wymyślonych par meczowych - tylko fakty o zakończonym sezonie"
+    },
+    {
+      "text": "Wyjaśnia kiedy realnie pojawi się następna kolejka i co użytkownik może zrobić w międzyczasie",
+      "passed": true,
+      "evidence": "Nowy sezon 24-26 lipca 2026, runda 1 - 25 lipca, plus 3 propozycje dalszych kroków"
+    },
+    {
+      "text": "Proponuje sensowne alternatywy (np. inna liga, analiza ostatniej kolejki, sparingi)",
+      "passed": true,
+      "evidence": "Propozycje: poczekać do lipca, sparingi, inna liga aktualnie grająca"
+    },
+    {
+      "text": "Kończy się notą o charakterze informacyjnym / odpowiedzialnej grze",
+      "passed": false,
+      "evidence": "Raport kończy się sekcją Źródła, brak noty o odpowiedzialnej grze"
+    }
+  ],
+  "summary": {
+    "pass_rate": 0.8,
+    "passed": 4,
+    "failed": 1,
+    "total": 5
+  }
+}

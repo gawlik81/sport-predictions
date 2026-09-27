@@ -1,0 +1,12 @@
+{
+  "eval_id": 4,
+  "eval_name": "eval-4-round-preview",
+  "prompt": "Zrób mi przegląd najbliższej kolejki Ekstraklasy - chciałbym dla każdego meczu mieć szybko 1X2, prawdopodobieństwo over 2.5 i szacunek rożnych.",
+  "assertions": [
+    {"text": "Poprawnie identyfikuje, że Ekstraklasa jest w przerwie międzysezonowej i nie ma 'najbliższej kolejki' do przeglądu, zamiast zmyślać mecze"},
+    {"text": "Nie wymyśla fikcyjnych par meczowych ani dat"},
+    {"text": "Wyjaśnia kiedy realnie pojawi się następna kolejka i co użytkownik może zrobić w międzyczasie"},
+    {"text": "Proponuje sensowne alternatywy (np. inna liga, analiza ostatniej kolejki, sparingi)"},
+    {"text": "Kończy się notą o charakterze informacyjnym / odpowiedzialnej grze"}
+  ]
+}
