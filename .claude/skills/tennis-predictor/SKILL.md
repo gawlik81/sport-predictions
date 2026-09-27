@@ -125,13 +125,20 @@ właściwej średniej turowej.
 
 Reguły wynikają z weryfikacji predykcji względem rzeczywistych wyników (patrz
 `analizy/Weryfikacja_USOpen_10-pewniakow_2026-08-30-31.md` i
-`analizy/Weryfikacja_predykcji_2026-09-24.md`). Każdy sygnał ostrzegawczy musi
+`analizy/Weryfikacja_predykcji_2026-09-24.md` i `analizy/Weryfikacja_predykcji_2026-09-26.md`). Każdy sygnał ostrzegawczy musi
 **realnie obniżyć liczbę użytą do rankingu pewności**. Sama wzmianka w opisie nie wystarcza.
 
 1. **Pierwszy mecz faworyta po wolnym losie lub po przerwie ≥2 tygodni, gdy rywal ma rytm meczowy.**
    Przykład: Eala (nr 18, rozstawiona z nr 3) w Singapurze grała pierwszy mecz od US Open. Model dał jej
    90,8%, a przegrała z nr 180 Prozorovą, choć prowadziła 1 set i 4-2. Obniż p faworyta o 5-8 pp.
    W WTA nie umieszczaj takiego meczu wyżej niż na poziomie ~85% w rankingu top-N.
+   **Nie sumuj tej kary ze spłaszczeniem modelu.** Model ATP systematycznie spłaszcza faworytów. Gdy
+   surowy model jest już ≥10 pp poniżej rynku dla faworyta z top-20 ATP, nie odejmuj dodatkowych pp
+   i nie typuj zwycięstwa underdoga (co najwyżej +1,5 seta). Przykład z 26.09: Miedwiediew po wolnym
+   losie (model 60%, rynek 80%) dostał dodatkową karę, przez co w raporcie pojawił się typ na Royera.
+   Miedwiediew wygrał 7-6 6-3 z 16 asami.
+   Bilans reguły po 24 i 26.09: faworyt po wolnym losie przegrał 2 z 3 meczów (Eala, Vacherot), ale
+   jedyny faworyt z top-20 i dużym serwisem (Miedwiediew) wygrał pewnie.
 2. **Zmęczenie underdoga po maratonie w poprzedniej rundzie to słaby argument za faworytem.**
    Prozorova miała za sobą 2 h 51 min z poprzedniej rundy i wygrała. Rytm meczowy i pewność siebie
    po wygranym maratonie często równoważą zmęczenie, zwłaszcza w best-of-3 przy dniu przerwy.
@@ -155,10 +162,36 @@ Reguły wynikają z weryfikacji predykcji względem rzeczywistych wyników (patr
 8. **Dla każdego faworyta w zestawieniu top-N wykonaj osobne zapytanie
    „[zawodnik] injury [rok]”.** Nie polegaj na tym, że ogólny research formy przypadkiem wyłapie
    kontuzję.
+9. **Kontuzja w ostatnich ~6 tygodniach = realna korekta, nie tylko wzmianka.** Korneeva (uraz mięśnia
+   brzucha w sierpniu, opisany w kolumnie ryzyk) przy ~74% skreczowała przy 2-6, 0-1 w półfinale Seulu.
+   Znalezienie kontuzji przez pkt 8 nie wystarcza, trzeba ją przełożyć na liczbę:
+   - p faworyta najwyżej ~65%, pewność najwyżej średnia;
+   - w rankingu top-N nie umieszczaj zwycięstwa takiego zawodnika wyżej niż w drugiej połowie listy,
+     albo pomiń mecz;
+   - szczególnie ostrożnie przy zaburzonym harmonogramie (deszcz, dwa mecze jednego dnia, trzeci mecz
+     w trzy dni).
+10. **Zawodnik, który w tym samym turnieju drugi raz z rzędu wygrywa wbrew modelowi, ma zapewne
+    przestarzałe statystyki.** Joint pokonała Tararudee (82,7% dla rywalki), a dzień później Korneevą
+    (88,6% surowo). 12-miesięczne okno na nawierzchni nie łapie szybkiej poprawy młodego zawodnika.
+    Przelicz jego SPW/RPW na ostatnich ~3 miesiącach i użyj tej wersji, jeśli różni się o >2 pp.
+11. **Obcięcie za statystyki z Challengerów rób umiarkowanie (1-2 pp SPW), nie o kilkanaście pp p meczu.**
+    Harris: model surowy 76%, po obcięciu ~57%, wynik 6-4 7-6 bez break pointa przeciw niemu. Zawodnik,
+    który przeszedł kwalifikacje i 1. rundę turnieju ATP bez straty serwisu, ma formę na poziomie
+    ATP, więc korekta za Challengery powinna być mniejsza.
 
 **Co działa:** duże przepaści jakościowe poparte konkretną, świeżą statystyką sezonu (RPW, SGW) dają
 najpewniejsze trafienia, łącznie z dokładnym wynikiem setowym. Dlatego w Kroku 1 priorytetem jest
 dociągnięcie tych statystyk, a szacunek z samego rankingu to ostateczność.
+
+**Underdog +1,5 seta** przy różnicy p_serve ≤ ~0,03 i kursie 1,5-2,0 to najlepszy rynek z weryfikacji
+26.09: 4/5 (Harris, Vallejo, de Minaur, Fritz; jedyne pudło Royer po 6-7(6) w 1. secie). Gdy model
+widzi value na underdoga, a p jego zwycięstwa jest poniżej ~45%, wybieraj +1,5 seta zamiast zwycięzcy
+meczu (zwycięzca meczu dla underdoga: 1/3 tego dnia). W formacie z super tie-breakiem zamiast 3. seta
+(Laver Cup) model spłaszczający faworytów okazał się trafniejszy niż rynek.
+
+**Hala / szybka twarda nawierzchnia i duży serwis po obu stronach** (≥10 asów na mecz w sezonie)
+sprzyjają tie-breakom, więc Over na linii ok. 1,5 gema poniżej oczekiwanej wartości modelu był
+bezpieczny (Over 19,5 i Over 22,5 weszły 26.09).
 
 ## Krok 3: Policz prawdopodobieństwa modelem hierarchicznym punkt→gem→set→mecz
 

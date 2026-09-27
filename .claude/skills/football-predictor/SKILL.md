@@ -178,15 +178,38 @@ finalnej liczbie, nie tylko opisowo:
    - Reprezentacje częściej niż kluby rozstrzygają mecz w końcówce: 3 z 8 meczów miały gol w 90+.
 
    Dlatego:
-   - nie schodź z λ drużyny poniżej ok. 0,7, nawet przy serii meczów bez gola;
+   - w meczu drużyn o zbliżonym poziomie nie schodź z λ drużyny poniżej ok. 0,7, nawet przy serii
+     meczów bez gola;
+   - **podłoga 0,7 NIE dotyczy meczów o dużej różnicy klas.** Gdy rynek daje faworytowi ≥80% (kurs
+     ≤1,25), dopasuj λ obu drużyn tak, by 1X2 z modelu było blisko rynku, zamiast podnosić λ słabeusza
+     do 0,7. Weryfikacja z 26.09: San Marino (λ 0,7) i Mołdawia (λ 0,7) nie strzeliły gola, a Finlandia
+     (λ 2,6) strzeliła 7. W obu meczach rynek był trafniejszy od modelu;
    - nie kumuluj korekt kadrowych w dół powyżej ok. 15% łącznie;
-   - typ Under 2,5 przy łącznym λ ≤ 2,0 traktuj najwyżej jako średnią pewność;
-   - na rynku goli preferuj Over 1,5, który trafił 3/3 w rankingu i 6/8 we wszystkich meczach dnia.
+   - Under 2,5 przy łącznym λ ≤ 2,3 i braku wyraźnego faworyta może wejść do rankingu, ale najwyżej ze
+     średnią pewnością. **Nie wykluczaj go całkowicie:** po 24.09 Under przegrał 2 razy przez gole po
+     80. minucie, ale 26.09 trafił w 4 z 5 takich meczów (łącznie 4/7). Pełne wykluczenie było
+     nadkorektą po jednym dniu;
+   - na rynku goli Over 1,5 pozostaje najpewniejszym typem (3/3 i 5/5 w rankingach, 15/18 we wszystkich
+     meczach 24 i 26.09). Jedyny wyjątek to mecze dwóch defensywnych drużyn o λ ≈ 1,0-1,15 każda
+     (Słowenia–Szkocja 0-0).
 6. **Korekta „kryzysowa” z pkt 2 dotyczy tylko underdoga, nie faworyta.** Nie obniżaj λ faworyta za jego
    własną słabą serię, jeśli rywal jest klasowo wyraźnie słabszy. Przykład: Litwa (model 64,7%, rynek
    ok. 79%) pewnie wygrała 2-0 z Liechtensteinem. Gdy w meczu o dużej różnicy klas model odbiega od rynku
    o ponad 10 pp, zaznacz to wprost i nie zakładaj, że model ma rację. W takich meczach rynek bywał
-   lepiej skalibrowany.
+   lepiej skalibrowany. Potwierdzone 26.09: Albania po 5 porażkach z rzędu (model 47%, rynek ~63%)
+   wygrała 2-0 z Białorusią.
+7. **Mecze reprezentacji: serie wyników i braki kadrowe słabszej drużyny mają słabą moc predykcyjną.**
+   Seria bez porażki reprezentacji z dolnych dywizji LN często powstaje przeciw rywalom jeszcze
+   słabszym. Weryfikacja `analizy/Weryfikacja_predykcji_2026-09-26.md`: typy value na underdogów
+   oparte głównie na ich formie (Estonia, Białoruś) i na brakach kadrowych rywala (Luksemburg bez
+   trzech graczy wygrał z Bułgarią) dały 0/3 na zwycięzcę i 1/2 na X2. Wcześniej Serbia po -20% za
+   braki strzeliła w 4. minucie (24.09). Dlatego:
+   - korekta kadrowa słabszej drużyny wynosi najwyżej -5%, chyba że brakuje kilku podstawowych graczy
+     ofensywy jednocześnie;
+   - przy liczeniu formy reprezentacji waż wyniki siłą rywali (ranking FIFA/Elo), a nie samym bilansem
+     W-D-L;
+   - value na underdoga w reprezentacjach typuj jako X2 lub handicap +1,5, a nie jako zwycięstwo
+     underdoga, i najwyżej ze średnią pewnością.
 
 ## Krok 3: Policz prawdopodobieństwa modelem Poissona
 
