@@ -19,16 +19,22 @@ Użyte skille: football-predictor, tennis-predictor i esports-predictor.
 |---|------|-------|-----|--------|-------------|---------|-------------------|
 | 1 | Węgry – Gruzja | 20:35 | **Under 3,5 gola** | 80,9% (bazowo 86,6%) | 1,24 | Średnia/Wysoka | Żadna z drużyn nie strzeliła gola w LN (obie 0-1 i 0-0). Węgry średnio 1,2 gola z 10,5 strzału. Ryzyko: obie muszą zdobyć punkty |
 | 2 | Kazachstan – Mołdawia | 16:00 | **Under 3,5 gola** | 78,9% (bazowo 84,8%) | 1,27 | Średnia | Mołdawia nie wygrała 17 meczów i ma problemy ze strzelaniem. Kazachstan u siebie traci 0,33 gola na mecz. Zapowiedzi typują Under 2,5 |
-| 3 | Wyspy Owcze – Słowacja | 20:45 | **Over 7,5 rzutu rożnego** | ~77% (model 82,2%) | 1,30 | Średnia | λ rożnych 4,5 : 6,0. Wyspy Owcze 4,6, Słowacja 5,3 rożnego na mecz. W 5 ostatnich meczach Wysp Owczych u siebie padało średnio **12,6 rożnego**. Ryzyko: jedno źródło dla Słowacji |
+| 3 | Wyspy Owcze – Słowacja | 20:45 | **Under 3,5 gola** *(zamiana)* | 73,6% (bazowo 79,9%) | 1,36 | Średnia | Wyspy Owcze zremisowały dwa razy 1-1, Słowacja wygrała 2-0 i 2-1. Under 2,5 trafiał w 14 z 16 ostatnich meczów Słowacji w LN. Ryzyko: Słowacja rozbija gospodarzy |
 | 4 | Bośnia i H. – Szwecja | 20:45 | **Over 1,5 gola** | 74,2% | 1,35 | Średnia/Wysoka | Szwecja strzeliła gola w 11 meczach LN z rzędu. BiH u siebie traci gola w 12 z 13 meczów. Pożegnanie Džeko, brak Isaka. Ryzyko: 1-0 |
 | 5 | Łotwa – Czarnogóra | 18:00 | **Over 7,5 rzutu rożnego** | ~74% (model 74,2%) | 1,35 | Średnia | λ 4,6 : 5,0. Ponad 8 rożnych padło w **7 z 8** ostatnich meczów Łotwy u siebie i w **10 z 11** meczów Czarnogóry na wyjeździe. Ta statystyka meczów potwierdza model, więc bez obcięcia |
 | 6 | Belgia – Turcja | 20:45 | **Over 1,5 gola** | 73,3% | 1,36 | Średnia | Turcja straciła 5 goli w 2 meczach. Belgia średnio 2,4 gola w 10 meczach, ale gra bez Courtoisa i Doku. Ryzyko: Belgia nie strzeliła gola Francji |
-| 7 | Belgia – Turcja | 20:45 | **Over 7,5 rzutu rożnego** | ~73% (model 76,1%) | 1,37 | Średnia | λ 5,5 : 4,3. Belgia 6,1 wywalczonego i 3,9 oddanego rożnego na mecz, Turcja 6,3 i 4,3, a w 5 ostatnich meczach Turcja średnio 6,6 rożnego. Dwa źródła. Skorelowane z #6 |
-| 8 | Polska – Rumunia | 20:45 | **Over 21,5 faula** | ~72% (model 78,2%) | 1,39 | Średnia | λ fauli 12,5 : 13,0. Polska 12,29, Rumunia 13,35 faula na mecz. Marin (Rumunia) 2,22 faula na 90 min, a Zalewski często wymusza faule. Stawka meczu (obie drużyny bez wygranej) sprzyja walce. Ryzyko: rozrzut fauli i styl sędziego (nieznany) |
-| 9 | Bośnia i H. – Szwecja | 20:45 | **Under 10,5 rzutu rożnego** | ~71% (model 74,1%) | 1,41 | Średnia | λ 4,4 : 4,3. W 10 ostatnich meczach BiH padało średnio 9,0 rożnego łącznie, Szwecji 8,7. Szwecja w 3 ostatnich meczach miała poniżej 4,5 rożnego, a BiH 3 razy z rzędu oddała poniżej 4,5. Zapowiedź typuje Under 9,5 |
+| 7 | Łotwa – Czarnogóra | 18:00 | **Under 3,5 gola** *(zamiana)* | 73,6% (bazowo 79,9%) | 1,36 | Średnia | Łotwa nie strzeliła gola w LN (0-2, 0-0). Czarnogóra: 2-1 i 3-2. Ryzyko: Czarnogóra gra otwarcie. Niezależne od #5 (rożne), bo wiele rożnych nie oznacza wielu goli |
+| 8 | Cypr – Armenia | 18:00 | **Under 3,5 gola** *(zamiana)* | ~72% (bazowo 78,9%) | 1,39 | Średnia | Cypr: 1-2 w Czarnogórze, 0-0 z Łotwą. Armenia: 2-0 z Łotwą, 2-3 z Czarnogórą. Ryzyko: 5 goli Armenii w ostatnim meczu |
+| 9 | Polska – Rumunia | 20:45 | **Over 1,5 gola** *(zamiana)* | 71,3% | 1,40 | Średnia | Polska straciła 3 gole w Szwecji, Rumunia 6 w 2 meczach. Wraca Lewandowski. Ryzyko: Polska nie wygrała 5 meczów z rzędu i zremisowała 0-0 z BiH |
 | 10 | Francja – Włochy | 20:45 | **Over 7,5 rzutu rożnego** | ~70% (model 73,1%) | 1,43 | Średnia | λ 5,9 : 3,6. Francja 6,9 rożnego na mecz (20 meczów), Włochy 3,93 (14 meczów). Zapowiedź szacuje total na 9,8 i daje Over 8,5 60%. Ryzyko: Francja Zidane'a gra zachowawczo (dwa razy 1-0) |
 
-**Oczekiwana liczba trafień: ok. 7,4 z 10.** Skorelowane są pary #4/#9 (BiH–Szwecja) i #6/#7 (Belgia–Turcja).
+**Zamiana na prośbę użytkownika (wersja 3).** Wymieniłem pozycje 3, 7, 8 i 9 na kolejne najlepsze typy spoza listy. Usunięte typy:
+- Wyspy Owcze–Słowacja Over 7,5 rożnego (~77%);
+- Belgia–Turcja Over 7,5 rożnego (~73%);
+- Polska–Rumunia Over 21,5 faula (~72%);
+- BiH–Szwecja Under 10,5 rożnego (~71%).
+
+**Oczekiwana liczba trafień: ok. 7,3 z 10.** Wśród par typów z tego samego meczu nie ma już silnie skorelowanych.
 
 ## Pozostałe typy powyżej 65% (poza TOP 10)
 
