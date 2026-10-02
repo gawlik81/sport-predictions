@@ -1,84 +1,125 @@
-# TOP 10 predykcji dnia — piątek, 02.10.2026
+# TOP 10 predykcji dnia — piątek, 02.10.2026 (wersja 2: gole, rożne i faule)
 
 Użyte skille: football-predictor, tennis-predictor i esports-predictor.
 **W piłce nożnej są tylko typy over/under** (gole, rożne, faule), zgodnie z prośbą.
 
-**Źródła:** zapowiedzi meczowe (Sports Mole, Goal, Al Jazeera, khelnow) i wyniki 1. i 2. kolejki Ligi Narodów (ESPN, Al Jazeera, 101 Great Goals). Kursów bukmacherskich nie zbierałem. Przy typach jest kurs fair (1/p). Stan na ok. 08:45.
+**Zmiana względem wersji 1:** pierwsza wersja zawierała tylko gole, bo nie znalazłem wtedy danych o rożnych i faulach. Po dokładniejszym wyszukaniu (zapowiedzi bet builder: That's A Goal, Statz.ai, Sports Gambler, Sky Sports) mam statystyki rożnych dla 9 meczów i fauli dla 4 meczów. Ranking jest przebudowany.
 
-**Oferta dnia:**
-- **Piłka nożna, 3. kolejka Ligi Narodów:**
-  - A: Francja–Włochy, Belgia–Turcja;
-  - B: **Polska–Rumunia**, Bośnia i H.–Szwecja, Węgry–Gruzja (20:35);
-  - C: Kazachstan–Mołdawia (16:00), Cypr–Armenia (18:00), Łotwa–Czarnogóra (18:00), Wyspy Owcze–Słowacja;
-  - pozostałe mecze o 20:45.
-- **Tenis:** Pekin i Tokio, kolejne rundy. Sesje dzienne zaczynają się o 04:00-05:00 CEST, więc w chwili analizy mecze trwały. Statystyk serwisu i returnu nie zebrałem, więc typów nie ma (reguła 4).
-- **E-sport:** jest tylko LoL na igrzyskach azjatyckich (reprezentacje, ostatni dzień). Brak danych, więc zgodnie z regułami 7-8 nie typuję.
-
-**Rożne i faule:** dla dzisiejszych meczów nie znalazłem średnich rożnych ani fauli w zapowiedziach. Zgodnie z Krokiem 1 nie podaję linii zamiast wymyślonej liczby.
+**Źródła:** zapowiedzi meczowe i statystyki drużyn (linki na końcu) oraz wyniki 1. i 2. kolejki LN. Kursów bukmacherskich nie zbierałem. Przy typach jest kurs fair (1/p). Stan na ok. 09:00.
 
 **Zasady rankingu:**
-- Uwzględnia tylko typy z kursem fair powyżej 1,15.
-- **Under:** liczba do rankingu pochodzi z wariantu z λ podniesionym o 0,15 na drużynę (reguła 5: model zaniżał gole w meczach reprezentacji o ok. 0,3 na mecz). **Over:** model bazowy.
-- Under 2,5 najwyżej ze średnią pewnością (reguła 5).
+- Uwzględnia tylko typy z kursem fair powyżej 1,15. Najwyżej 2 typy z jednego meczu.
+- **Gole, under:** liczba z wariantu z λ podniesionym o 0,15 na drużynę (reguła 5). **Gole, over:** model bazowy.
+- **Rożne:** model Poissona z λ ze statystyk drużyn. Jedno źródło oznacza obcięcie o 5 pp i najwyżej średnią pewność (Krok 2b, pkt 4). Dwa źródła albo zgodna statystyka meczów oznaczają obcięcie o 3 pp.
+- **Faule:** Poisson zaniża rozrzut liczby fauli (wariancja jest wyższa niż średnia), więc obcinam wynik o ok. 6 pp.
 
 ## Ranking
 
-| # | Mecz | Godz. | Typ | Prawd. | Kurs (fair) | Pewność | Kluczowe ryzyko |
-|---|------|-------|-----|--------|-------------|---------|-----------------|
-| 1 | Węgry – Gruzja | 20:35 | **Under 3,5 gola** | 80,9% (bazowo 86,6%) | 1,24 | Średnia/Wysoka | Żadna z drużyn nie strzeliła gola w LN: Węgry 0-1 z Ukrainą i 0-0 z Irlandią Płn., Gruzja 0-1 z Irlandią Płn. i 0-0 z Ukrainą. Ryzyko: obie drużyny muszą zdobyć punkty i mogą otworzyć mecz w końcówce |
-| 2 | Kazachstan – Mołdawia | 16:00 | **Under 3,5 gola** | 78,9% (bazowo 84,8%) | 1,27 | Średnia | W 4 meczach tych drużyn w LN padło łącznie 8 goli, czyli średnio 2 na mecz (KAZ 1-1 FRO, 1-2 SVK; MDA 0-2 SVK, 1-1 FRO). Ryzyko: mecz dwóch słabych obron |
-| 3 | Bośnia i H. – Szwecja | 20:45 | **Over 1,5 gola** | 74,2% | 1,35 | Średnia/Wysoka | Mecz liderów grupy. BiH strzeliła 4 gole w Rumunii, Szwecja strzeliła 5 w 2 meczach (Gyökeres 2 gole). To pożegnalny mecz Džeko (73 gole w kadrze), a Tabaković jest w formie. Brak Isaka w Szwecji. Ryzyko: 1-0 |
-| 4 | Łotwa – Czarnogóra | 18:00 | **Under 3,5 gola** | 73,6% (bazowo 79,9%) | 1,36 | Średnia | Łotwa nie strzeliła gola w LN (0-2 i 0-0). Czarnogóra wygrała oba mecze: 2-1 z Cyprem i 3-2 w Armenii. Ryzyko: Czarnogóra ma w obu meczach po 3+ gole łącznie (pierwszy 2-1) |
-| 5 | Wyspy Owcze – Słowacja | 20:45 | **Under 3,5 gola** | 73,6% (bazowo 79,9%) | 1,36 | Średnia | Wyspy Owcze zremisowały dwa razy 1-1, Słowacja wygrała 2-0 i 2-1. Under 2,5 trafiał w 14 z 16 ostatnich meczów Słowacji w tych rozgrywkach. Ryzyko: Słowacja rozbija gospodarzy |
-| 6 | Belgia – Turcja | 20:45 | **Over 1,5 gola** | 73,3% | 1,36 | Średnia | Turcja straciła 5 goli w 2 meczach (0-1, 1-4). Belgia gra bez Courtoisa i Doku. Do Turcji wracają Çakır, Bardakcı i Kadıoğlu. Belgia nie strzeliła gola z Francją (0-1) |
-| 7 | Cypr – Armenia | 18:00 | **Under 3,5 gola** | ~72% (bazowo 78,9%) | 1,39 | Średnia | Cypr: 1-2 w Czarnogórze i 0-0 z Łotwą. Armenia: 2-0 z Łotwą i 2-3 z Czarnogórą. Ryzyko: Armenia gra otwarcie (5 goli w meczu z Czarnogórą) |
-| 8 | Francja – Włochy | 20:45 | **Under 3,5 gola** | 71,4% (bazowo 77,9%) | 1,40 | Średnia | Francja Zidane'a wygrała oba mecze po 1-0 i bez Mbappé gra zachowawczo. Włochy wygrały 4-1 w Turcji, ale przegrały 0-2 z Belgią. Ryzyko: Włochy po 4 golach w Bursie są w formie strzeleckiej |
-| 9 | Polska – Rumunia | 20:45 | **Over 1,5 gola** | 71,3% | 1,40 | Średnia | Polska straciła 3 gole w Szwecji, Rumunia 6 w 2 meczach. Wraca Lewandowski, Urban prawdopodobnie przejdzie na czwórkę obrońców. Ryzyko: Polska nie wygrała 5 meczów z rzędu i zremisowała 0-0 z BiH, możliwe też nerwowe 1-0 |
-| 10 | Francja – Włochy | 20:45 | **Over 1,5 gola** | 69,2% | 1,45 | Średnia | Skorelowane z #8: oba typy wchodzą przy 2 lub 3 golach. Ryzyko: kolejne 1-0 Francji |
+| # | Mecz | Godz. | Typ | Prawd. | Kurs (fair) | Pewność | Podstawa i ryzyko |
+|---|------|-------|-----|--------|-------------|---------|-------------------|
+| 1 | Węgry – Gruzja | 20:35 | **Under 3,5 gola** | 80,9% (bazowo 86,6%) | 1,24 | Średnia/Wysoka | Żadna z drużyn nie strzeliła gola w LN (obie 0-1 i 0-0). Węgry średnio 1,2 gola z 10,5 strzału. Ryzyko: obie muszą zdobyć punkty |
+| 2 | Kazachstan – Mołdawia | 16:00 | **Under 3,5 gola** | 78,9% (bazowo 84,8%) | 1,27 | Średnia | Mołdawia nie wygrała 17 meczów i ma problemy ze strzelaniem. Kazachstan u siebie traci 0,33 gola na mecz. Zapowiedzi typują Under 2,5 |
+| 3 | Wyspy Owcze – Słowacja | 20:45 | **Over 7,5 rzutu rożnego** | ~77% (model 82,2%) | 1,30 | Średnia | λ rożnych 4,5 : 6,0. Wyspy Owcze 4,6, Słowacja 5,3 rożnego na mecz. W 5 ostatnich meczach Wysp Owczych u siebie padało średnio **12,6 rożnego**. Ryzyko: jedno źródło dla Słowacji |
+| 4 | Bośnia i H. – Szwecja | 20:45 | **Over 1,5 gola** | 74,2% | 1,35 | Średnia/Wysoka | Szwecja strzeliła gola w 11 meczach LN z rzędu. BiH u siebie traci gola w 12 z 13 meczów. Pożegnanie Džeko, brak Isaka. Ryzyko: 1-0 |
+| 5 | Łotwa – Czarnogóra | 18:00 | **Over 7,5 rzutu rożnego** | ~74% (model 74,2%) | 1,35 | Średnia | λ 4,6 : 5,0. Ponad 8 rożnych padło w **7 z 8** ostatnich meczów Łotwy u siebie i w **10 z 11** meczów Czarnogóry na wyjeździe. Ta statystyka meczów potwierdza model, więc bez obcięcia |
+| 6 | Belgia – Turcja | 20:45 | **Over 1,5 gola** | 73,3% | 1,36 | Średnia | Turcja straciła 5 goli w 2 meczach. Belgia średnio 2,4 gola w 10 meczach, ale gra bez Courtoisa i Doku. Ryzyko: Belgia nie strzeliła gola Francji |
+| 7 | Belgia – Turcja | 20:45 | **Over 7,5 rzutu rożnego** | ~73% (model 76,1%) | 1,37 | Średnia | λ 5,5 : 4,3. Belgia 6,1 wywalczonego i 3,9 oddanego rożnego na mecz, Turcja 6,3 i 4,3, a w 5 ostatnich meczach Turcja średnio 6,6 rożnego. Dwa źródła. Skorelowane z #6 |
+| 8 | Polska – Rumunia | 20:45 | **Over 21,5 faula** | ~72% (model 78,2%) | 1,39 | Średnia | λ fauli 12,5 : 13,0. Polska 12,29, Rumunia 13,35 faula na mecz. Marin (Rumunia) 2,22 faula na 90 min, a Zalewski często wymusza faule. Stawka meczu (obie drużyny bez wygranej) sprzyja walce. Ryzyko: rozrzut fauli i styl sędziego (nieznany) |
+| 9 | Bośnia i H. – Szwecja | 20:45 | **Under 10,5 rzutu rożnego** | ~71% (model 74,1%) | 1,41 | Średnia | λ 4,4 : 4,3. W 10 ostatnich meczach BiH padało średnio 9,0 rożnego łącznie, Szwecji 8,7. Szwecja w 3 ostatnich meczach miała poniżej 4,5 rożnego, a BiH 3 razy z rzędu oddała poniżej 4,5. Zapowiedź typuje Under 9,5 |
+| 10 | Francja – Włochy | 20:45 | **Over 7,5 rzutu rożnego** | ~70% (model 73,1%) | 1,43 | Średnia | λ 5,9 : 3,6. Francja 6,9 rożnego na mecz (20 meczów), Włochy 3,93 (14 meczów). Zapowiedź szacuje total na 9,8 i daje Over 8,5 60%. Ryzyko: Francja Zidane'a gra zachowawczo (dwa razy 1-0) |
 
-**Oczekiwana liczba trafień: ok. 7,4 z 10.** Typy #8 i #10 łączą się w praktyce w „2-3 gole w meczu Francja–Włochy”.
+**Oczekiwana liczba trafień: ok. 7,4 z 10.** Skorelowane są pary #4/#9 (BiH–Szwecja) i #6/#7 (Belgia–Turcja).
 
-## Świadomie pominięte
+## Pozostałe typy powyżej 65% (poza TOP 10)
 
-- **Węgry – Gruzja, Under 2,5:** bazowo 69,0%, po stresie λ 60,9%. Skorelowane z #1, więc nie wszedł do rankingu.
-- **Kazachstan – Mołdawia, Under 2,5:** bazowo 66,3%, po stresie 58,3%.
-- **Over 2,5:** najwyżej 49,4% (BiH–Szwecja), poniżej progu.
-- **Rożne i faule:** brak danych drużynowych dla dzisiejszych meczów.
+| Mecz | Typ | Prawd. | Kurs (fair) | Uwagi |
+|---|---|---|---|---|
+| Węgry – Gruzja | Under 10,5 rzutu rożnego | ~71% (model 75,2%) | 1,41 | Węgry 4,2, Gruzja 4,4 rożnego na mecz (jedno źródło). Wypadło, bo #1 to już typ z tego meczu |
+| Francja – Włochy | Under 3,5 gola | 71,4% | 1,40 | Francja dwa razy wygrała 1-0 |
+| Belgia – Turcja | Over 21,5 faula | ~70% (model 70,7%) | 1,43 | Belgia 12,3 faula na mecz, w jej meczach średnio 23,6 faula łącznie. W meczach Turcji średnio 25,2 faula, a **78% meczów** kończyło się powyżej 21,5. Statystyka meczów potwierdza model, więc bez obcięcia. Trzeci typ z meczu, dlatego poza TOP 10 |
+| Polska – Rumunia | Over 1,5 gola | 71,3% | 1,40 | Wersja 1 rankingu |
+| Cypr – Armenia | Over 7,5 rzutu rożnego | ~65% (model 69,9%) | 1,54 | Cypr 5,4, Armenia 2,9 rożnego na mecz. W meczu z Łotwą Cypr miał 11 rożnych |
+| Bośnia i H. – Szwecja | Over 21,5 faula | ~67% (model 72,7%) | 1,49 | BiH 13,6 faula i 2,1 żółtej kartki na mecz (27 żółtych w 10 meczach) |
+| Rumunia (drużynowo) | Under 3,5 rzutu rożnego | ~67% (model 69,2%) | 1,49 | Rumunia miała poniżej 3,5 rożnego w 5 kolejnych wyjazdach. Polska u siebie oddała poniżej 3,5 rożnego w 6 kolejnych meczach |
+| Francja – Włochy | Under 23,5 faula | ~63% (model 67,7%) | 1,59 | Francja 9,15, Włochy 11,25 faula na mecz |
 
-## Skrót — piłka nożna (model Poissona)
+## Tenis i e-sport — dlaczego brak typów
 
-| Mecz | λ gole | 1X2 (%) | O1,5 | U2,5 | U3,5 (baza / stres) | Wyniki w LN |
+- **Tenis.**
+  - Pekin i Tokio grają dziś 2. rundę. Sesja wieczorna w Tokio zaczyna się o 09:00 CEST, a w Pekinie mecze zaczynają się od 07:00 CEST.
+  - Najciekawszy mecz to **Djokovic – Bu Yunchaokete**: Djokovic ma w Pekinie bilans 30-0, a Bu to nr 114 z dziką kartą.
+  - Godziny tego meczu nie potwierdziłem. Nie mam też rzeczywistych statystyk serwisu i returnu obu zawodników na twardej nawierzchni, więc zgodnie z regułą 4 total gemów nie wchodzi do rankingu.
+  - Wygrana Djokovica dałaby kurs fair poniżej 1,15, więc odpada zgodnie z filtrem.
+- **E-sport.**
+  - W CS2 grają dziś tylko turnieje tier-3: ROG Journey Autumn (pula 20 tys. USD), Stake Ranked, ESN Fall Showdown.
+  - Zgodnie z regułą 8 (ryzyko integralności i brak danych) nie typuję.
+  - LoL na igrzyskach azjatyckich to reprezentacje bez danych.
+
+## Skrót — modele
+
+**Gole (Poisson):**
+
+| Mecz | λ gole | O1,5 | U2,5 | U3,5 (baza / stres) |
+|---|---|---|---|---|
+| Francja – Włochy | 1,40 : 1,00 | 69,2% | 57,0% | 77,9% / 71,4% |
+| Belgia – Turcja | 1,75 : 0,85 | 73,3% | 51,8% | 73,6% |
+| Polska – Rumunia | 1,40 : 1,10 | 71,3% | 54,4% | 75,8% |
+| Bośnia i H. – Szwecja | 1,30 : 1,35 | 74,2% | 50,6% | 72,5% |
+| Węgry – Gruzja | 1,00 : 0,95 | 58,0% | 69,0% | 86,6% / 80,9% |
+| Kazachstan – Mołdawia | 1,15 : 0,90 | 60,7% | 66,3% | 84,8% / 78,9% |
+| Cypr – Armenia | 1,10 : 1,25 | 68,0% | 58,3% | 78,9% / ~72% |
+| Łotwa – Czarnogóra | 0,95 : 1,35 | 66,9% | 59,6% | 79,9% / 73,6% |
+| Wyspy Owcze – Słowacja | 0,70 : 1,60 | 66,9% | 59,6% | 79,9% / 73,6% |
+
+**Rożne (Poisson):**
+
+| Mecz | λ rożne | O7,5 | O8,5 | O9,5 | U10,5 | Dane wejściowe |
 |---|---|---|---|---|---|---|
-| Francja – Włochy | 1,40 : 1,00 | 46,1 / 27,0 / 26,9 | 69,2% | 57,0% | 77,9% / 71,4% | FRA 1-0 TUR, 1-0 @BEL; ITA 0-2 BEL, 4-1 @TUR |
-| Belgia – Turcja | 1,75 : 0,85 | 58,5 / 23,3 / 18,0 | 73,3% | 51,8% | 73,6% | BEL 2-0 @ITA, 0-1 FRA; TUR 0-1 @FRA, 1-4 ITA |
-| Polska – Rumunia | 1,40 : 1,10 | 43,7 / 26,6 / 29,5 | 71,3% | 54,4% | 75,8% | POL 0-0 BIH, 1-3 @SWE; ROU 1-2 @SWE, 2-4 BIH |
-| Bośnia i H. – Szwecja | 1,30 : 1,35 | 35,8 / 26,1 / 38,1 | 74,2% | 50,6% | 72,5% | BIH 0-0 @POL, 4-2 @ROU; SWE 2-1 ROU, 3-1 POL |
-| Węgry – Gruzja | 1,00 : 0,95 | 35,7 / 31,3 / 33,0 | 58,0% | 69,0% | 86,6% / 80,9% | HUN 0-1 UKR, 0-0 @NIR; GEO 0-1 NIR, 0-0 UKR |
-| Kazachstan – Mołdawia | 1,15 : 0,90 | 41,4 / 30,1 / 28,5 | 60,7% | 66,3% | 84,8% / 78,9% | KAZ 1-1 @FRO, 1-2 @SVK; MDA 0-2 @SVK, 1-1 FRO |
-| Cypr – Armenia | 1,10 : 1,25 | 32,4 / 27,9 / 39,7 | 68,0% | 58,3% | 78,9% / ~72% | CYP 1-2 @MNE, 0-0 @LVA; ARM 2-0 LVA, 2-3 MNE |
-| Łotwa – Czarnogóra | 0,95 : 1,35 | 26,4 / 27,6 / 45,9 | 66,9% | 59,6% | 79,9% / 73,6% | LVA 0-2 @ARM, 0-0 CYP; MNE 2-1 CYP, 3-2 @ARM |
-| Wyspy Owcze – Słowacja | 0,70 : 1,60 | 16,2 / 24,8 / 58,9 | 66,9% | 59,6% | 79,9% / 73,6% | FRO 1-1 KAZ, 1-1 @MDA; SVK 2-0 MDA, 2-1 KAZ |
+| Francja – Włochy | 5,9 : 3,6 | 73,1% | 60,8% | 47,8% | 64,5% | FRA 6,9, ITA 3,93 rożnego na mecz |
+| Polska – Rumunia | 5,8 : 2,8 | 62,7% | 49,1% | 36,0% | 75,2% | POL 5,59, ROU 4,88; ROU <3,5 na 5 wyjazdach |
+| Belgia – Turcja | 5,5 : 4,3 | 76,1% | 64,4% | 51,7% | 60,8% | BEL 6,1 / 3,9, TUR 6,3 / 4,3 (wywalczone / oddane) |
+| Bośnia i H. – Szwecja | 4,4 : 4,3 | 64,0% | 50,4% | 37,3% | 74,1% | BiH 4,0 / 5,0, SWE 3,9 / 4,8 (10 meczów) |
+| Węgry – Gruzja | 4,2 : 4,4 | 62,7% | 49,1% | 36,0% | 75,2% | HUN 4,2, GEO 4,4 |
+| Łotwa – Czarnogóra | 4,6 : 5,0 | 74,2% | 62,0% | 49,1% | 63,3% | LVA 4,4, MNE 5,2; >8 rożnych w 7/8 i 10/11 meczów |
+| Wyspy Owcze – Słowacja | 4,5 : 6,0 | 82,2% | 72,1% | 60,3% | 52,1% | FRO 4,6, SVK 5,3; mecze FRO u siebie średnio 12,6 |
+| Cypr – Armenia | 5,8 : 3,4 | 69,9% | 57,0% | 43,9% | 68,2% | CYP 5,4, ARM 2,9 |
+| Kazachstan – Mołdawia | 4,0 : 3,3 | O6,5 59,4% | O7,5 44,6% | O8,5 31,1% | U9,5 79,9% | zapowiedź: 6-8 rożnych |
 
-**Korekty λ:**
-- **Francja:** -8% za brak Mbappé.
-- **Belgia:** -5% za brak Doku. Brak Courtoisa podnosi λ Turcji o ~5%.
-- **Szwecja:** -8% za brak Isaka.
-- **Polska:** bez korekty, bo wraca Lewandowski.
-- **Węgry, Gruzja, Łotwa:** λ nie niższe niż ok. 0,95, mimo braku goli w LN (reguła 5, podłoga ~0,7 przy zbliżonym poziomie).
-- **Wyspy Owcze:** λ 0,70 na podłodze reguły 5, bez schodzenia niżej. Słowacja jest wyraźnym faworytem, ale nie na poziomie ≥80%.
+**Faule (Poisson, bez korekty na rozrzut):**
+
+| Mecz | λ faule | O20,5 | O21,5 | O22,5 | O23,5 | Dane |
+|---|---|---|---|---|---|---|
+| Polska – Rumunia | 12,5 : 13,0 | — | 78,2% | 71,7% | 64,3% | POL 12,29, ROU 13,35 faula na mecz |
+| Belgia – Turcja | 12,3 : 12,0 | 77,6% | 70,7% | 63,1% | 55,1% | BEL 12,3; mecze TUR średnio 25,2 faula łącznie |
+| Bośnia i H. – Szwecja | 13,6 : 11,0 | — | 72,7% | 65,4% | 57,5% | BiH 13,6 faula na mecz |
+| Francja – Włochy | 10,0 : 11,5 | 57,2% | 48,6% | 40,1% | 32,3% | FRA 9,15, ITA 11,25 faula na mecz |
+
+**Kartki (bez modelu, sygnały z danych):**
+- Węgry–Gruzja sędziuje Srđan Jovanović, średnio 4,0-4,07 żółtej kartki na mecz.
+- BiH zebrała 27 żółtych kartek w 10 meczach.
 
 ---
 Źródła:
-- [Polsat Sport, plan 02.10](https://www.polsatsport.pl/wiadomosc/2026-10-01/liga-narodow-gdzie-ogladac-mecze-plan-transmisji-piatkowych-meczow-02-10/)
-- [matchday.pl](https://matchday.pl/2026/10/01/02-10-26-piatek-pilka-nozna-w-tv/)
-- [ESPN, Belgia 0-1 Francja](https://www.espn.com/soccer/report/_/gameId/401861081)
-- [101 Great Goals, wyniki 28.09](https://www.101greatgoals.com/match-reports/nations-league-results-today-reports-results-scores-goals/)
-- [Al Jazeera, Hiszpania 4-1 Chorwacja (wyniki 29.09)](https://www.aljazeera.com/sports/liveblog/2026/9/29/live-spain-vs-croatia-nations-league)
-- [Goal, Francja–Włochy](https://www.goal.com/en/news/france-italy-uefa-nations-league-preview/blt34db302c6b849447)
-- [Al Jazeera, Francja–Włochy](https://www.aljazeera.com/sports/2026/10/1/france-italy-uefa-nations-league-zidane-olise-esposito-teams-tv-channel-stream)
+- [That's A Goal, Francja–Włochy (bet builder)](https://www.thatsagoal.com/predictions/nations-league/france-vs-italy-bet-builder-tips-02-10-26)
+- [Statz.ai, rożne Francji](https://statz.ai/team/france/corners)
+- [That's A Goal, Polska–Rumunia (bet builder)](https://www.thatsagoal.com/predictions/nations-league/poland-vs-romania-bet-builder-tips-02-10-26)
+- [Statz.ai, Belgia–Turcja](https://statz.ai/h2h/belgium-vs-turkey/19676675)
+- [Statz.ai, faule Belgii](https://statz.ai/team/belgium/fouls)
+- [Sports Gambler, Belgia–Turcja](https://www.sportsgambler.com/betting-tips/football/belgium-vs-turkey-prediction-lineups-odds-2026-10-02/)
+- [Statz.ai, Szwecja–BiH](https://statz.ai/h2h/sweden-vs-bosnia/19676704)
+- [Sports Gambler, BiH–Szwecja](https://www.sportsgambler.com/betting-tips/football/bosnia-herzegovina-vs-sweden-prediction-lineups-odds-2026-10-02/)
+- [Sky Sports, Węgry–Gruzja](https://www.skysports.com/football/hungary-vs-georgia/554046)
+- [Sports Gambler, Węgry–Gruzja](https://www.sportsgambler.com/betting-tips/football/hungary-vs-georgia-prediction-lineups-odds-2026-10-02/)
+- [Sports Gambler, Cypr–Armenia](https://www.sportsgambler.com/betting-tips/football/cyprus-vs-armenia-prediction-lineups-odds-2026-10-02/)
+- [Sports Gambler, Łotwa–Czarnogóra](https://www.sportsgambler.com/betting-tips/football/latvia-vs-montenegro-prediction-lineups-odds-2026-10-02/)
+- [Sports Gambler, Wyspy Owcze–Słowacja](https://www.sportsgambler.com/betting-tips/football/faroe-islands-vs-slovakia-prediction-lineups-odds-2026-10-02/)
+- [The Pressing Zone, Kazachstan–Mołdawia](https://www.thepressingzone.com/kazakhstan-vs-moldova-prediction-2026/)
 - [Sports Mole, Polska–Rumunia](https://www.sportsmole.co.uk/football/poland/uefa-nations-league/preview/poland-vs-romania-prediction-team-news-lineups_606004.html)
 - [Sports Mole, Belgia–Turcja](https://www.sportsmole.co.uk/football/belgium/uefa-nations-league/preview/belgium-vs-turkey-prediction-team-news-lineups_606012.html)
 - [Sports Mole, BiH–Szwecja](https://www.sportsmole.co.uk/football/sweden/uefa-nations-league/preview/bosnia-hvina-vs-sweden-prediction-team-news-lineups_606005.html)
-- [Dailysports, BiH–Szwecja](https://dailysports.net/predictions/bosnia-and-herzegovina-vs-sweden-prediction-who-will-come-out-on-top-in-the-leaders-showdown/)
+- [Goal, Francja–Włochy](https://www.goal.com/en/news/france-italy-uefa-nations-league-preview/blt34db302c6b849447)
+- [101 Great Goals, wyniki 28.09](https://www.101greatgoals.com/match-reports/nations-league-results-today-reports-results-scores-goals/)
+- [Tennis Majors, Djokovic 30-0 w Pekinie](https://www.tennismajors.com/atp/djokovic-makes-it-30-0-in-beijing-beating-borges-despite-treatment-862205.html)
+- [esports.gg, kalendarz CS2](https://esports.gg/news/counter-strike-2/schedule-cs2-events-2026/)
 
 *Analiza ma charakter informacyjny i statystyczny, nie stanowi porady finansowej ani zachęty do zakładów. Graj odpowiedzialnie.*
