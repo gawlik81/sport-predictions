@@ -1,0 +1,29 @@
+{
+  "skill_name": "bet-slip-builder",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "mam analizy na dziś (football, tenis, cs2) - złóż mi 3 zestawy po 3-4 typy, tylko takie które się nie wykluczają, kursy sprawdź w necie",
+      "expected_output": "Trzy zestawy (zachowawczy/zrównoważony/ryzykowny), jeden typ na mecz, tabela p/kurs/fair/EV, brak nóg z fair <=1.15",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "z analiz w analizy/Top10_predykcje_2026-10-06.md zrób kupon na 4 typy z najwyższym prawdopodobieństwem, uwzględnij kursy które podam: 1.62, 1.45, 1.80, 1.55",
+      "expected_output": "Kupon z kursami użytkownika, łączne p i EV wyliczone skryptem, ostrzeżenie o założeniu niezależności",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "chcę typ Over 2.5 i wynik 1-0 w tym samym meczu w jednym zestawie, połącz to z tenisem",
+      "expected_output": "Skill odmawia sprzecznych typów w jednym meczu i wyjaśnia dlaczego, proponuje spójną alternatywę",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "złóż 5 kuponów z analizy kolejki, max 3 typy, kurs >1.6, uwzględnij też gole, BTTS, rożne i kartki",
+      "expected_output": "Kupony mieszają rynki (nie same 1X2); jeden typ na mecz; typy bez znanego kursu oznaczone i nie wliczone w kurs kuponu; rynki zawodnika tylko po składach",
+      "files": []
+    }
+  ]
+}

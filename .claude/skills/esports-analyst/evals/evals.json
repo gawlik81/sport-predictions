@@ -1,0 +1,8 @@
+{
+  "skill_name": "esports-analyst",
+  "evals": [
+    {"id": 1, "prompt": "Vitality vs NAVI w bo3 na IEM, kto wygra i jaki handicap map?", "expected_output": "Raport z map pool/vetem, p per mapa, wynik serii, handicap ±1.5, fair odds", "files": []},
+    {"id": 2, "prompt": "T1 vs Gen.G na Worlds, bo5. daj typ na zwycięzcę i total map", "expected_output": "Uwzględnia meta patcha, strony i H2H w obecnych składach; wynik serii bo5 i total map", "files": []},
+    {"id": 3, "prompt": "przegląd dzisiejszego dnia BLAST - top 3 typy, tylko z sensownymi kursami, pamiętaj że jedna drużyna gra ze stand-inem", "expected_output": "Ściągnięcie p w stronę 50% dla drużyny ze stand-inem, ranking bez typów z fair odds <=1.15", "files": []}
+  ]
+}

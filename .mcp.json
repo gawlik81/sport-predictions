@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "sportsdata": {
+      "command": "/home/pawelm/sport-predictions/sportsdata-mcp/.venv/bin/python",
+      "args": [
+        "-m",
+        "sportsdata_mcp"
+      ],
+      "env": {
+        "THE_ODDS_API_KEY": "184363a36a49a614b83fc3bfbb804ffe"
+      }
+    }
+  }
+}

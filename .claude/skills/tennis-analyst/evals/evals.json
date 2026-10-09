@@ -1,0 +1,8 @@
+{
+  "skill_name": "tennis-analyst",
+  "evals": [
+    {"id": 1, "prompt": "przeanalizuj mecz Sinner - Alcaraz, jaki typ na zwycięzcę i total gemów?", "expected_output": "Raport z 4 filarami, osobne sprawdzenie kontuzji obu zawodników, p, fair odds, total gemów z zastrzeżeniem o źródle p_serve", "files": []},
+    {"id": 2, "prompt": "mam dziś w WTA 1000 dwa mecze: Swiatek vs zawodniczka z drugiej setki rankingu oraz Sabalenka vs Gauff. co typujesz, wynik setowy też", "expected_output": "Spłaszczony rozkład wyniku setowego w WTA, ostrożność przy dużej przepaści rankingowej", "files": []},
+    {"id": 3, "prompt": "Djokovic w 2. rundzie Szlema, bo5. zrób top 3 najpewniejszych typów dnia", "expected_output": "Obniżenie p dla 35+ w bo5, ranking bez typów z fair odds <=1.15", "files": []}
+  ]
+}

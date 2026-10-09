@@ -1,0 +1,29 @@
+{
+  "skill_name": "football-analyst",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "przeanalizuj mecz Arsenal - Chelsea z najbliższej kolejki Premier League, daj typ 1X2 i gole",
+      "expected_output": "Raport z 4 filarami, prawdopodobieństwami, fair odds i ryzykami (remis ORAZ wygrana underdoga)",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "mam na jutro Puchar Polski: Raków Częstochowa vs Znicz Pruszków. Czy warto wierzyć w faworyta?",
+      "expected_output": "Obniżony pułap pewności dla pucharu z rotacją, jawna wzmianka o ryzyku niespodzianki",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "zrób mi top 5 typów z dzisiejszych meczów Ligi Mistrzów, tylko z sensownymi kursami",
+      "expected_output": "Ranking top 5 bez typów z fair odds <=1.15, z krótkim raportem dla każdego meczu",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "przeanalizuj Arsenal - Chelsea pod kupon: gole, BTTS, rożne i kartki, nie tylko wynik",
+      "expected_output": "Raport z tabelą rynków dodatkowych (gole O/U, BTTS, rożne, kartki z sędzią, faule) z p, fair odds i pewnością; liczby z markets.py; bez rekomendacji rynków bez danych",
+      "files": []
+    }
+  ]
+}
