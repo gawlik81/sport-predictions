@@ -34,6 +34,7 @@ Zasady jakości:
 - Sprawdź, czy mecz nie został przełożony lub odwołany.
 - W tenisie pary wyłaniają się z drabinki w trakcie turnieju; nie podawaj meczów późniejszych rund jako znanych.
 - Przy rozbieżności źródeł co do godziny podaj późniejszą źródłowo zweryfikowaną i zaznacz rozbieżność.
+- **Ligę krajową sprawdzaj po dacie, nie po numerze kolejki.** Wniosek "liga w tym terminie nie gra" wyciągnięty z numeracji ("następna kolejka 23-25.10") jest niewiarygodny, bo przełożone kolejki bywają rozgrywane poza kolejnością. W analizach z 09.10.2026 napisano, że Ekstraklasa nie gra, a 9-12.10 odbyła się jej 10. kolejka (9 meczów). Przed napisaniem "brak meczów" sprawdź terminarz ligi dla każdej daty zakresu (strona ligi z listą meczów wg daty, Flashscore/Sofascore) i zaznacz źródło.
 
 ## Krok 3: Zwróć terminarz
 
