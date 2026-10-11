@@ -1,6 +1,6 @@
 # Weryfikacja predykcji z 07-08.10.2026 (CS2 ESL Pro League S24, ATP Szanghaj R1, Brasileirão)
 
-Zweryfikowany plik: `Top10_predykcje_2026-10-07.md`
+Zweryfikowany plik: `ZWERYFIKOWANE_Top10_predykcje_2026-10-07.md`
 
 Źródła wyników: ATP Tour (Szanghaj 2026 results, wyniki z 9.10 wynikające z drabinki), Tennis.com, Perfect Tennis, NOS, esports.ru / skin.club, VAVEL Brasil, Gazeta Esportiva. Wynik Munar - Brooksby wnioskowany z drabinki (Brooksby zagrał w R2 9.10, więc wygrał R1); wyniku setowego nie potwierdzono.
 

@@ -1,0 +1,8 @@
+{
+  "skill_name": "mma-analyst",
+  "evals": [
+    {"id": 1, "prompt": "UFC 330 main event - kto wygra i w jaki sposób? daj też Over/Under rund", "expected_output": "Raport z danych z MCP (ufc_event_card, ufc_athlete) i kursów, p zwycięzcy, sposób wygranej, dystans, Over/Under rund wyliczone mma_model.py, fair odds, ryzyka", "files": []},
+    {"id": 2, "prompt": "przegląd gali KSW w sobotę - top 3 typy, tylko z sensownymi kursami", "expected_output": "Pobiera kartę z sieci (brak MCP dla KSW), obniża pewność przy braku statystyk, nie wpisuje rynków sposobu/rund do rankingu, pomija typy z fair <= 1.15, nie dopycha listy", "files": []},
+    {"id": 3, "prompt": "Walka UFC: faworyt przyszedł na zastępstwo 10 dni przed galą i nie zrobił wagi (+2 kg). Jak to zmienia typ?", "expected_output": "Sygnały zmieniają liczbę (konkretna korekta w pp), nie tylko opis; nie schodzi pod rynek o >5 pp bez uzasadnienia; podaje odpowiednią pewność", "files": []}
+  ]
+}

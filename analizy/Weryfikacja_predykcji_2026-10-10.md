@@ -1,6 +1,6 @@
 # Weryfikacja predykcji z 08-09.10.2026 (CS2 EPL S24, ATP Szanghaj R2, WTA Pekin, Bundesliga, Süper Lig, Brasileirão)
 
-Zweryfikowany plik: `Top10_predykcje_2026-10-08.md` (faktycznie 9 typów + kupon 3-nogowy)
+Zweryfikowany plik: `ZWERYFIKOWANE_Top10_predykcje_2026-10-08.md` (faktycznie 9 typów + kupon 3-nogowy)
 
 Źródła wyników: ESPN scoreboard (ATP Szanghaj, Süper Lig, Brasileirão), OpenLigaDB (Bundesliga), sport1.pl (statystyki Świątek - Mertens), esports.gg / fragster / lufkindailynews (ćwierćfinały EPL S24).
 

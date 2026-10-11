@@ -1,6 +1,6 @@
 # Weryfikacja: Dortmund - Werder (Bundesliga, 09.10.2026)
 
-Zweryfikowany plik: `Dortmund_Werder_2026-10-09.md` (wycena przed i po składach, 2 + 3 kupony jednomeczowe).
+Zweryfikowany plik: `ZWERYFIKOWANE_Dortmund_Werder_2026-10-09.md` (wycena przed i po składach, 2 + 3 kupony jednomeczowe).
 
 Wynik: **Dortmund 2-2 Werder** (0-0 do przerwy). Gole od 80' do 90'+2: 1-0 Svensson 80', 2-0 Schlotterbeck 85' (głową po rożnym), 2-1 Reis 88' (po błędzie Schlotterbecka), 2-2 Füllkrug 90'+2 (głową po wolnym Grülla). Statystyki wg Sofascore/livescore: xG 2,42 - 1,13, strzały 21:11, posiadanie 72%, 9 rożnych Dortmundu.
 Źródła: OpenLigaDB (wynik, minuty goli), livescore.com i Sofascore (xG, strzały, przebieg), ESPN. Uwaga: strona ESPN podaje niespójną listę strzelców (Silva, Wójcik zamiast Svensson, Reis, Füllkrug) i jej statystyk nie użyłem; wynik i minuty potwierdza OpenLigaDB. Kartek i rożnych Werderu nie znalazłem (analiza ich nie typowała).
