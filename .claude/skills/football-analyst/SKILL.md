@@ -59,7 +59,7 @@ Min. dwa niezależne źródła liczb do średniej (np. FBref/Sofascore/Flashscor
 Te zasady wynikają z tego, gdzie wcześniejsze analizy realnie się myliły:
 
 - **Ryzyko ma dwie twarze.** Dla faworyta z pewnością 50-85% wymień oba scenariusze porażki: remis i wygrana underdoga. Podobnej wagi - nie opisuj samego remisu.
-- **Przepaść klas ≠ pewniak, gdy underdog jest w kryzysie** (świeża zmiana trenera, seria bez wygranej, desperacja). Wtedy realnie odejmij 5-10 pp od pewności faworyta, nie tylko wspomnij o tym w tekście. Korekta kryzysowa dotyczy wyłącznie underdoga, nigdy faworyta.
+- **Przepaść klas ≠ pewniak, gdy underdog jest w kryzysie** (świeża zmiana trenera, seria bez wygranej, desperacja). Wtedy realnie odejmij 5-10 pp od pewności faworyta, nie tylko wspomnij o tym w tekście. Korekta kryzysowa dotyczy wyłącznie underdoga, nigdy faworyta. Nie obniżaj p faworyta i nie wykluczaj go z nóg wynikowych za serię słabych meczów: jego forma jest już w kursie, a zmienić p można tylko za konkretną informację kadrową (kontuzja kluczowego gracza, rotacja). W analizie TOP5 z 09.10.2026 złamano tę regułę (Napoli -3 pp, Man Utd -2 pp, Marseille i Union Berlin wykluczone jako "w kryzysie"), a wszystkie cztery drużyny nie przegrały (3-0, 1-1, 2-0, 1-0).
 - **Puchary bez rewanżu z rotacją** (Carabao, Puchar Polski, Copa del Rey) mają więcej niespodzianek niż liga - obniż górny pułap pewności o kilka pp i napisz to w raporcie.
 - **Reprezentacje:** nie schodź z λ drużyny poniżej ~0,7; łączne korekty kadrowe w dół nie więcej niż ~15%; Under 2.5 przy łącznym λ ≤ 2,0 daj najwyżej średnią pewność (gole padają często po 80. minucie).
 - **Przy dużej rozbieżności z rynkiem** w meczu o dużej różnicy klas zaznacz, że rynek bywa trafniejszy.
