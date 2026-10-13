@@ -24,13 +24,27 @@ def main(args):
             print(f"  ! fair odds <= 1.15 ({name})")
         if k and p * k < 1:
             print(f"  ! ujemne EV ({name}): kurs {k} < fair {1 / p:.2f}")
+        if k and k <= 1.2:
+            print(f"  ! kurs nogi <= 1.2 (domyślny próg) ({name})")
         if k:
             total_k *= k
         else:
             known = False
     print(f"\nŁączne p: {total_p * 100:.1f}%   fair odds zestawu: {1 / total_p:.2f}")
     if known:
-        print(f"Łączny kurs: {total_k:.2f}   EV: {(total_p * total_k - 1) * 100:+.1f}%")
+        ev = total_p * total_k - 1
+        print(f"Łączny kurs: {total_k:.2f}   EV: {ev * 100:+.1f}%")
+        if total_k <= 1.6:
+            print("  ! łączny kurs <= 1.6 (domyślny próg)")
+        if total_p <= 0.5:
+            print("  ! łączne p <= 50% (domyślny próg)")
+        if ev > 0 and total_k > 1:
+            kelly = (total_p * total_k - 1) / (total_k - 1)
+            print(f"Stawka (Kelly): {kelly * 100:.1f}% bankrolla pełne | "
+                  f"{kelly * 50:.1f}% (1/2 Kelly, bezpieczniej) | "
+                  f"{kelly * 25:.1f}% (1/4 Kelly) - sugestia, nie porada finansowa")
+        else:
+            print("Stawka: 0% bankrolla (EV <= 0, bez przewagi nad rynkiem)")
     else:
         print("Łączny kurs / EV: nieznane (brak kursu przy co najmniej jednej nodze)")
 

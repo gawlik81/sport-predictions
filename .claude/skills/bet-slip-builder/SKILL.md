@@ -33,6 +33,8 @@ Odrzuć kandydatów:
 - z EV wyraźnie ujemnym (k < fair odds), chyba że to jedyna "bezpieczna" noga zestawu zachowawczego i jawnie to zaznaczysz,
 - z niską pewnością z analizy (np. brak statystyk, stand-in, powrót po kontuzji), gdy da się je zastąpić pewniejszym.
 
+**Domyślne progi kuponu** (stosuj, jeśli użytkownik nie podał innych w danym zapytaniu): kurs pojedynczej nogi > 1.2, łączny kurs zestawu > 1.6, EV > 0, własne p > 50%. Noga, która nie spełnia któregoś z tych warunków, nie wchodzi do zestawu. Jeśli po usunięciu marży bukmachera żadna noga nie spełnia wszystkich czterech warunków jednocześnie (typowe przy marży 5-9%, bo EV>0 przy p>50% wymaga realnej przewagi nad rynkiem, nie tylko zgodności z nim) - powiedz to wprost i zaproponuj, który warunek zrelaksować (niższe p, EV bliskie zeru, inny rynek), zamiast fabrykować typ, który formalnie spełnia progi.
+
 Dodatkowo (weryfikacja 07-08.10.2026, pudła Norrie/Griekspoor/Simakin/Munar):
 - **EV dodatnie, które bierze się tylko z p wyższego od rynku o >5 pp, bez twardej informacji w analizie, to podejrzenie błędu, nie value.** Oznacz taki typ "przewaga niepotwierdzona" i nie ufaj jego EV (Kupon 1 z EV +4,9% przegrał przez takiego faworyta).
 - **Nie dobijaj TOP-N na siłę.** Jeśli typów z p ≥ 70% i twardymi danymi jest mniej niż N, pokaż mniej pozycji. W TOP 10 z 07.10 pozycje 6-10 miały p 55-66% i 3 z 5 przegrały.
@@ -73,8 +75,11 @@ Po polsku, zwięźle:
 ```
 ## Zestaw 1 - Zachowawczy
 | Mecz | Typ | p | Kurs | Fair | EV | Pewność |
-Łączne p: XX% | Fair odds: X.XX | Łączny kurs: X.XX | EV: +X% 
+Łączne p: XX% | Fair odds: X.XX | Łączny kurs: X.XX | EV: +X%
+Stawka: X% bankrolla (ułamek Kelly'ego)
 Ryzyko: który element jest najsłabszy i co go zabija
 ```
+
+**Zawsze podawaj przy każdym zestawie:** EV, łączne p i proponowaną wielkość stawki jako % bankrolla. Stawkę licz ułamkiem Kelly'ego dla całego zestawu: f = (p·kurs − 1)/(kurs − 1), i rekomenduj 1/4 do 1/2 tej wartości (pełne Kelly jest zbyt agresywne przy niepewnym p) - zaznacz, że to sugestia wielkości stawki, nie porada finansowa, i że przy EV ≤ 0 nie proponujesz stawki (0%).
 
 Pod zestawami dodaj krótkie zastrzeżenia: założenie niezależności meczów, to że kursy mogą się zmienić do czasu postawienia, oraz że to oszacowania probabilistyczne, nie gwarancje. Jeśli żaden zestaw nie ma dodatniego EV, powiedz to wprost zamiast na siłę rekomendować - brak wartości to uczciwy wynik.

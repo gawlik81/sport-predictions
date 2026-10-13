@@ -10,7 +10,7 @@ Brak aplikacji, buildu i testów. Repo służy do analizy i typowania wydarzeń 
 
 Standardowy przebieg pracy, w tej kolejności; każdy krok korzysta z wyników poprzedniego:
 
-1. **Wyszukiwanie wydarzeń sportowych** (`sports-fixtures-finder`) - mecze piłkarskie, tenisowe i e-sportowe z zadanego okresu; sam terminarz, bez analizy.
+1. **Wyszukiwanie wydarzeń sportowych** (`sports-fixtures-finder`) - mecze piłkarskie, tenisowe, e-sportowe i walki MMA (UFC, KSW) z zadanego okresu; sam terminarz, bez analizy.
 2. **Dokładna analiza wyszukanych wydarzeń** (`football-analyst`, `tennis-analyst`, `esports-analyst`, `mma-analyst`) - dla każdego meczu statystyki drużyn/zawodników, H2H, informacje medialne z sieci; wynik: prawdopodobieństwa i fair odds.
 3. **Analiza kursów i wybór najbardziej prawdopodobnych predykcji** (wszystkie rynki, nie tylko wynik: gole, BTTS, rożne, kartki, faule, rynki zawodnika) (`bet-slip-builder`) - zestawienie wyników analiz z kursami bukmacherskimi (EV), wybór typów o największym prawdopodobieństwie i złożenie zestawów bez sprzecznych typów. Wynik zapisuj w `analizy/` (np. `Top10_predykcje_<data>.md`).
 
@@ -39,6 +39,7 @@ Stare skille `*-predictor` zostały zastąpione przez `*-analyst` (usunięcie ni
 Są wpisane w `SKILL.md` skilli analitycznych (krok "Skalibruj"); zmieniając je, zachowaj uzasadnienia:
 - Sygnał ryzyka musi zmienić liczbę, nie tylko opis.
 - W rankingach i kuponach pomijaj typy z fair odds ≤ 1.15.
+- Domyślne progi kuponu, jeśli użytkownik nie poda innych w zapytaniu (`bet-slip-builder`): kurs nogi > 1.2, łączny kurs zestawu > 1.6, EV > 0, własne p > 50%. Przy każdym zestawie podawaj EV, p i proponowaną stawkę jako % bankrolla (ułamek Kelly'ego). Jeśli żadna kombinacja nie spełnia wszystkich czterech warunków, powiedz to wprost i zaproponuj, który warunek zrelaksować - nie fabrykuj typu.
 - Piłka: ryzyko to remis ORAZ wygrana underdoga; kryzys dotyczy tylko underdoga; puchary z rotacją i reprezentacje (λ ≥ ~0,7) mają osobne korekty.
 - Tenis: 35+ w bo5, zmęczenie vs forma, faworyt po wolnym losie/przerwie; bez total gemów przy p_serve oszacowanym z rankingu.
 
