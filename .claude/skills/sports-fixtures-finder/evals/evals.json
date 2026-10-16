@@ -1,8 +1,29 @@
 {
   "skill_name": "sports-fixtures-finder",
   "evals": [
-    {"id": 1, "prompt": "co grają w ten weekend? piłka, tenis i esport, wszystko co ważniejsze", "expected_output": "Terminarz sob-nd z godzinami w czasie polskim, pogrupowany po dniach i dyscyplinach, bez wymyślonych meczów", "files": []},
-    {"id": 2, "prompt": "daj mi mecze Ligi Mistrzów i Ligi Europy z 21-23 października", "expected_output": "Tylko piłka, zakres dat uwzględniony, mecze ze źródłami lub oznaczone jako do potwierdzenia", "files": []},
-    {"id": 3, "prompt": "jakie turnieje CS2 i LoL są w przyszłym tygodniu i kto z kim gra we wtorek", "expected_output": "Tylko e-sport, rozróżnienie turniejów od potwierdzonych par, tier-1", "files": []}
+    {
+      "id": 1,
+      "prompt": "co grają w ten weekend? piłka, tenis i esport, wszystko co ważniejsze",
+      "expected_output": "Terminarz sob-nd z godzinami w czasie polskim, pogrupowany po dniach i dyscyplinach, bez wymyślonych meczów",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "daj mi mecze Ligi Mistrzów i Ligi Europy z 21-23 października",
+      "expected_output": "Tylko piłka, zakres dat uwzględniony, mecze ze źródłami lub oznaczone jako do potwierdzenia",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "jakie turnieje CS2 i LoL są w przyszłym tygodniu i kto z kim gra we wtorek",
+      "expected_output": "Tylko e-sport, rozróżnienie turniejów od potwierdzonych par, tier-1",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "co grają dziś w NBA i NHL? ruszyły nowe sezony",
+      "expected_output": "Tylko NBA i NHL, mecze z godzinami w czasie polskim (noc po północy przypisana do właściwego dnia, z datą USA w nawiasie), oznaczenie preseason/back-to-back, bez wymyślonych meczów",
+      "files": []
+    }
   ]
 }

@@ -1,0 +1,9 @@
+{
+  "skill_name": "nba-analyst",
+  "evals": [
+    {"id": 1, "prompt": "przeanalizuj mecz Celtics - Knicks z najbliższej nocy, daj typ na zwycięzcę, spread i total", "expected_output": "Raport z 4 filarami, injury reportem ze statusami, oczekiwanymi punktami, p/fair dla zwycięzcy, spreadu i totalu (z nba_model.py), ryzykami i godziną sprawdzenia składów", "files": []},
+    {"id": 2, "prompt": "Jokić jutro: punkty, zbiórki, asysty - czy warto grać over?", "expected_output": "Średnie na ten mecz z minutami i rywalem, liczby z nba_props.py, uwzględnione ryzyko blowoutu i status zawodnika; bez typu, jeśli skład niepotwierdzony", "files": []},
+    {"id": 3, "prompt": "zrób top 5 typów z dzisiejszych meczów NBA, tylko z sensownymi kursami", "expected_output": "Ranking top 5 ze wszystkich rynków bez typów z fair odds <=1.15, z krótkim raportem dla każdego meczu i tabelą kandydatów na kupon", "files": []},
+    {"id": 4, "prompt": "Lakers grają drugi dzień back-to-back bez Davisa. Co z totalem i spreadem?", "expected_output": "Korekta oczekiwanych punktów i spreadu za absencję i back-to-back przełożona na liczby, porównanie z rynkiem, ostrożna pewność przy rozbieżności >3 pkt", "files": []}
+  ]
+}
