@@ -1,0 +1,9 @@
+{
+  "skill_name": "nhl-analyst",
+  "evals": [
+    {"id": 1, "prompt": "przeanalizuj mecz Oilers - Avalanche z najbliższej nocy, typ na zwycięzcę i total goli", "expected_output": "Raport z 4 filarami, potwierdzonymi/przewidywanymi bramkarzami, λ, p/fair dla moneyline (z dogrywką) i totalu z nhl_model.py, ryzykami (bramkarz, dogrywka) i pułapem pewności hokeja", "files": []},
+    {"id": 2, "prompt": "czy McDavid strzeli gola dziś? daj strzały i punkty", "expected_output": "Średnie na ten mecz z czasem na lodzie i PP, liczby z nhl_props.py, strzelec gola poniżej ~45%, brak typu przy niepotwierdzonym składzie", "files": []},
+    {"id": 3, "prompt": "top 5 typów z dzisiejszych meczów NHL z kursami powyżej 1.2", "expected_output": "Ranking top 5 ze wszystkich rynków bez typów z fair odds <=1.15, jawne rozróżnienie 60 minut vs z dogrywką, tabela kandydatów na kupon", "files": []},
+    {"id": 4, "prompt": "Bruins grają drugi dzień z rzędu, w bramce zapowiadany rezerwowy. Czy puck line -1.5 rywala ma sens?", "expected_output": "Korekta λ za rezerwowego i back-to-back przełożona na liczby, p puck line z nhl_model.py, ostrzeżenie o pustej bramce i niskim p -1.5, fair odds vs rynek", "files": []}
+  ]
+}

@@ -24,6 +24,12 @@
       "prompt": "złóż 5 kuponów z analizy kolejki, max 3 typy, kurs >1.6, uwzględnij też gole, BTTS, rożne i kartki",
       "expected_output": "Kupony mieszają rynki (nie same 1X2); jeden typ na mecz; typy bez znanego kursu oznaczone i nie wliczone w kurs kuponu; rynki zawodnika tylko po składach",
       "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "złóż kupon z dzisiejszych meczów NBA i NHL na podstawie analiz",
+      "expected_output": "Zestawy z nogami NBA/NHL po analizach nba-analyst i nhl-analyst, godziny czasu polskiego z datą USA, rozróżnienie 60 minut vs dogrywka w NHL, nogi zawodnika/bramkarza tylko po potwierdzeniu, jeden typ na mecz, EV, p i stawka Kelly",
+      "files": []
     }
   ]
 }
