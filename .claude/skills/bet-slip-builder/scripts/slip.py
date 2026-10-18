@@ -34,8 +34,8 @@ def main(args):
     if known:
         ev = total_p * total_k - 1
         print(f"Łączny kurs: {total_k:.2f}   EV: {ev * 100:+.1f}%")
-        if total_k <= 1.6:
-            print("  ! łączny kurs <= 1.6 (domyślny próg)")
+        if total_k <= 1.5 or total_k >= 2.0:
+            print("  ! łączny kurs poza przedziałem 1.5-2.0 (domyślny próg)")
         if total_p <= 0.5:
             print("  ! łączne p <= 50% (domyślny próg)")
         if ev > 0 and total_k > 1:

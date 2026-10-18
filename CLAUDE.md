@@ -14,11 +14,13 @@ Standardowy przebieg pracy, w tej kolejności; każdy krok korzysta z wyników p
 2. **Dokładna analiza wyszukanych wydarzeń** (`football-analyst`, `tennis-analyst`, `esports-analyst`, `mma-analyst`, `nba-analyst`, `nhl-analyst`) - dla każdego meczu statystyki drużyn/zawodników, H2H, informacje medialne z sieci; wynik: prawdopodobieństwa i fair odds.
 3. **Analiza kursów i wybór najbardziej prawdopodobnych predykcji** (wszystkie rynki, nie tylko wynik: gole, BTTS, rożne, kartki, faule, spread i total w NBA, puck line w NHL, rynki zawodnika) (`bet-slip-builder`) - zestawienie wyników analiz z kursami bukmacherskimi (EV), wybór typów o największym prawdopodobieństwie i złożenie zestawów bez sprzecznych typów. Wynik zapisuj w `analizy/` (np. `Top10_predykcje_<data>.md`).
 
+4. **Weryfikacja** (`predictions-verifier`) - po rozegraniu wydarzeń porównanie typów, TOP-N i kuponów z rzeczywistymi wynikami: bilans trafień vs oczekiwane, rozdzielenie wariancji od błędu procesu, podsumowanie dla użytkownika i - tylko przy konkretnym błędzie procesu - poprawki reguł w skillach (analitycznych, `bet-slip-builder`, `sports-fixtures-finder`). Wynik zapisuj jako `Weryfikacja_*` w `analizy/`.
+
 Nie przeskakuj kroku 2: krok 3 nie wymyśla prawdopodobieństw, tylko korzysta z gotowych analiz.
 
 ## Skille i ich zależności
 
-Osiem skilli realizuje powyższy flow; każdy ma `SKILL.md`, a niektóre skrypt Pythona (bez zewnętrznych zależności) i `evals/evals.json`. Dane zawsze z researchu w sieci, nie z pamięci.
+Dziewięć skilli realizuje powyższy flow; każdy ma `SKILL.md`, a niektóre skrypt Pythona (bez zewnętrznych zależności) i `evals/evals.json`. Dane zawsze z researchu w sieci, nie z pamięci.
 
 Skrypty liczą rozkłady z parametrów wejściowych (uruchamiane z katalogu skilla):
 - `football-analyst/scripts/poisson.py <λ_gospodarze> <λ_goście>` - 1X2, O/U, BTTS, wyniki.
@@ -31,8 +33,9 @@ Skrypty liczą rozkłady z parametrów wejściowych (uruchamiane z katalogu skil
 - `nhl-analyst/scripts/nhl_model.py <λ_gospodarze> <λ_goście> [--total L]` - wynik po 60', moneyline z dogrywką, puck line ±1.5, total goli.
 - `nhl-analyst/scripts/nhl_props.py <rynek> <średnia> [linie]` - strzały, punkty, strzelec gola, obrony bramkarza.
 - `bet-slip-builder/scripts/slip.py "opis" p kurs ...` - łączne p, fair odds, EV zestawu.
+- `predictions-verifier/scripts/verify.py <plik.json>` - bilans trafień vs oczekiwane, Brier, kupony, zysk hipotetyczny (format JSON w nagłówku skryptu).
 
-**Używaj skilli, gdy zadanie ich wymaga.** Każde zadanie z zakresu flow (terminarz, analiza meczu, TOP/kupon) realizuj przez odpowiedni skill (`sports-fixtures-finder`, `football-analyst`, `tennis-analyst`, `esports-analyst`, `mma-analyst`, `nba-analyst`, `nhl-analyst`, `bet-slip-builder`), wywołując go narzędziem Skill, zamiast robić to ad hoc. Dotyczy to też próśb bez słów kluczowych (same nazwy drużyn/zawodników, data, "co grają"). Skilli nie uruchamiaj do zadań spoza flow (np. edycja CLAUDE.md, git).
+**Używaj skilli, gdy zadanie ich wymaga.** Każde zadanie z zakresu flow (terminarz, analiza meczu, TOP/kupon, weryfikacja typów) realizuj przez odpowiedni skill (`sports-fixtures-finder`, `football-analyst`, `tennis-analyst`, `esports-analyst`, `mma-analyst`, `nba-analyst`, `nhl-analyst`, `bet-slip-builder`, `predictions-verifier`), wywołując go narzędziem Skill, zamiast robić to ad hoc. Dotyczy to też próśb bez słów kluczowych (same nazwy drużyn/zawodników, data, "co grają"). Skilli nie uruchamiaj do zadań spoza flow (np. edycja CLAUDE.md, git).
 
 **Używaj serwerów MCP, jeśli to możliwe.** Do researchu w sieci i pobierania danych (terminarze, statystyki, kursy, newsy) korzystaj w pierwszej kolejności z dostępnych narzędzi MCP (np. `mcp__claude-in-chrome__*` do stron wymagających przeglądarki), a dopiero potem z innych metod. Przed użyciem sprawdź, jakie serwery MCP są dostępne w sesji (deferred tools załaduj przez ToolSearch).
 
@@ -43,7 +46,7 @@ Stare skille `*-predictor` zostały zastąpione przez `*-analyst` (usunięcie ni
 Są wpisane w `SKILL.md` skilli analitycznych (krok "Skalibruj"); zmieniając je, zachowaj uzasadnienia:
 - Sygnał ryzyka musi zmienić liczbę, nie tylko opis.
 - W rankingach i kuponach pomijaj typy z fair odds ≤ 1.15.
-- Domyślne progi kuponu, jeśli użytkownik nie poda innych w zapytaniu (`bet-slip-builder`): kurs nogi > 1.2, łączny kurs zestawu > 1.6, EV > 0, własne p > 50%. Przy każdym zestawie podawaj EV, p i proponowaną stawkę jako % bankrolla (ułamek Kelly'ego). Jeśli żadna kombinacja nie spełnia wszystkich czterech warunków, powiedz to wprost i zaproponuj, który warunek zrelaksować - nie fabrykuj typu.
+- Domyślne progi kuponu, jeśli użytkownik nie poda innych w zapytaniu (`bet-slip-builder`): kurs nogi > 1.2, łączny kurs zestawu > 1.5 i < 2.0, EV > 0, własne p > 50%. Przy każdym zestawie podawaj EV, p i proponowaną stawkę jako % bankrolla (ułamek Kelly'ego). Jeśli żadna kombinacja nie spełnia wszystkich czterech warunków, powiedz to wprost i zaproponuj, który warunek zrelaksować - nie fabrykuj typu.
 - Piłka: ryzyko to remis ORAZ wygrana underdoga; kryzys dotyczy tylko underdoga; puchary z rotacją i reprezentacje (λ ≥ ~0,7) mają osobne korekty.
 - Tenis: 35+ w bo5, zmęczenie vs forma, faworyt po wolnym losie/przerwie; bez total gemów przy p_serve oszacowanym z rankingu.
 - NBA i NHL: skille są nowe i nie mają jeszcze zweryfikowanych typów, więc sekcje "Skalibruj" opierają się na ogólnych zasadach; po pierwszej weryfikacji dopisz tam konkretne lekcje. NBA: status zawodnika z injury reportu i blowout w rynkach zawodnika. NHL: potwierdzony bramkarz startowy, rozliczenie 60 minut vs dogrywka.

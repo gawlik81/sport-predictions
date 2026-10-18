@@ -1,0 +1,8 @@
+{
+  "skill_name": "predictions-verifier",
+  "evals": [
+    {"id": 1, "prompt": "zweryfikuj predykcje, których jeszcze nie weryfikowałeś", "expected_output": "Znajduje w analizy/ pliki bez prefiksu ZWERYFIKOWANE_ (poza Weryfikacja_*), pobiera wyniki z ESPN/innych źródeł, rozlicza TOP-N, kupony i typy spoza kuponów, liczy bilans scripts/verify.py, rozdziela wariancję od błędu procesu, zapisuje Weryfikacja_*.md, dodaje prefiks do w pełni rozegranych plików, wyświetla podsumowanie ze zmianami w skillach lub jawnym 'bez zmian'", "files": []},
+    {"id": 2, "prompt": "jak poszedł mój kupon z wczoraj? część meczów jeszcze trwa", "expected_output": "Rozlicza tylko zakończone mecze, nierozstrzygnięte oznacza jako nierozliczone, nie zgaduje wyników, nie dodaje prefiksu ZWERYFIKOWANE_ i pisze, czego brakuje do pełnej weryfikacji", "files": []},
+    {"id": 3, "prompt": "zweryfikuj TOP10 z 16.10 i popraw skille jeśli trzeba", "expected_output": "Po bilansie w granicach 1 odchylenia standardowego nie zmienia skilli i wpisuje obserwacje do 'Do obserwacji'; zmiana reguły tylko przy konkretnym błędzie procesu (np. sygnał ryzyka bez zmiany p) z liczbą, uzasadnieniem i przykładem, we właściwym skillu (dyscyplina, bet-slip-builder lub sports-fixtures-finder)", "files": []}
+  ]
+}
