@@ -1,0 +1,35 @@
+{
+  "skill_name": "daily-coupons",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "przygotuj kupony na dziś",
+      "expected_output": "Przechodzi terminarz → analizy → kursy Betclic → kupony dla dzisiejszej daty; każdy kupon ma min. 2 nogi, nogi >1.2, kurs kuponu w (1.5; 2.5), p>50%, bez powtórzeń nóg i sprzeczności; podaje EV, p i % bankrolla; zapis w analizy/Kupony_10_<data>.md",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "zrób 10 kuponów na weekend 24-25.10",
+      "expected_output": "Używa zakresu 24-25.10 zamiast dzisiejszej daty, zapisuje plik z datą początkową zakresu",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "kupony na jutro, ale kurs kuponu ma być między 2.0 a 3.5",
+      "expected_output": "Zapytanie użytkownika nadpisuje domyślny przedział kursu kuponu; pozostałe ograniczenia zostają",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "kupony na dziś; Betclic nie ładuje się w przeglądarce",
+      "expected_output": "Fallback na MCP sportsdata z jawnym oznaczeniem źródła kursów, bez kursów z pamięci; nogi bez kursu nie wchodzą do kuponów",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "kupony na dziś, w puli jest tylko 8 nóg spełniających kryteria",
+      "expected_output": "Nie fabrykuje 10 kuponów; pokazuje ile kuponów spełnia wszystkie warunki (max 4 przy 8 nogach po 2) i proponuje, który warunek zrelaksować",
+      "files": []
+    }
+  ]
+}

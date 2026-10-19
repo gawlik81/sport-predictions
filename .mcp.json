@@ -7,7 +7,10 @@
         "sportsdata_mcp"
       ],
       "env": {
-        "THE_ODDS_API_KEY": "184363a36a49a614b83fc3bfbb804ffe"
+        "THE_ODDS_API_KEY": "184363a36a49a614b83fc3bfbb804ffe",
+        "PANDASCORE_TOKEN": "pORynGc8rnyJkSe9Wudr3Fmb6jKoF1Zqfbm9lKcxOzNFyU006js",
+        "API_SPORTS_KEY": "6c4d9f8dd0ca3a33934e4031f472e8e4",
+        "API_TENIS_KEY": "8c0eb68d23b1746a95292891203201c05f0b4e263f48809302c5da0916129359"
       }
     }
   }

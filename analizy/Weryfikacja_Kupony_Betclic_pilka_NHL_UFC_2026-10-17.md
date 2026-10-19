@@ -3,11 +3,11 @@
 Zweryfikowane pliki:
 - `ZWERYFIKOWANE_Kupon_pewniaki_Betclic_2026-10-17.md` (akumulator 5 nóg, DC/1X2)
 - `ZWERYFIKOWANE_Kupony_jednomeczowe_Betclic_2026-10-17.md` (5 kuponów MyCombi)
-- `Kupony_NHL_noc_Betclic_2026-10-17.md` (5 kuponów NHL/UFC + typy poza kuponami z UFC, NHL, J1)
+- `ZWERYFIKOWANE_Kupony_NHL_noc_Betclic_2026-10-17.md` (5 kuponów NHL/UFC + typy poza kuponami z UFC, NHL, J1)
 
 Źródła wyników: ESPN scoreboard (piłka, NHL, J1, UFC). Wyniki UFC z jednego źródła (ESPN; API UFC zablokowane bot-challenge). Rozliczenie NHL: gole drużyn i total wg wyniku końcowego z dogrywką (zgodnie z etykietą Betclic); wszystkie nogi NHL rozstrzygają się tak samo także bez gola dogrywki/karnych (Buffalo 3 gole, San Jose 3, MTL-BUF 7 goli, bez gola OT 6 > 5,5).
 
-**Nierozliczone:** Machida - Avispa Fukuoka (J1, 09:00 PL) według ESPN jeszcze się nie odbył; typ "Machida lub remis" (p 76%) był tylko w tabeli analizy, nie w kuponie. Buckley - Malott Over 2,5 rundy: brak źródła rundy zakończenia, nie rozliczono. Dlatego `Kupony_NHL_noc` **nie dostaje prefiksu** (weryfikacja częściowa); dwa pozostałe pliki są rozliczone w całości.
+**Nierozliczone:** Machida - Avispa Fukuoka (J1, 09:00 PL) według ESPN jeszcze się nie odbył; typ "Machida lub remis" (p 76%) był tylko w tabeli analizy, nie w kuponie. Buckley - Malott Over 2,5 rundy: brak źródła rundy zakończenia, nie rozliczono. Weryfikacja była częściowa; uzupełniono ją 19.10 w `Weryfikacja_Kupony_Betclic_i_NHL_2026-10-18.md` (Machida 3-0 ✅, Over 2,5 rundy Buckley - Malott ❌, walka skończyła się w 2. rundzie) i plik dostał prefiks `ZWERYFIKOWANE_`.
 
 ## Wyniki
 
@@ -68,6 +68,6 @@ Hipotetyczny zysk przy stawce 1 na kupon: **+4,46** (pewniaki +1,06; jednomeczow
 - **NHL: sygnał ryzyka bez zmiany liczby (licznik 1):** Chicago Over 1,5 vs najlepsza obrona ligi. Jeśli powtórzy się w kolejnej weryfikacji NHL (nogi z opisanym ryzykiem rywala przy p bez korekty), dopisać do `nhl-analyst` regułę: przy rywalu z top-3 obroną w próbie obniż λ drużyny o 0,1-0,2 gola i przelicz p.
 - **NHL: Over na gole drużyny** po tej kolejce 5/7 (nogi kuponów) i 3/3 (poza kuponami); próba 10 nóg, za mała na korektę globalną. Cel: po ok. 30 nogach ocenić, czy p dla tej grupy jest zawyżone/zaniżone.
 - **UFC (karta bez statystyk, p z rynku):** 7/13 przy 8,55 (wszystkie walki poza kuponami + Diniz); zbyt mało do wniosków. Zapisać licznik dla UFC Fight Night: kolejna gala z "p = rynek minus marża" pokaże, czy jest systematyczny błąd.
-- **Dane:** wyniki UFC z jednego źródła (ESPN); Machida - Fukuoka i Over 2,5 rundy Buckley - Malott do uzupełnienia, po czym dodać prefiks `ZWERYFIKOWANE_` do `Kupony_NHL_noc_Betclic_2026-10-17.md`.
+- **Dane:** wyniki UFC z jednego źródła (ESPN); Machida - Fukuoka i Over 2,5 rundy Buckley - Malott uzupełnione 19.10, prefiks dodany.
 
 To oszacowania, nie gwarancje; próba jednego dnia jest mała.
