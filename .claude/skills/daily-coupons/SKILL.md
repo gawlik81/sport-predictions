@@ -18,7 +18,16 @@ Orkiestrator flow z CLAUDE.md (kroki 1-3). Sam nie wyszukuje wydarzeń, nie anal
   - kurs całego kuponu > 1.5 i < 2.5,
   - własne p kuponu > 50%,
   - predykcje nie powtarzają się między kuponami (ta sama noga = ten sam mecz + ten sam rynek + ta sama selekcja, tylko w jednym kuponie),
+  - predykcje **między kuponami** też nie są sprzeczne: ten sam mecz w różnych kuponach tylko z nogami z różnych rodzin rynków (wynik / gole / BTTS), nigdy dwie nogi z rynku wyniku (np. 1X w jednym kuponie i 12 w drugim to przeciwne pokrycie remisu: remis wygrywa jeden kupon i przegrywa drugi); gdy zestaw ma być maksymalnie niezależny, każdy mecz tylko w jednym kuponie (podaj obie wersje, jeśli różnią się liczbą kuponów),
   - predykcje w obrębie kuponu nie są sprzeczne i nie wykluczają się (jeden typ na mecz; wyjątek tylko dla w pełni zgodnych rynków tego samego meczu, np. wygrana faworyta + Over 1.5, jeśli analiza nie widzi korelacji obniżającej p - domyślnie unikaj).
+
+## Odstępstwa warunkowe od kryteriów
+
+Stosuj **tylko wtedy, gdy przy pełnych kryteriach nie powstaje ani jeden kupon** (lub mniej niż żądana liczba), w tej kolejności, i wyraźnie oznacz w raporcie, które odstępstwo użyto:
+1. **Pominięcie EV > 0.** Nogi i kupony z EV ≤ 0 są dopuszczone; pozostałe warunki (min. 2 nogi, kurs kuponu 1.5-2.5, p kuponu > 50%, bez powtórzeń nóg i sprzeczności) zostają. Ranking po EV (najmniej ujemne pierwsze), przy remisie po p. Kupony z EV ≤ 0 mają stawkę Kelly 0%; podaj to wprost i zaznacz, że są poniżej progu EV. Nadal pomijaj nogi z fair odds ≤ 1.15.
+2. **Kurs nogi > 1.2 tylko dla dwóch nóg na kuponie.** Na kuponie muszą wystąpić co najmniej dwie predykcje z kursem > 1.2; pozostałe nogi mogą mieć kurs ≤ 1.2 (nadal z fair odds > 1.15, p > 50% kuponu, kurs kuponu 1.5-2.5). Dodatkowe krótkie nogi obniżają p kuponu, więc często nie zwiększają liczby kuponów; sprawdź to i napisz, jeśli nic nie dodały.
+
+Jeśli i po odstępstwach brakuje kuponów, nie dobijaj ich na siłę: pokaż ile jest i zaproponuj dalsze luzowanie (p 45-50%, dłuższy terminarz).
 
 ## Krok 1: Terminarz
 
@@ -55,7 +64,7 @@ Procedura:
 3. Wybierz zestaw 10 kuponów **bez powtórzeń nóg** (przydział zachłanny od kuponu o najwyższym EV; nogę użytą raz usuń z puli). Rankinguj po EV, a przy remisie po p.
 4. Przy każdym kuponie podaj: nogi (mecz, rynek, godzina), kurs każdej nogi i źródło, p nogi, kurs kuponu, p kuponu, fair odds, EV, proponowaną stawkę jako % bankrolla (ułamek Kelly'ego, np. ¼ Kelly, z limitem 2% bankrolla).
 
-**Warunek uczciwości:** 10 kuponów bez powtórzeń wymaga co najmniej 20 różnych nóg spełniających kryteria. Przy marży Betclic (5-9%) kupon z p > 50% i EV > 0 jest rzadki. Jeśli da się złożyć mniej niż 10 kuponów spełniających wszystkie warunki, pokaż tylko te, które je spełniają, powiedz wprost ile ich jest, i zaproponuj, który warunek zrelaksować (EV bliskie 0, p 45-50%, dopuszczenie 1 powtórzenia). Nie fabrykuj typów ani nie dobijaj do 10 na siłę (w weryfikacji 07.10 pozycje 6-10 z p 55-66% przegrały 3 z 5). Kupony z relaksacją oznacz osobno jako "poniżej progów".
+**Warunek uczciwości:** 10 kuponów bez powtórzeń wymaga co najmniej 20 różnych nóg spełniających kryteria. Przy marży Betclic (5-9%) kupon z p > 50% i EV > 0 jest rzadki. Jeśli da się złożyć mniej niż 10 kuponów spełniających wszystkie warunki, pokaż tylko te, które je spełniają, powiedz wprost ile ich jest, a następnie zastosuj "Odstępstwa warunkowe" (pominięcie EV > 0, potem kurs > 1.2 tylko dla dwóch nóg) i pokaż wynik osobno; dalsze luzowanie (p 45-50%, dopuszczenie 1 powtórzenia) tylko zaproponuj. Nie fabrykuj typów ani nie dobijaj do 10 na siłę (w weryfikacji 07.10 pozycje 6-10 z p 55-66% przegrały 3 z 5). Kupony z relaksacją oznacz osobno jako "poniżej progów".
 
 ## Krok 6: Zapis i raport
 
