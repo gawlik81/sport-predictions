@@ -2,7 +2,7 @@
 
 Zweryfikowane pliki:
 - `ZWERYFIKOWANE_Kupony_10_2026-10-19.md` (dawniej `Kupony_10_2026-10-19.md`) - 0 kuponów spełniających progi; zestawy R1, R2, pojedynczy typ i 3 kupony po pominięciu EV > 0. W pełni rozliczony.
-- `Analiza_dnia_2026-10-19.md` - **weryfikacja częściowa**: WTA Osaka Boulter - Sakatsume nierozliczony (ESPN pokazuje mecz jako "Scheduled" 20.10 z częściowym wynikiem 6-3 / 3-1 w setach, brak wyniku końcowego z drugiego źródła). Plik bez prefiksu do czasu uzupełnienia.
+- `ZWERYFIKOWANE_Analiza_dnia_2026-10-19.md` (dawniej `Analiza_dnia_2026-10-19.md`; uzupełnione 21.10, Boulter d. Sakatsume 6-3 6-1 - typ trafiony, ESPN jedno źródło) - było: weryfikacja częściowa: WTA Osaka Boulter - Sakatsume nierozliczony (ESPN pokazuje mecz jako "Scheduled" 20.10 z częściowym wynikiem 6-3 / 3-1 w setach, brak wyniku końcowego z drugiego źródła). Plik bez prefiksu do czasu uzupełnienia.
 
 Źródła wyników: ESPN scoreboard (Premier League, La Liga, Serie A, NHL, ATP, WTA; NHL: wszystkie 4 mecze skończone w 3. tercji, więc rozliczenie po 60' i z dogrywką jest identyczne); Ekstraklasa: WebSearch, 4 zgodne źródła (Interia, gol24, cozadzien, pilkarskiswiat) - ESPN nie obsługuje ligi, Wikipedia nie była jeszcze zaktualizowana. Nie sprawdzano rynków rożnych i kartek (brak źródła, dokument i tak wykluczył je z kuponów).
 

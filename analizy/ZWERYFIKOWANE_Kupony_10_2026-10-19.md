@@ -5,7 +5,7 @@
 - Okres: poniedziałek 19.10.2026 (NHL: noc 19→20.10). Czasy polskie.
 - Kursy: **Betclic.pl** (przeglądarka, strony meczów), pobrane rano 19.10 (ok. 07:00). Kursy mogą się zmienić do startu. Zebrano komplet dla piłki, NHL i WTA (Ningbo/Osaka). Dla ATP Lyon nie otwierano stron Betclic; kursy odniesienia z innych serwisów (Faria 1.53, Musetti 1.33, Sonego ok. 1.50) są niżej niż moje fair odds, więc EV ujemne i nogi odpadają.
 - Betclic nie oferuje w NHL puck line ani linii total 6.5 (są linie 3.5-5.5); wyceny z analiz NHL na puck line i 6.5 nie mają więc zastosowania na Betclic.
-- Analizy: [Analiza_dnia_2026-10-19.md](Analiza_dnia_2026-10-19.md).
+- Analizy: [ZWERYFIKOWANE_Analiza_dnia_2026-10-19.md](ZWERYFIKOWANE_Analiza_dnia_2026-10-19.md).
 - Ograniczenia (skill daily-coupons): min. 2 nogi, kurs nogi > 1.2, kurs kuponu > 1.5 i < 2.5, p kuponu > 50%, EV > 0 (z CLAUDE.md), bez powtórzeń nóg i sprzeczności.
 
 ## 2. Terminarz (skrót)
