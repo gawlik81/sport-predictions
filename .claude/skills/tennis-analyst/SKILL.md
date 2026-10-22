@@ -39,7 +39,7 @@ Model punkt→gem→set→mecz był dobrze skalibrowany (np. 8/9 przy średniej 
 
 - **Wiek 35+ w best-of-5** to niedoszacowane ryzyko ogonowe (choroba/uraz w trakcie meczu, którego nie widać przed). Odejmij 3-5 pp od p przy rankingu "najpewniejszych" albo nie stawiaj takiego meczu w czołówce.
 - **Forma vs zmęczenie:** zawodnik po finale/półfinale w 2-3 ostatnich turniejach z rzędu przed Szlemem - rozważ obie hipotezy (rozpęd i zmęczenie), nie traktuj serii jako czystego plusa.
-- **Faworyt po wolnym losie lub przerwie ≥2 tygodni** przeciw rywalowi z rytmem meczowym to realne ryzyko (faworytka 90% przegrała z nr 180). Zmęczenie underdoga po maratonie nie jest wystarczającym argumentem za faworytem.
+- **Faworyt po wolnym losie lub przerwie ≥2 tygodni** przeciw rywalowi z rytmem meczowym to realne ryzyko (faworytka 90% przegrała z nr 180). Zmęczenie underdoga po maratonie nie jest wystarczającym argumentem za faworytem. Dotyczy każdej rangi turnieju (także ATP/WTA 250-500), nie tylko Masters/WTA 1000: faworytowi w pierwszym meczu po wolnym losie przeciw rywalowi po wygranym R1 odejmij 3-5 pp od p i nie wpisuj go do TOP-N (weryfikacja 21.10: Rublev 74,8%, p = rynek bez analizy, przegrał w Almaty R2 z Mannarino po jego trzysetowym R1).
 - **Kryzys formy faworyta** (np. bilans 9-13) to ważny sygnał - nie ignoruj go dla rankingu.
 - **WTA:** przy dokładnym wyniku setowym spłaszcz rozkład bardziej niż daje model; duża przepaść rankingowa nie gwarantuje "czystego" wyniku.
 - **Powrót po długiej kontuzji:** wyraźnie obniż pewność i napisz o tym wprost.

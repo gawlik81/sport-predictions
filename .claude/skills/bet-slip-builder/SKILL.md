@@ -51,7 +51,7 @@ Odrzuć kandydatów:
 - Przy każdym zestawie podaj poziom luzowania i które progi złamano. Zestawy poniżej progów pokaż osobno, pod bazowymi.
 - Kupon z EV ≤ 0 ma stawkę 0%.
 - Przy p > 50% i EV ≤ 0 górna granica kursu 2.5 i tak nie działa (kurs wychodzi < 2.0); faktycznie ogranicza dolna granica 1.5.
-- **Nie luzuj nigdy:** fair odds nogi > 1.15, brak sprzeczności i powtórzeń tej samej nogi, kurs musi pochodzić z Betclic, gg397.bet lub jawnie oznaczonego fallbacku (nigdy z pamięci), noga z niską pewnością tylko w zestawie ryzykownym, "przewaga niepotwierdzona" nie podnosi EV.
+- **Nie luzuj nigdy:** fair odds nogi > 1.15, brak sprzeczności i powtórzeń tej samej nogi, kurs musi pochodzić z Betclic, gg397.bet lub jawnie oznaczonego fallbacku (nigdy z pamięci), noga z niską pewnością tylko w zestawie ryzykownym, "przewaga niepotwierdzona" nie podnosi EV. Noga, której p to rynek po usunięciu marży bez analizy skilla dyscypliny (np. tenis bez statystyk), ma niską pewność i podlega tej samej zasadzie; zanim wejdzie nawet do zestawu ryzykownego, sprawdź dla niej listę "Skalibruj" skilla dyscypliny (wolny los, odpoczynek, kwalifikant, b2b) i odejmij korekty (weryfikacja 21.10: Rublev 74,8% po wolnym losie w kuponie 4 i Cirstea 66,7% w kuponie 10, obie nogi p = rynek, obie przegrały).
 - Jeśli i poziom 6 nie wystarcza, pokaż, ile zestawów jest, i nie dobijaj na siłę.
 
 Dodatkowo (weryfikacja 07-08.10.2026, pudła Norrie/Griekspoor/Simakin/Munar):

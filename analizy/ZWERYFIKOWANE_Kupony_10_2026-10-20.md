@@ -1,6 +1,6 @@
 # Kupony 20.10.2026 (dziś, noc 20/21.10, rano 21.10) - wynik: 5 kuponów, nie 10
 
-**Źródło kursów:** Betclic.pl (pobrane ok. 19:35-20:05 CEST 20.10). Weryfikacja na gg397.bet: strona działa, ale kursy 1x2 NHL są niespójne z Betclic (np. SEA 5.76 / DET 1.21 vs Betclic ML 1.85 / 1.78; NYI 2.46 vs 1.59) i rozbieżność jest wielokrotnie > 0,10, więc nie służą do potwierdzenia. Z gg397.bet użyto wyłącznie nogi VAN-CAR Under 6.5 (Betclic nie ma tej linii w NHL), oznaczonej poniżej. Analizy: [Analiza_dnia_2026-10-20.md](Analiza_dnia_2026-10-20.md).
+**Źródło kursów:** Betclic.pl (pobrane ok. 19:35-20:05 CEST 20.10). Weryfikacja na gg397.bet: strona działa, ale kursy 1x2 NHL są niespójne z Betclic (np. SEA 5.76 / DET 1.21 vs Betclic ML 1.85 / 1.78; NYI 2.46 vs 1.59) i rozbieżność jest wielokrotnie > 0,10, więc nie służą do potwierdzenia. Z gg397.bet użyto wyłącznie nogi VAN-CAR Under 6.5 (Betclic nie ma tej linii w NHL), oznaczonej poniżej. Analizy: [ZWERYFIKOWANE_Analiza_dnia_2026-10-20.md](ZWERYFIKOWANE_Analiza_dnia_2026-10-20.md).
 
 **Skrót terminarza:** piłka 7 (LM) + 2 pominięte (trwały), NBA 3, NHL 11, tenis ATP 3, MMA 0, e-sport 0 (brak potwierdzonych, nie zweryfikowano).
 

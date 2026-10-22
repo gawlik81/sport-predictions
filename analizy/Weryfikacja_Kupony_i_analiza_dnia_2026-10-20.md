@@ -2,7 +2,7 @@
 
 **Zweryfikowane pliki:**
 - `ZWERYFIKOWANE_Kupony_10_2026-10-20.md` (dawniej `Kupony_10_2026-10-20.md`) - 5 kuponów, wszystkie nogi rozstrzygnięte -> prefiks `ZWERYFIKOWANE_`.
-- `Analiza_dnia_2026-10-20.md` - **weryfikacja częściowa**: NHL VGK - TBL w chwili weryfikacji nierozstrzygnięty (TBL 6-2, 3. tercja, ok. 7 min do końca; Under 6.5 przegrany już po 7 golach, ale ML, wynik po 60' i puck line otwarte). Plik bez prefiksu do czasu uzupełnienia.
+- `ZWERYFIKOWANE_Analiza_dnia_2026-10-20.md` (dawniej `Analiza_dnia_2026-10-20.md`; uzupełnione 22.10 w `Weryfikacja_Kupony_i_analiza_dnia_2026-10-21.md`) - **weryfikacja częściowa**: NHL VGK - TBL w chwili weryfikacji nierozstrzygnięty (TBL 6-2, 3. tercja, ok. 7 min do końca; Under 6.5 przegrany już po 7 golach, ale ML, wynik po 60' i puck line otwarte). Plik bez prefiksu do czasu uzupełnienia.
 - Uzupełnienie z 19.10: WTA Osaka Boulter - Sakatsume 6-3 6-1 (Boulter) -> typ trafiony, `Analiza_dnia_2026-10-19.md` dostaje prefiks.
 
 **Źródła wyników:** ESPN scoreboard (LM, NBA, NHL, tenis), NHL API (api-web.nhle.com) dla NHL. Wszystko z 1-2 źródeł (NHL: ESPN + NHL API zgodne); tenis i NBA tylko ESPN (jedno źródło). Gospodarze wg pola `homeAway`.
@@ -51,7 +51,7 @@
 - **Nogi "przewaga niepotwierdzona" (+5 pp i więcej nad rynkiem) w kuponach:** 19.10: 5/7, 20.10: 0/2 (WSH lub remis, VAN-CAR U6.5) -> łącznie 5/9 przy oczekiwanych ok. 6,2. Za mało, by zmieniać regułę.
 - **Faworyci NHL po b2b:** COL w NJ-COL (b2b, p modelu na COL+1.5 70%) przegrał 3-4 w regulaminowym czasie (dla "12" noga trafiła); licznik z 19.10 (0/2) bez nowego przypadku wymagającego p wyżej.
 - **Gole w LM (faza ligowa, kol. 3):** Over 2.5 5/7 (oczekiwane 4,03), średnia 4,7 gola/mecz; zbadać po kolejnych kolejkach LM, czy λ faworytów (Roma 3,0, City 2,9) są zaniżone.
-- **Do uzupełnienia:** NHL VGK - TBL (po zakończeniu) -> prefiks `ZWERYFIKOWANE_` dla `Analiza_dnia_2026-10-20.md`. Nadal otwarta noga CS2 FURIA - BetBoom Over 69,5 rund z `Kupony_10_2026-10-18.md`.
+- **Do uzupełnienia:** NHL VGK - TBL (po zakończeniu) -> prefiks `ZWERYFIKOWANE_` dla `Analiza_dnia_2026-10-20.md` (zrobione 22.10). Nadal otwarta noga CS2 FURIA - BetBoom Over 69,5 rund z `Kupony_10_2026-10-18.md`.
 - Jakość danych: ESPN (jedno źródło) dla NBA, LM i tenisa; NHL: ESPN + NHL API.
 
 Hipotetyczny zysk tylko informacyjny. To oszacowania, nie gwarancje; próba jest mała.
