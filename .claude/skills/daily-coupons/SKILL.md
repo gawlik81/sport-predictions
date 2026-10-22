@@ -1,6 +1,6 @@
 ---
 name: daily-coupons
-description: Pełny pipeline dnia jednym poleceniem - wyszukuje wydarzenia sportowe (domyślnie dzisiejsze, można podać inny dzień lub zakres dat), robi dokładną analizę każdego z nich skillami analitycznymi, pobiera kursy z Betclic.pl i składa 10 najlepszych kuponów skillem bet-slip-builder, według jego progów i zasad spójności. Używaj zawsze, gdy użytkownik prosi o "kupony na dziś", "10 kuponów", "przygotuj kupony na jutro/weekend/od-do", "zrób cały research i kupony", "typy na dziś z Betclic" albo chce przejść całą ścieżkę terminarz → analiza → kupony bez prowadzenia jej krok po kroku - także gdy nie pada słowo "kupon".
+description: Pełny pipeline dnia jednym poleceniem - najpierw zawsze pyta użytkownika o okres (dzień lub zakres dat), potem wyszukuje wydarzenia sportowe z tego okresu, robi dokładną analizę każdego z nich skillami analitycznymi, pobiera kursy z Betclic.pl i składa 10 najlepszych kuponów skillem bet-slip-builder, według jego progów i zasad spójności. Używaj zawsze, gdy użytkownik prosi o "kupony na dziś", "10 kuponów", "przygotuj kupony na jutro/weekend/od-do", "zrób cały research i kupony", "typy na dziś z Betclic" albo chce przejść całą ścieżkę terminarz → analiza → kupony bez prowadzenia jej krok po kroku - także gdy nie pada słowo "kupon".
 ---
 
 # Dzienne kupony (terminarz → analiza → 10 kuponów)
@@ -9,7 +9,7 @@ Orkiestrator flow z CLAUDE.md (kroki 1-3). Sam nie wyszukuje wydarzeń, nie anal
 
 ## Parametry
 
-- **Okres**: domyślnie dzień dzisiejszy (data z kontekstu sesji, strefa Europe/Warsaw). Użytkownik może podać jutro, weekend, konkretną datę albo zakres "od-do" - użyj go zamiast domyślnego. Zakres dłuższy niż ~3 dni zawęź lub zapytaj, bo pełna analiza każdego meczu jest kosztowna.
+- **Okres**: **zawsze zapytaj o niego przed krokiem 1**, narzędziem AskUserQuestion, i nie zaczynaj terminarza przed odpowiedzią (wymaganie użytkownika z 22.10.2026; wcześniej domyślnie był dzień dzisiejszy). Opcje: dziś, jutro, najbliższy weekend, z konkretnymi datami (strefa Europe/Warsaw, data z kontekstu sesji); inny dzień lub zakres "od-do" użytkownik poda w polu "Other". Jeśli zapytanie zawiera już okres (np. "kupony na jutro", "weekend 24-25.10"), też zapytaj, ale jako potwierdzenie: ten okres z rozwiniętymi datami pokaż jako pierwszą opcję "(Recommended)". Zakres dłuższy niż ~3 dni zaproponuj zawęzić w tym samym pytaniu, bo pełna analiza każdego meczu jest kosztowna.
 - **Bukmacher**: Betclic.pl (https://www.betclic.pl/) jako źródło główne, https://gg397.bet/pl do weryfikacji/potwierdzenia kursów; chyba że użytkownik poda innego.
 - **Liczba kuponów**: 10, chyba że podano inną.
 - **Ograniczenia kuponu**: jeden zestaw warunków, zdefiniowany wyłącznie w `bet-slip-builder` (progi domyślne: kurs nogi, kurs zestawu, EV, p; zasady spójności; stawka Kelly'ego; poziomy luzowania, gdy progi nie dają kuponów). Ten skill nie ma własnych progów ani odstępstw i niczego nie nadpisuje. Zapytanie użytkownika nadpisuje progi domyślne. Zmiany progów wprowadzaj tylko w `bet-slip-builder/SKILL.md`.
