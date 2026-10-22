@@ -35,7 +35,7 @@ Kursy bierz z Betclic.pl, w pierwszej kolejności przez MCP przeglądarki (`mcp_
 
 ## Krok 4: Wycena, selekcja nóg i 10 kuponów (skill `bet-slip-builder`)
 
-Wywołaj narzędziem Skill `bet-slip-builder` i przekaż mu analizy (ścieżka pliku z kroku 2), kursy Betclic z kroku 3 (z rynkiem, linią i źródłem) oraz polecenie złożenia 10 kuponów (liczba kuponów z parametrów). Cała wycena (fair odds, EV), filtrowanie nóg, progi, zasady spójności i niepowtarzalności nóg między kuponami, wielkość stawki oraz skrypt `slip.py` należą do `bet-slip-builder`; nie licz ich ani nie filtruj ad hoc w tym skillu. Ranking kuponów, format prezentacji i postępowanie, gdy progi bazowe nie dają 10 kuponów, są takie, jak w `bet-slip-builder`: stosuj jego poziomy luzowania (wszystkie poziomy automatycznie, po kolei), oznacz poziom przy każdym kuponie i nie dobijaj do 10 na siłę.
+Wywołaj narzędziem Skill `bet-slip-builder` i przekaż mu analizy (ścieżka pliku z kroku 2), kursy Betclic z kroku 3 (z rynkiem, linią i źródłem) oraz polecenie złożenia 10 kuponów (liczba kuponów z parametrów). Cała wycena (fair odds, EV), filtrowanie nóg, progi, zasady spójności i niepowtarzalności nóg między kuponami, wielkość stawki oraz skrypt `slip.py` należą do `bet-slip-builder`; nie licz ich ani nie filtruj ad hoc w tym skillu. Ranking kuponów, format prezentacji i postępowanie, gdy progi bazowe nie dają 10 kuponów, są takie, jak w `bet-slip-builder`: stosuj jego poziomy luzowania (poziomy 0-2 automatycznie, 3-6 tylko za zgodą użytkownika), oznacz poziom przy każdym kuponie i nie dobijaj do 10 na siłę.
 
 Do wyniku `bet-slip-builder` dodaj przy każdym kuponie godzinę każdej nogi i źródło kursu (Betclic, potwierdzenie gg397.bet / fallback).
 

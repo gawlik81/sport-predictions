@@ -47,7 +47,7 @@ Odrzuć kandydatów:
 | 5 | dolny kurs zestawu | > 1.4 (zamiast 1.5) | 0% |
 | 6 | powtórzenia | ten sam mecz w 2 zestawach, tylko z różnych rodzin rynków (nigdy dwie nogi z rynku wyniku) | 0% |
 
-- **Wszystkie poziomy (1-6) stosuj automatycznie**, bez pytania o zgodę (decyzja użytkownika z 20.10.2026), po kolei i tylko do najniższego poziomu, który daje żądaną liczbę zestawów. Poziomy 3-6 obniżają jakość (w weryfikacji 07.10 pozycje z p 55-66% przegrywały często), więc oznaczaj je wyraźnie jako "poniżej progów" z podanym poziomem.
+- **Poziomy 0-2 stosuj automatycznie**, po kolei i tylko do najniższego poziomu, który daje żądaną liczbę zestawów. **Poziomy 3-6 tylko za zgodą użytkownika** (decyzja z 22.10.2026, wcześniej 20.10 wszystkie były automatyczne): gdy poziomy 0-2 nie dają żądanej liczby zestawów, zatrzymaj się, pokaż co powstało, powiedz ile zestawów dałby poziom 3 (i kolejne) i zapytaj, czy luzować dalej. Poziomy 3-6 obniżają jakość (w weryfikacji 07.10 pozycje z p 55-66% przegrywały często); po zgodzie oznaczaj je wyraźnie jako "poniżej progów" z podanym poziomem.
 - Przy każdym zestawie podaj poziom luzowania i które progi złamano. Zestawy poniżej progów pokaż osobno, pod bazowymi.
 - Kupon z EV ≤ 0 ma stawkę 0%.
 - Przy p > 50% i EV ≤ 0 górna granica kursu 2.5 i tak nie działa (kurs wychodzi < 2.0); faktycznie ogranicza dolna granica 1.5.
