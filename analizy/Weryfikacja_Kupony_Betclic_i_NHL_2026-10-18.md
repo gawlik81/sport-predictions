@@ -1,7 +1,7 @@
 # Weryfikacja kuponów 18.10.2026 (piłka, CS2, NHL noc 18/19.10) i uzupełnienie 17.10
 
 Zweryfikowane pliki:
-- `Kupony_10_2026-10-18.md` - 10 kuponów na dzień 18.10 (**weryfikacja częściowa**: noga CS2 FURIA - BetBoom Over 69,5 rund w kuponie 3 nierozliczona, brak źródła rund)
+- `ZWERYFIKOWANE_Kupony_10_2026-10-18.md` - 10 kuponów na dzień 18.10 (**weryfikacja częściowa**: noga CS2 FURIA - BetBoom Over 69,5 rund w kuponie 3 nierozliczona, brak źródła rund)
 - `ZWERYFIKOWANE_Kupony_10_2026-10-18_v2.md` (dawniej `Kupony_10_2026-10-18_v2.md`) - noc 18/19.10, 0 kuponów spełniających progi, kupon A "poniżej progów"
 - `ZWERYFIKOWANE_Analiza_NHL_noc_2026-10-18.md` (dawniej `Analiza_NHL_noc_2026-10-18.md`) - 14 wycenionych nóg MIN-CBJ i CGY-CAR
 - uzupełnienie `ZWERYFIKOWANE_Kupony_NHL_noc_Betclic_2026-10-17.md` (dawniej `Kupony_NHL_noc_Betclic_2026-10-17.md`): Machida - Fukuoka i Buckley - Malott
@@ -71,7 +71,7 @@ Pula 14 wycenionych nóg: **6/14 przy oczekiwanych 8,24 (-1,25 odch. std.)**. Tr
 ## Do obserwacji
 - **Piłka "wygrana którejkolwiek drużyny (12)": 10/10 przy oczekiwanych 7,58** (jedna kolejka, 6 lig, dzień z niewielką liczbą remisów). Wcześniejsza uwaga dokumentu mówiła, że Poisson niedoszacowuje remisy o 1-3 pp; ten dzień jej nie potwierdza, ale próba jest mała. Zmienić regułę dopiero, jeśli po ≥ 30 nogach 12 w zestawieniu zbiorczym trafienia przekroczą oczekiwane o > 2 odch. std. (licznik: 10/10 z dziś).
 - **NHL: 6/14 przy 8,24** (próba ze stawek 0%). Obie sekcje NHL nadal bez zweryfikowanych typów kuponowych poza 17.10 (16/19). Gdy zbierze się ≥ 30 nóg NHL, sprawdzić kalibrację Over 4,5 i nóg faworytów po b2b (CAR ML p 66% przegrany; wcześniej faworyci po b2b: brak danych).
-- Rynek rund CS2 (Over 69,5) nierozliczony: uzupełnić po znalezieniu wyników map FURIA - BetBoom; wtedy zmienić nazwę `Kupony_10_2026-10-18.md` na `ZWERYFIKOWANE_...`.
+- Rynek rund CS2 (Over 69,5) nierozliczony: uzupełnić po znalezieniu wyników map FURIA - BetBoom; wtedy zmienić nazwę `ZWERYFIKOWANE_Kupony_10_2026-10-18.md` na `ZWERYFIKOWANE_...`.
 - Jakość danych: CS2 z jednego źródła (PandaScore), Buckley - Malott z jednego źródła (ESPN), Ekstraklasa z dwóch zgodnych.
 
 Hipotetyczny zysk tylko informacyjny, stawki zalecane 0%. To oszacowania, nie gwarancje; próba jest mała.

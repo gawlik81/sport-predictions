@@ -69,7 +69,7 @@ Tenis (typy z analizy, bez kursów): Musetti ✅, Sasnovich ✅, Bouzkova ✅, E
 - **Faworyci NHL po b2b / drugi mecz z rzędu:** CAR (18.10, p 66%) i COL (19.10, p 72% na "lub remis") przegrali; 0/2. Gdy będzie ≥ 5 takich nóg z wynikiem, rozważyć w `nhl-analyst` odjęcie ok. 3-5 pp za b2b w p faworyta.
 - **Piłka Under 2.5 (p 48-70%):** 2/5 dziś (oczekiwane 2,94); próba < 10, licznik startuje od dziś.
 - **Piłka 12:** 12/12 łącznie (10/10 z 18.10 plus 2/2 dziś), oczekiwane ok. 9,0; licznik rośnie, reguła bez zmian do ≥ 30 nóg.
-- **Do uzupełnienia:** Boulter - Sakatsume (po opublikowaniu wyniku końcowego), potem `Analiza_dnia_2026-10-19.md` dostaje prefiks `ZWERYFIKOWANE_`. Nadal otwarta noga CS2 FURIA - BetBoom Over 69,5 rund z `Kupony_10_2026-10-18.md`.
+- **Do uzupełnienia:** Boulter - Sakatsume (po opublikowaniu wyniku końcowego), potem `Analiza_dnia_2026-10-19.md` dostaje prefiks `ZWERYFIKOWANE_`. Nadal otwarta noga CS2 FURIA - BetBoom Over 69,5 rund z `ZWERYFIKOWANE_Kupony_10_2026-10-18.md`.
 - Jakość danych: Ekstraklasa z 4 źródeł (zgodne), ESPN dla reszty (jedno źródło), tenis z ESPN (jedno źródło).
 
 Hipotetyczny zysk tylko informacyjny. To oszacowania, nie gwarancje; próba jest mała.

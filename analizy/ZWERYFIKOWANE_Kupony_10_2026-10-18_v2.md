@@ -1,6 +1,6 @@
 # Kupony - noc 18/19.10 i poranek 19.10.2026 (v2, zakres: "dzisiejsza noc i jutrzejszy ranek")
 
-Plik v2, bo `Kupony_10_2026-10-18.md` (kupony na cały dzień 18.10) już istnieje. Źródło kursów: Betclic.pl, pobrane 18.10 ok. 22:10. Analiza: `Analiza_NHL_noc_2026-10-18.md`.
+Plik v2, bo `ZWERYFIKOWANE_Kupony_10_2026-10-18.md` (kupony na cały dzień 18.10) już istnieje. Źródło kursów: Betclic.pl, pobrane 18.10 ok. 22:10. Analiza: `Analiza_NHL_noc_2026-10-18.md`.
 
 ## Terminarz (od 18.10 22:00 do 19.10 ok. 12:00)
 - **NHL: 2 mecze** - Minnesota - Columbus (00:00), Calgary - Carolina (02:00). Mecze z 19.10 (Rangers-Ducks, Flyers-Avalanche, Leafs-Sharks, Mammoth-Penguins) startują dopiero 01:00-03:00 w nocy 19/20.10, poza zakresem.

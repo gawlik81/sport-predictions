@@ -76,7 +76,7 @@ Bez innych zmian: pozostałe pudła to wariancja (bilans nóg zgodny z oczekiwan
 - **Gole w LM:** 21.10 średnio 3,8 gola na mecz, Over 2,5 7/9 przy oczekiwanych 6,24 (wg tabeli analizy). Łącznie z 20.10: 12/16 przy 10,27. Jeszcze w granicach wariancji (ok. +1,2 odch. std.); jeśli po kolejnej kolejce LM nadal > +1,5 odch. std., rozważyć w `football-analyst` korektę λ z kursów Pinnacle w górę dla LM.
 - **Tenis p = rynek:** 3/5 przy 3,62; tylko informacyjnie, bo nowa reguła wyklucza takie nogi ze zwykłych kuponów.
 - **Kupony z progiem użytkownika 2,0-3,0 bez wyniku:** p 42-46% przy EV ujemnym; 0/3. Dokument słusznie pisał, że wyższe p pojedynczych nóg nie podnosi p kuponu. Kupony B i C dzieliły nogę Sporting O1,5 (wariant "na prośbę", ale formalnie powtórzenie nogi z reguły 1a).
-- **Nadal otwarte:** CS2 FURIA - BetBoom Over 69,5 rund z `Kupony_10_2026-10-18.md` (brak źródła rund).
+- **Nadal otwarte:** CS2 FURIA - BetBoom Over 69,5 rund z `ZWERYFIKOWANE_Kupony_10_2026-10-18.md` (brak źródła rund).
 - Jakość danych: LM, rożne, kartki i tenis tylko ESPN; NHL ESPN + NHL API; NBA ESPN + NBA CDN.
 
 Hipotetyczny zysk tylko informacyjny. To oszacowania, nie gwarancje; próba jest mała.
