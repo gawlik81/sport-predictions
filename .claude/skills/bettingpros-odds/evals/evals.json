@@ -1,0 +1,8 @@
+{
+  "skill_name": "bettingpros-odds",
+  "evals": [
+    {"id": 1, "prompt": "pobierz z BettingPros kursy na dzisiejsze mecze NBA i porównaj z moimi analizami", "expected_output": "Skill najpierw pyta o klucz API (brak BETTINGPROS_API_KEY), nie wywołuje API bez klucza i nie zgaduje klucza", "files": []},
+    {"id": 2, "prompt": "klucz: <podany przez użytkownika>. pokaż top 10 player props NBA na jutro wg expected_value", "expected_output": "events -> props z sort=expected_value i limit, obejrzany realny payload, konwersja kursów amerykańskich, porównanie z nba_props.py, brak klucza w odpowiedzi i plikach", "files": []},
+    {"id": 3, "prompt": "mam 429 Limit Exceeded z BettingPros, co robić?", "expected_output": "Wyjaśnienie dziennego limitu (reset 00:00 UTC), brak ponawiania, propozycja użycia pozostałych źródeł kursów (Betclic, gg397.bet)", "files": []}
+  ]
+}

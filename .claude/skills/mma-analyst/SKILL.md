@@ -19,6 +19,10 @@ Narzędzia `mcp__sportsdata__*` są deferred: załaduj je przez ToolSearch (np. 
 - **Gdy `ufc_*` zwraca stronę z bot-challenge lub puste dane** (zdarzyło się przy gali z 10.10.2026): nie rezygnuj ze statystyk kariery, tylko pobierz je z ufcstats.com, Tapology lub Sherdog przez WebFetch/WebSearch i napisz, z jakiego źródła pochodzą. Samo "brak statystyk" jako powód, by zostawić p równe rynkowi, to ostateczność.
 - **KSW i inne organizacje (brak MCP):** karta i zawodnicy z WebSearch/WebFetch: oficjalna strona KSW, Sherdog, Tapology, polskie media (np. Sport.pl, Interia, mmarocks, Przegląd Sportowy) i konferencje/ważenia. Pełnych statystyk uderzeń zwykle nie ma - patrz Krok 3.
 
+## BettingPros (skill `bettingpros-odds`)
+
+Dla NBA/NHL/piłki (i innych sportów, które API zwraca - sprawdź `events --sport <X>`) wywołaj skill `bettingpros-odds` jako dodatkowe źródło: konsensus linii i kursów z wielu bukmacherów, `best_lines`, a przy rynkach zawodnika rekomendacje `props` (probability, EV, bet rating, forma last_N). Skill najpierw pyta o klucz API, jeśli `BETTINGPROS_API_KEY` nie jest ustawiona; bez klucza pomiń to źródło i zaznacz to w raporcie (nie blokuj analizy). To kontrola i źródło kursów, nie zamiennik własnego p: różnica >10 pp względem rynku bez marży wymaga wyjaśnienia (skład, kontuzje), a niezgodność z `props` BettingPros to flaga do sprawdzenia, nie powód do zmiany liczby bez konkretów. W raporcie oznacz "BettingPros" przy każdej użytej linii/kursie.
+
 ## Krok 1: Zbierz dane (cztery filary)
 
 1. **Statystyki zawodników** - rekord, seria, sposoby wygranych (KO/TKO, submission, punkty) i porażek (kto jak przegrywał: brodą, parterem), ostatnie 5 walk z kim i jak, trafienia istotne na minutę vs przyjęte (SLpM/SApM), celność i obrona w stójce, obalenia (średnia, celność, obrona), submission na 15 min, knockdowny, % finiszów w 1. rundzie, średni czas walki, wiek, zasięg i wzrost, stójka (orto/południowa), kategoria wagowa (czy zmienia dywizję). Liczby sezonowe i z ostatnich walk ważą więcej niż rekord.

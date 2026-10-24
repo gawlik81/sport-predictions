@@ -15,6 +15,10 @@ Narzędzia `mcp__sportsdata__*` (deferred, załaduj przez ToolSearch) to prefero
 - **Kursy (rynek, filar 4):** `pinnacle_sport_matchups_all`/`pinnacle_league_matchups` (soccer `sportId` 29, tylko `hasMarkets: true`, kursy w formacie amerykańskim, przelicz na dziesiętne, bez klucza), `theoddsapi_odds` (`THE_ODDS_API_KEY`, `h2h`/`totals`; każdy rynek × region kosztuje kredyty, sprawdź klucze przez darmowe `theoddsapi_sports`), `oddsapiio_odds`, `apisports_football_odds`. Pinnacle to dobry kurs odniesienia po usunięciu marży.
 - Duże odpowiedzi zapisują się do pliku: czytaj je przez `jq`, nie wczytuj w całości.
 
+## BettingPros (skill `bettingpros-odds`)
+
+Dla NBA/NHL/piłki (i innych sportów, które API zwraca - sprawdź `events --sport <X>`) wywołaj skill `bettingpros-odds` jako dodatkowe źródło: konsensus linii i kursów z wielu bukmacherów, `best_lines`, a przy rynkach zawodnika rekomendacje `props` (probability, EV, bet rating, forma last_N). Skill najpierw pyta o klucz API, jeśli `BETTINGPROS_API_KEY` nie jest ustawiona; bez klucza pomiń to źródło i zaznacz to w raporcie (nie blokuj analizy). To kontrola i źródło kursów, nie zamiennik własnego p: różnica >10 pp względem rynku bez marży wymaga wyjaśnienia (skład, kontuzje), a niezgodność z `props` BettingPros to flaga do sprawdzenia, nie powód do zmiany liczby bez konkretów. W raporcie oznacz "BettingPros" przy każdej użytej linii/kursie.
+
 ## Krok 1: Zbierz dane (cztery filary)
 
 1. **Statystyki drużyn** - ostatnie 5-8 meczów każdej drużyny osobno u siebie / na wyjeździe: gole strzelone i stracone, xG/xGA jeśli dostępne, strzały i celne, rożne, faule/kartki, pozycja w tabeli. Forma bez kontekstu przeciwników wprowadza w błąd - zapisz, z kim grali.

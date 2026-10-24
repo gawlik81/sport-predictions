@@ -33,6 +33,7 @@ Skrypty liczą rozkłady z parametrów wejściowych (uruchamiane z katalogu skil
 - `nhl-analyst/scripts/nhl_model.py <λ_gospodarze> <λ_goście> [--total L]` - wynik po 60', moneyline z dogrywką, puck line ±1.5, total goli.
 - `nhl-analyst/scripts/nhl_props.py <rynek> <średnia> [linie]` - strzały, punkty, strzelec gola, obrony bramkarza.
 - `bet-slip-builder/scripts/slip.py "opis" p kurs ...` - łączne p, fair odds, EV zestawu.
+- `bettingpros-odds/scripts/bettingpros.py <events|markets|counts|offers|props|books|odds> ...` - API BettingPros (kursy, linie, prop picks); klucz w `BETTINGPROS_API_KEY` (skill pyta o niego, jeśli brak). Skille analityczne, `sports-fixtures-finder`, `bet-slip-builder` i `daily-coupons` używają go jako dodatkowego źródła; nie zastępuje własnych p ani kursów Betclic/gg397.bet.
 - `predictions-verifier/scripts/verify.py <plik.json>` - bilans trafień vs oczekiwane, Brier, kupony, zysk hipotetyczny (format JSON w nagłówku skryptu).
 
 **Używaj skilli, gdy zadanie ich wymaga.** Każde zadanie z zakresu flow (terminarz, analiza meczu, TOP/kupon, weryfikacja typów) realizuj przez odpowiedni skill (`sports-fixtures-finder`, `football-analyst`, `tennis-analyst`, `esports-analyst`, `mma-analyst`, `nba-analyst`, `nhl-analyst`, `bet-slip-builder`, `predictions-verifier`), wywołując go narzędziem Skill, zamiast robić to ad hoc. Dotyczy to też próśb bez słów kluczowych (same nazwy drużyn/zawodników, data, "co grają"). Skilli nie uruchamiaj do zadań spoza flow (np. edycja CLAUDE.md, git).

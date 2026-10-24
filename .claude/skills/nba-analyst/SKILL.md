@@ -16,6 +16,10 @@ Narzędzia `mcp__sportsdata__*` (deferred, załaduj przez ToolSearch) to prefero
 - **Kursy (filar 4):** `nba_odds_today`, `pinnacle_sport_matchups_all`/`pinnacle_league_matchups` (koszykówka; potwierdź `sportId` przez `pinnacle_sports`, tylko `hasMarkets: true`, kursy amerykańskie przelicz na dziesiętne), `theoddsapi_odds` (`basketball_nba`; `h2h`, `spreads`, `totals`; rynki zawodnika osobno i drożej), `oddsapiio_odds`. Pinnacle to dobry kurs odniesienia po usunięciu marży.
 - Duże odpowiedzi zapisują się do pliku: czytaj je przez `jq`, nie wczytuj w całości.
 
+## BettingPros (skill `bettingpros-odds`)
+
+Dla NBA/NHL/piłki (i innych sportów, które API zwraca - sprawdź `events --sport <X>`) wywołaj skill `bettingpros-odds` jako dodatkowe źródło: konsensus linii i kursów z wielu bukmacherów, `best_lines`, a przy rynkach zawodnika rekomendacje `props` (probability, EV, bet rating, forma last_N). Skill najpierw pyta o klucz API, jeśli `BETTINGPROS_API_KEY` nie jest ustawiona; bez klucza pomiń to źródło i zaznacz to w raporcie (nie blokuj analizy). To kontrola i źródło kursów, nie zamiennik własnego p: różnica >10 pp względem rynku bez marży wymaga wyjaśnienia (skład, kontuzje), a niezgodność z `props` BettingPros to flaga do sprawdzenia, nie powód do zmiany liczby bez konkretów. W raporcie oznacz "BettingPros" przy każdej użytej linii/kursie.
+
 ## Krok 1: Zbierz dane (cztery filary)
 
 1. **Statystyki drużyn** - net rating, offensive/defensive rating, tempo (pace), eFG%, zbiórki, straty, ostatnie 8-10 meczów z kontekstem rywali, bilans dom/wyjazd. **Początek sezonu (pierwsze ~15 meczów): próba jest mała**, więc mieszaj bieżące liczby z ubiegłym sezonem i projekcjami (np. win totals rynku) po zmianach w składach, a nie ufaj 3-5 meczom.

@@ -18,6 +18,10 @@ Narzędzia `mcp__sportsdata__*` (deferred, załaduj przez ToolSearch) dają term
 - **NHL:** `nhl_schedule` (oficjalne API NHL, bez klucza, terminarz tygodniowy od podanej daty), `nhl_scores` (wyniki/mecze dla dnia), `nhl_club_schedule` (terminarz klubu), alternatywnie `espn_scoreboard` (`sport=hockey`, `league=nhl`) i `sportsdataio_nhl_games_by_date`. Godziny w UTC, przelicz na polskie.
 - Pusta lista `events: []` to brak meczów, nie błąd. Jeśli narzędzie zwraca błąd klucza, przejdź na kolejne źródło, nie powtarzaj w pętli.
 
+## BettingPros (skill `bettingpros-odds`)
+
+Dla sportów obsługiwanych przez API BettingPros (m.in. NBA, NHL, piłka) terminarz i `event_id` możesz pobrać skillem `bettingpros-odds` (`events --sport <X> --date <data>`; czasy w UTC, w wyniku podaj czas polski) i użyć go do weryfikacji kompletności listy. Skill pyta o klucz API, jeśli nie jest ustawiony; bez klucza pomiń. Nie zastępuje pozostałych źródeł.
+
 ## Krok 1: Ustal zakres
 
 - **Okres:** przelicz "dziś/jutro/weekend" na konkretne daty (sprawdź dzisiejszą datę w kontekście). Zakres dłuższy niż ~7 dni zawęż do najważniejszych rozgrywek albo zapytaj, jak go zawęzić.

@@ -14,6 +14,10 @@ Narzędzia `mcp__sportsdata__*` (deferred, załaduj przez ToolSearch) to prefero
 - **Kursy (filar 4):** `theoddsapi_odds` (`THE_ODDS_API_KEY`, `h2h`; klucze sportów z darmowego `theoddsapi_sports`), `pinnacle_sports` sprawdź, czy oferuje tenis, potem `pinnacle_league_matchups` i `pinnacle_matchup_markets` (kursy amerykańskie, przelicz na dziesiętne).
 - MCP nie dostarcza gotowego % punktów przy serwisie ani informacji o kontuzjach: te nadal ustalaj w sieci (Tennis Abstract, ATP/WTA, osobne zapytanie o kontuzję każdego zawodnika). Duże odpowiedzi czytaj przez `jq`.
 
+## BettingPros (skill `bettingpros-odds`)
+
+Dla NBA/NHL/piłki (i innych sportów, które API zwraca - sprawdź `events --sport <X>`) wywołaj skill `bettingpros-odds` jako dodatkowe źródło: konsensus linii i kursów z wielu bukmacherów, `best_lines`, a przy rynkach zawodnika rekomendacje `props` (probability, EV, bet rating, forma last_N). Skill najpierw pyta o klucz API, jeśli `BETTINGPROS_API_KEY` nie jest ustawiona; bez klucza pomiń to źródło i zaznacz to w raporcie (nie blokuj analizy). To kontrola i źródło kursów, nie zamiennik własnego p: różnica >10 pp względem rynku bez marży wymaga wyjaśnienia (skład, kontuzje), a niezgodność z `props` BettingPros to flaga do sprawdzenia, nie powód do zmiany liczby bez konkretów. W raporcie oznacz "BettingPros" przy każdej użytej linii/kursie.
+
 ## Krok 1: Zbierz dane (cztery filary)
 
 1. **Statystyki zawodników** - ranking, bilans sezonu i ostatnich 5-10 meczów (z kim), bilans na danej nawierzchni, a przede wszystkim statystyki sezonu: % punktów wygranych przy własnym serwisie, % utrzymanych gemów serwisowych (SGW), % punktów przy returnie (RPW), asy, break pointy. Konkretne statystyki sezonu są dużo lepsze niż sam ranking.
