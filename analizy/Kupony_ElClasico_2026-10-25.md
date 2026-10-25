@@ -2,7 +2,28 @@
 
 **Analiza:** `analizy/ElClasico_Barcelona_RealMadryt_2026-10-25.md` (`football-analyst`, aktualizacja z popołudnia 25.10). λ Barcelona 2,65, Real 1,60. Courtois wypada (grypa), w bramce Lunin. Sędzia Juan Martínez Munuera. Składy niepotwierdzone.
 **Kursy:** Betclic.pl i gg397.bet są niedostępne z tego środowiska (CloudFront 403). Fallback to **BettingPros API**, książki FanDuel (FD), BetMGM i Fanatics (FAN), pobrane 25.10 o 15:10 CET. To kursy rynku USA, nie Betclic. Przed postawieniem sprawdź kurs na Betclic.
-**Status:** wersja wstępna. Aktualizacja po składach ok. 20:05 CET (przypomnienie ustawione).
+**Status:** zaktualizowane po składach (ESPN, 20:06 CET). Kursy odświeżone o 20:06 CET (BettingPros).
+
+## Aktualizacja po składach (20:06 CET)
+
+**Barcelona (4-3-3):** Joan García; Xavi Espart, Cubarsí, Gerard Martín, Cancelo; Pedri, Rodri, Fermín López; Yamal, Raphinha, Gordon.
+**Real Madryt (4-4-2):** Lunin; Valverde (PO), Konaté, Huijsen, Cucurella; Güler, Tchouaméni, Bernardo Silva, Bellingham; Mbappé, Diomande.
+
+Wnioski:
+- Obrona Barçy jest mocno prowizoryczna: na prawej obronie Xavi Espart, w środku Gerard Martín. Real ma Courtois na ławce/poza kadrą i Valverde na prawej obronie. Składy zwiększają szanse na gole obu drużyn, więc nie gramy Under 4,5 mimo EV +1,3% przy FD 1,746.
+- **Mbappé w XI** jako napastnik w duecie z Diomande. Typ celnych strzałów potwierdzony. Kurs wzrósł z 1,714 do 1,80.
+- **Raphinha w XI**, ale rynek jego celnych strzałów zniknął z ofert (brak kursu), więc kupon 4 jest usunięty.
+- Kursy 1X2, rożnych i rożnych Barcelony bez zmian. Real +1,5 kosztuje 1,625 (EV −2,8%), Barcelona 1,606 w MGM (EV −3,5%).
+
+| Kupon | Typ | p | Kurs teraz | EV | Stawka (1/4-1/2 Kelly'ego) | Decyzja |
+|---|---|---|---|---|---|---|
+| 1 | Mbappé celne Over 1,5 | 60,6% | 1,80 (Fanatics) | +9,1% | 2,8% (do 5,7%) | **potwierdzony** (rynek bez marży ok. 52-53%: część przewagi z osłabionej obrony Barçy, reszta niepotwierdzona) |
+| 2 | Rożne Under 10,5 | 55,0% | 1,87 (Fanatics) | +2,9% | 0,8% (do 1,6%) | bez zmian |
+| 3 | Barcelona rożne Under 6,5 * | 57,9% | 1,741 (Fanatics) | +0,8% | ok. 0,3% | bez zmian, przewaga niepotwierdzona |
+| 4 | Raphinha celne Over 1,5 | - | brak kursu | - | 0% | **usunięty** |
+| 5-7 | Under 4,5 / Real +1,5 / Barcelona | 58% / 59,8% / 60,1% | 1,746 / 1,625 / 1,606 | +1,3% / −2,8% / −3,5% | 0% | Under 4,5 bez stawki ze względu na składy |
+
+Poniżej wersja sprzed składów (15:10 CET) dla porównania.
 
 ## Zakres i ograniczenia
 - Okres to jeden mecz, więc kupon jest **jednomeczowy**. Reguła `bet-slip-builder` „jeden typ na mecz” i wymóg dwóch nóg > 1,2 oznaczają, że kupony to **typy pojedyncze (single)**.
