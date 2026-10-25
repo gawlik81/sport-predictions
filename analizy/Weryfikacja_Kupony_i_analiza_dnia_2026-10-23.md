@@ -1,6 +1,6 @@
 # Weryfikacja kuponów i analiz z 23.10.2026 (czas polski, weryfikacja 24.10 ok. 08:00)
 
-**Zweryfikowane pliki:** `ZWERYFIKOWANE_Analiza_dnia_2026-10-23.md`, `ZWERYFIKOWANE_Analiza_dnia_2026-10-23_NBA_v2.md`, `ZWERYFIKOWANE_Kupony_10_2026-10-23.md`, `ZWERYFIKOWANE_Kupony_10_2026-10-23_NBA_v2.md`, `ZWERYFIKOWANE_Kupony_10_2026-10-23_wieczor.md`. **Częściowo:** `Analiza_dnia_2026-10-23_wieczor.md` (Li - Krueger, Osaka SF, nie rozegrany w chwili weryfikacji; plik bez prefiksu do uzupełnienia).
+**Zweryfikowane pliki:** `ZWERYFIKOWANE_Analiza_dnia_2026-10-23.md`, `ZWERYFIKOWANE_Analiza_dnia_2026-10-23_NBA_v2.md`, `ZWERYFIKOWANE_Kupony_10_2026-10-23.md`, `ZWERYFIKOWANE_Kupony_10_2026-10-23_NBA_v2.md`, `ZWERYFIKOWANE_Kupony_10_2026-10-23_wieczor.md`. **Częściowo:** `ZWERYFIKOWANE_Analiza_dnia_2026-10-23_wieczor.md` (Li - Krueger, Osaka SF, nie rozegrany w chwili weryfikacji; plik bez prefiksu do uzupełnienia).
 
 **Źródła wyników i jakość danych:**
 - Piłka (Torino, Brest, Stuttgart, Ipswich, Alavés), NBA, NHL, tenis: ESPN scoreboard (**jedno źródło**). NBA i NHL spójne z liniami po kwartach/tercjach.
@@ -75,7 +75,7 @@ Wykluczenia: dodatnie EV na totalach NBA (przewaga niepotwierdzona) wypadły 2/6
 - **NBA totaly z przewagą nad linią 4-5 pkt (początek sezonu):** 2/6 dziś; MIL - CHI 257 pkt. Licznik zaczyna się od dziś; sprawdzić, czy model niedoszacowuje totali w pierwszych tygodniach (próba ≥ 20).
 - **Te same nogi w kilku kuponach (Pacers w 2 plikach):** wskazać w `bet-slip-builder`, że unikalność nóg dotyczy także przebiegów tego samego dnia? Licznik 1; decyzja przy kolejnym przypadku, w którym jedna noga zabija ≥ 2 kupony.
 - **NBA spread alt-linie:** 7/7 (oczekiwane 4,5), nogi skorelowane (3 mecze); nie wyciągać wniosku.
-- **Do uzupełnienia:** Li - Krueger (Osaka SF, Analiza_dnia_2026-10-23_wieczor.md, p Li 54%); po wyniku dodać prefiks `ZWERYFIKOWANE_` do tego pliku.
+- **Do uzupełnienia:** Li - Krueger (Osaka SF, ZWERYFIKOWANE_Analiza_dnia_2026-10-23_wieczor.md, p Li 54%; uzupełnione w Weryfikacja_Analiza_i_kupony_dnia_2026-10-24.md: Krueger 6-4 6-7 6-3, Li ❌); po wyniku dodać prefiks `ZWERYFIKOWANE_` do tego pliku.
 - **Jakość danych:** ESPN jedno źródło (piłka, tenis, NBA, NHL), LoL z dwóch zgodnych źródeł po odrzuceniu błędnego streszczenia.
 
 Hipotetyczny zysk tylko informacyjny. To oszacowania, nie gwarancje; próba jest mała.

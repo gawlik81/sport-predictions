@@ -60,7 +60,7 @@ Reguły wstępne (do weryfikacji po pierwszych typach):
 - **Styl vs styl:** zapaśnik przeciw słabej obronie obaleń to realna przewaga, ale tylko jeśli ma statystyki obaleń z porównywalnego poziomu; sam zasięg lub wyższy ranking nie wystarczą. Styl faworyta oparty na dystansie traci wartość, gdy rywal skraca dystans i dobrze wchodzi w klincz.
 - **Decyzje sędziów:** walki kończące się na punkty mają większą wariancję niż KO; dla walki wyrównanej przesuń da w stronę 50%, nie wskazuj "punktów dla A" jako pewnego typu. Nie dodawaj premii za zawodnika "u siebie" ani za kraj bez danych potwierdzających.
 - **Nie uśredniaj mechanicznie** model / zewnętrzne modele / rynek. Gdy rozstęp >8 pp, p jest niepewne: przyjmij dolną część rozstępu zwycięzcy, oznacz pewność "niska".
-- **Rynki sposobu i Over/Under rund** mają mniej danych niż zwycięzca: pewność co najwyżej "średnia", chyba że znasz dokładne wskaźniki finiszu obu stron z ostatnich walk i liczbę rund jest potwierdzona.
+- **Rynki sposobu i Over/Under rund** mają mniej danych niż zwycięzca: pewność co najwyżej "średnia", chyba że znasz dokładne wskaźniki finiszu obu stron z ostatnich walk i liczbę rund jest potwierdzona. Reguła "rynek ±5 pp" dotyczy też dystansu i Over/Under rund: porównaj z linią bukmachera lub rynkiem predykcyjnym (Kalshi), a bez rynku obetnij wynik modelu (UFC 333, 24.10.2026: dystans w walkach tytułowych dawał w jednej analizie 82-84% wobec rynku 66-72%; Volkanovski - Evloev skończyło się TKO w R2, Over 3,5 / 4,5 rundy i dystans przegrały).
 - **Dane z mniejszych gal (KSW, regionalne):** często brak statystyk uderzeń, tylko rekordy i sposoby wygranych. Pracuj na rekordzie i przebiegu walk, obniż pewność o jeden stopień, nie wpisuj typów sposobu/rund do rankingu.
 
 ## Krok 4: Raport

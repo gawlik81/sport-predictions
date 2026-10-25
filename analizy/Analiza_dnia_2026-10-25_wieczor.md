@@ -513,7 +513,7 @@ To są oszacowania probabilistyczne oparte na niepełnych danych z wyszukiwarki,
 
 Pary podane w zleceniu się zgadzają. Pozostałe mecze R3 LoL, czyli Bo1 1-1 KC–BLG i CFO–T1 oraz Bo3 0-2 TL–AL i LØS–TSW, są według Sheepesports i egamersworld rozgrywane 26.10, więc wypadają poza oknem. Wcześniejsze mecze CS2 R2 (FUT–Liquid 09:00; Vitality–MongolZ i BetBoom–Nemiga 12:00; G2–Aurora i MOUZ–9z 15:00; Spirit–TYLOO w ciągu dnia) zaczynają się przed 18:00 i je pominąłem. Godziny CS2 wyliczyłem tak: sloty esports.ru 11/14/17/20 są w czasie MSK (UTC+3), co daje 09/12/15/18 CET, a to zgadza się z HLTV. Liquipedia ma etykietę „EEST” przesuniętą o 2 h, prawdopodobnie błędną. Przed meczem warto potwierdzić godzinę, bo PGL bywa opóźniony po długich seriach.
 
-### Wyniki z 24.10 (aktualizacja względem Analiza_dnia_2026-10-24_wieczor.md)
+### Wyniki z 24.10 (aktualizacja względem ZWERYFIKOWANE_Analiza_dnia_2026-10-24_wieczor.md)
 
 **LoL Worlds R2 (Bo1)** – źródła: GosuGamers, Dotesports, Hotspawn, Liquipedia (opisy w wynikach wyszukiwania):
 - Grupa 1-0: **DK 1-0 T1** (41 min; drugi comeback DK z rzędu, „Elder flip” w ostatniej minucie), **Gen.G 1-0 HLE** (29 min, dominacja), **MKOI 1-0 CFO**, **LYON 1-0 KC**.

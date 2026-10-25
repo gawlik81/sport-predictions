@@ -1,6 +1,6 @@
 # Kupony 23.10.2026 wieczór (20:00 – 24.10 06:00), czas polski
 
-**Zakres (wybór użytkownika):** Top 5 lig + Ekstraklasa, NBA, NHL, e-sport, tenis. Analizy: `analizy/Analiza_dnia_2026-10-23_wieczor.md` (Struff – Bergs z `analizy/ZWERYFIKOWANE_Analiza_dnia_2026-10-23.md`).
+**Zakres (wybór użytkownika):** Top 5 lig + Ekstraklasa, NBA, NHL, e-sport, tenis. Analizy: `analizy/ZWERYFIKOWANE_Analiza_dnia_2026-10-23_wieczor.md` (Struff – Bergs z `analizy/ZWERYFIKOWANE_Analiza_dnia_2026-10-23.md`).
 **Kursy:** Betclic.pl (w EV liczy się Betclic), weryfikacja gg397.bet; pobrane 23.10 po południu, kursy pre-match i mogą się zmienić. Rozbieżności > 0,10 oznaczone w tabeli pul. Kursy gg397 dla 1X/X2/BTTS i NBA/NHL bywały wewnętrznie niespójne, więc nie traktowano ich jako wzorca.
 
 ## Terminarz w skrócie
