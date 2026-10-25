@@ -49,7 +49,31 @@ Stawka: 0% bankrolla (EV ≤ 0).
 Złamane progi: EV > 0 (poziom 1).
 Ryzyko: Nets grają na B2B, ale Pacers bez McConnella, Furphy'ego i Sheppard'a. Jets +1,5 przegrywa tylko przy wygranej MTL różnicą 2+ goli. Mecz jest na otwartym stadionie (ok. −4°C), a bramkarze nie są potwierdzeni.
 
-Pozostałe kupony wymagają poziomów luzowania 3-6, a na nie potrzebna jest Twoja zgoda (decyzja w toku).
+### Poniżej progów (poziomy 3-6, za zgodą użytkownika z 25.10)
+
+Poziom 6 (powtórzenia meczów) nic nie dodaje: pozostałe mecze nie mają drugiej rodziny rynku z kursem i p ≥ 55%. Razem są 3 kupony, a nie 10. Nie dobijano na siłę.
+
+#### Kupon 2, poziom 4 (kurs > 1,2 tylko dla jednej nogi)
+| Godz. CET | Mecz | Typ | p | Kurs | Fair | EV | Pewność | Źródło kursu |
+|---|---|---|---|---|---|---|---|---|
+| 00:00 26.10 | LAC @ OKC (25.10 USA, 19:00 ET) | Thunder ML | 85,9% | 1,105 | 1,16 | −5,1% | Ś | BettingPros, book: DraftKings |
+| 01:00 26.10 | COL @ NSH (25.10 USA, 20:00 ET) | Avalanche ML (z dogrywką) | 66,8% | 1,435 | 1,50 | −4,1% | Ś | BettingPros, book: DraftKings |
+
+Łączne p: 57,4% | Fair: 1,74 | Kurs: 1,59 | EV: −9,0%
+Stawka: 0%.
+Złamane progi: EV > 0, dwie nogi > 1,2 (poziom 4).
+Ryzyko: Avalanche grają w Nashville, a Predators są na B2B, więc w bramce NSH prawdopodobnie rezerwowy. Typ jest jednak po bramkarzu. LAC gra bez 5 rotacyjnych zawodników, a status Leonarda jest nieznany.
+
+#### Kupon 3, poziom 3 (p kuponu > 45%, nogi ≥ 55%)
+| Godz. CET | Mecz | Typ | p | Kurs | Fair | EV | Pewność | Źródło kursu |
+|---|---|---|---|---|---|---|---|---|
+| 00:00 26.10 | ORL @ NYK (25.10 USA, 19:00 ET) | Knicks ML | 72,3% | 1,323 | 1,38 | −4,3% | Ś | BettingPros, book: DraftKings |
+| 22:00 | LAL @ UTA (25.10 USA, 17:00 ET) | Lakers ML | 67,2% | 1,42 | 1,49 | −4,6% | N/Ś | BettingPros, book: DraftKings |
+
+Łączne p: 48,6% | Fair: 2,06 | Kurs: 1,88 | EV: −8,7%
+Stawka: 0%.
+Złamane progi: EV > 0, p kuponu > 50% (poziom 3).
+Ryzyko: LeBron jest Q albo Out (plecy). Magic grają bez Banchero, a Black jest Q.
 
 ## Ostrzeżenia
 - Łączne p zakłada niezależność meczów.
