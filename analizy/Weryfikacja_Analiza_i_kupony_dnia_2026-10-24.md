@@ -1,6 +1,6 @@
 # Weryfikacja analiz i kuponów z 24.10.2026 (weryfikacja 25.10 ok. 09:00)
 
-**Zweryfikowane pliki (po weryfikacji z prefiksem):** `ZWERYFIKOWANE_Kupony_10_2026-10-24.md` (10 kuponów), `ZWERYFIKOWANE_Analiza_dnia_2026-10-24.md`, `ZWERYFIKOWANE_Analiza_dnia_2026-10-24_wieczor.md`, `ZWERYFIKOWANE_Analiza_dnia_2026-10-23_wieczor.md` (domknięty Li - Krueger z weryfikacji 23.10). Niezweryfikowane: `Analiza_dnia_2026-10-25_wieczor.md` i `Kupony_10_2026-10-25_wieczor.md` (mecze jeszcze się nie odbyły).
+**Zweryfikowane pliki (po weryfikacji z prefiksem):** `ZWERYFIKOWANE_Kupony_10_2026-10-24.md` (10 kuponów), `ZWERYFIKOWANE_Analiza_dnia_2026-10-24.md`, `ZWERYFIKOWANE_Analiza_dnia_2026-10-24_wieczor.md`, `ZWERYFIKOWANE_Analiza_dnia_2026-10-23_wieczor.md` (domknięty Li - Krueger z weryfikacji 23.10). Niezweryfikowane: `Analiza_dnia_2026-10-25_wieczor.md` i `ZWERYFIKOWANE_Kupony_10_2026-10-25_wieczor.md` (zweryfikowane 26.10; mecze jeszcze się nie odbyły).
 
 **Źródła wyników i jakość danych:**
 - Piłka (PL, La Liga, Serie A, Bundesliga, Ligue 1), NBA, NHL, tenis: ESPN scoreboard (**jedno źródło**). Tenis: ESPN miesza dni i rundy, więc wyniki półfinałów wzięto z wyników zawodników i sprawdzono z zaplanowanymi finałami (Fritz - Musetti, Griekspoor - Struff, Basilaszwili - Medwiediew, Fernandez - Rybakina, Siniakova - Krueger), które są spójne.
