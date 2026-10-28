@@ -49,4 +49,4 @@ Zapisz wynik w `analizy/Kupony_10_<RRRR-MM-DD>.md` (dla zakresu dat: data począ
 4. 10 (lub mniej) kuponów w formacie `bet-slip-builder`.
 5. Ostrzeżenia: założenie niezależności, nogi z niepotwierdzoną przewagą, kursy mogące zmienić się do startu, składy do potwierdzenia przed meczem.
 
-W odpowiedzi dla użytkownika podaj krótkie podsumowanie: liczba wydarzeń, liczba spełnionych kuponów, 3 najlepsze kupony, ścieżka pliku. Weryfikacją po meczach zajmie się `predictions-verifier` (osobno, na prośbę).
+W odpowiedzi dla użytkownika podaj krótkie podsumowanie: liczba wydarzeń, liczba spełnionych kuponów, tabela wszystkich kuponów z poziomem luzowania przy każdym (wymaganie użytkownika z 26.10.2026; nie tylko 3 najlepsze), ścieżka pliku. Weryfikacją po meczach zajmie się `predictions-verifier` (osobno, na prośbę).
