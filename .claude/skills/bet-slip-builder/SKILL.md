@@ -43,6 +43,8 @@ Odrzuć kandydatów:
 
 | Poziom | Co luzujesz | Nowy próg | Stawka |
 |---|---|---|---|
+| -2 | Tylko pojedyncze (od 27.10.2026) | Kupon z jedną nogą (single); zasady jak w poziomie -1: EV > 0 nogi z kursem rynku, p i limity kursu nie są progiem, fair nogi > 1.15; ranking malejąco po EV; jedna noga = jeden kupon | Kelly 1/4 (p niskie) |
+| -1 | p i kursy (tryb EV; od 26.10.2026) | EV > 0 zestawu i każdej nogi z kursem rynku; p zestawu i nóg nie jest progiem; bez limitów kursu zestawu i kursu nogi (ani 1.5-2.5, ani "2 nogi > 1.2"); fair nogi nadal > 1.15; ranking malejąco po EV | Kelly 1/4 (p niskie) |
 | 0 | Bazowe | EV > 0, p > 50%, kurs zestawu 1.5-2.5, 2 nogi > 1.2 | Kelly 1/4-1/2 |
 | 1 | EV | EV ≥ -5% (tylko marża); ranking po EV, przy remisie po p | 0% |
 | 2 | EV | bez limitu EV; ranking malejąco po p | 0% |
@@ -51,6 +53,8 @@ Odrzuć kandydatów:
 | 5 | dolny kurs zestawu | > 1.4 (zamiast 1.5) | 0% |
 | 6 | powtórzenia | ten sam mecz w 2 zestawach, tylko z różnych rodzin rynków (nigdy dwie nogi z rynku wyniku) | 0% |
 
+- **Poziom -2 (single EV) to osobna ścieżka tak samo jak -1 i podlega tym samym zasadom** (zgoda użytkownika, pokaz osobno, "Nie luzuj nigdy", "przewaga niepotwierdzona", fallback kursów); różni się tylko tym, że kupony mają jedną nogę.
+- **Poziom -1 (tryb EV) to osobna ścieżka, nie kolejny stopień luzowania:** wybierasz ją na prośbę użytkownika, albo gdy poziomy 0-2 nie dały kuponów, i tylko za jego zgodą. Pokaż go osobno, pod pozostałymi. Zasady "Nie luzuj nigdy" obowiązują bez zmian: EV > 0, które bierze się tylko z p wyższego od rynku o > 5 pp bez twardej informacji, oznacz "przewaga niepotwierdzona", a kursy spoza Betclic jako fallback. Przy niskim łącznym p zestawu podaj je wprost obok EV (wariancja jest wysoka). Stawkę Kelly'ego dla nogi oznaczonej "przewaga niepotwierdzona" licz z p ściągniętym do p rynku + 5 pp (nie z p modelu); jeśli po tej korekcie EV ≤ 0, stawka 0% (weryfikacja 26-28.10: 17 takich nóg trafiło 9, czyli 53%, przy średnim p modelu ok. 65%; single'e z 27.10 z deklarowanym EV +10-36% i stawkami Kelly'ego 3,7-9,1% dały 5/10 i ok. -12% przy stałej stawce).
 - **Poziomy 0-2 stosuj automatycznie**, po kolei i tylko do najniższego poziomu, który daje żądaną liczbę zestawów. **Poziomy 3-6 tylko za zgodą użytkownika** (decyzja z 22.10.2026, wcześniej 20.10 wszystkie były automatyczne): gdy poziomy 0-2 nie dają żądanej liczby zestawów, zatrzymaj się, pokaż co powstało, powiedz ile zestawów dałby poziom 3 (i kolejne) i zapytaj, czy luzować dalej. Poziomy 3-6 obniżają jakość (w weryfikacji 07.10 pozycje z p 55-66% przegrywały często); po zgodzie oznaczaj je wyraźnie jako "poniżej progów" z podanym poziomem.
 - Przy każdym zestawie podaj poziom luzowania i które progi złamano. Zestawy poniżej progów pokaż osobno, pod bazowymi.
 - Kupon z EV ≤ 0 ma stawkę 0%.

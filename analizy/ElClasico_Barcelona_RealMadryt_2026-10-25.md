@@ -1,6 +1,6 @@
 # El Clásico: FC Barcelona – Real Madryt, 25.10.2026, 21:00 CET (Spotify Camp Nou)
 
-Analiza skillem `football-analyst`, aktualizacja 25.10 po południu (poranna wersja: `analizy/Analiza_dnia_2026-10-25_wieczor.md`). Składy niepotwierdzone (ok. 20:00 CET).
+Analiza skillem `football-analyst`, aktualizacja 25.10 po południu (poranna wersja: `analizy/ZWERYFIKOWANE_Analiza_dnia_2026-10-25_wieczor.md`). Składy niepotwierdzone (ok. 20:00 CET).
 
 ### 21:00 FC Barcelona – Real Madryt (La Liga, 10. kolejka) – aktualizacja 25.10 popołudnie
 

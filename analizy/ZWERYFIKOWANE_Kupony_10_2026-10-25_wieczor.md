@@ -1,6 +1,6 @@
 # Kupony 25.10.2026 wieczór (18:00 – 26.10 06:00, czas polski CET)
 
-**Analizy:** `analizy/Analiza_dnia_2026-10-25_wieczor.md`.
+**Analizy:** `analizy/ZWERYFIKOWANE_Analiza_dnia_2026-10-25_wieczor.md`.
 **Kursy:** Betclic.pl i gg397.bet niedostępne z tego środowiska (CloudFront 403 po stronie serwisów). Fallback: **BettingPros API**, kurs nogi z DraftKings, a gdy brak, z FanDuel lub BetMGM, z oznaczeniem bukmachera. To kursy amerykańskie, zwykle wyższe niż w polskich serwisach. Przed postawieniem sprawdź kurs u siebie. Pobrane 25.10 o 07:47 CET (06:47 UTC).
 **Dostępne rynki z kursem:** NBA (moneyline, spread, total), NHL (moneyline z dogrywką, puck line, total), piłka (1X2 i jedna linia totalu). Bez kursu, więc poza kuponami: e-sport, totale drużyn, rożne, kartki, BTTS, podwójna szansa.
 

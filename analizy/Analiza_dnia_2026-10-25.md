@@ -1,6 +1,6 @@
 # Analiza dnia 25.10.2026, piłka nożna: Top 5 lig + Ekstraklasa (czas polski CET)
 
-**Zakres:** 21 meczów od 12:15 do 17:30. Cztery mecze wieczorne (Lecce – Juventus, Real Sociedad – Levante, Udinese – Milan, Barcelona – Real) są w `analizy/Analiza_dnia_2026-10-25_wieczor.md`.
+**Zakres:** 21 meczów od 12:15 do 17:30. Cztery mecze wieczorne (Lecce – Juventus, Real Sociedad – Levante, Udinese – Milan, Barcelona – Real) są w `analizy/ZWERYFIKOWANE_Analiza_dnia_2026-10-25_wieczor.md`.
 **Źródła:** ESPN API (tabele, H2H, boxscore'y: strzały, rożne, faule, kartki; kursy DraftKings), WebSearch (newsy, składy, sędziowie), BettingPros API (kursy). Serwer `sportsdata` się nie połączył. Betclic.pl i gg397.bet odrzucają połączenia z tego serwera (CloudFront 403). Brak xG we wszystkich meczach. Ekstraklasy nie ma w ESPN ani BettingPros, więc analizy bez kursów (decyzja użytkownika).
 **Stan na:** 25.10, ok. 08:30-09:30. Składy do potwierdzenia ok. 1 h przed meczem.
 

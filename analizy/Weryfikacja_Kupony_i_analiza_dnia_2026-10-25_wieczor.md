@@ -1,6 +1,6 @@
 # Weryfikacja kuponów i analizy z 25.10.2026 wieczór (weryfikacja 26.10 ok. 06:40)
 
-**Pliki:** `ZWERYFIKOWANE_Kupony_10_2026-10-25_wieczor.md` (3 kupony, wszystkie rozstrzygnięte; po weryfikacji z prefiksem). `Analiza_dnia_2026-10-25_wieczor.md` - **weryfikacja częściowa, bez prefiksu**: brakuje e-sportu (LoL Worlds Swiss R3 x4, CS2 PGL Bucharest R2 x2; nie znaleziono źródła wyników, PandaScore bez klucza, WebSearch bez wyników, Dotesports bez treści) oraz PSG - Lyon (przełożony na 26.10 20:30, jeszcze nierozegrany).
+**Pliki:** `ZWERYFIKOWANE_Kupony_10_2026-10-25_wieczor.md` (3 kupony, wszystkie rozstrzygnięte; po weryfikacji z prefiksem). `ZWERYFIKOWANE_Analiza_dnia_2026-10-25_wieczor.md` - **weryfikacja częściowa, bez prefiksu**: brakuje e-sportu (LoL Worlds Swiss R3 x4, CS2 PGL Bucharest R2 x2; nie znaleziono źródła wyników, PandaScore bez klucza, WebSearch bez wyników, Dotesports bez treści) oraz PSG - Lyon (przełożony na 26.10 20:30, jeszcze nierozegrany).
 
 **Źródła wyników:** ESPN scoreboard (**jedno źródło**) dla piłki, NBA i NHL. Wszystkie 5 meczów NHL zakończyło się w 3 tercjach (rozliczenie 60' = z dogrywką). Rożne, kartki, faule, rynki zawodnika i rynki drużynowe poza tabelami kandydatów nie były sprawdzane.
 
@@ -59,7 +59,7 @@ Pasma p: 50-60%: 8/16 (8,95); 60-70%: 11/16 (10,38); 70-80%: 17/22 (16,41); 80%+
 - **NBA spread z linią szacowaną przez model:** 24.10 2/6, 25.10 1/5, razem 3/11 przy ok. 6,8. Brak linii rynkowych, więc kupony ich nie używają; sprawdzić, czy `nba-analyst` powinien wymagać linii rynkowej przed wyceną spreadu (próba ≥ 15).
 - **Piłka: nogi skorelowane z jednego meczu (Barcelona 1X2, 1X, Over 1,5 Barcelony):** to jedno zdarzenie liczone trzy razy w puli; interpretować bilans puli z tą korektą.
 - **Tenis, UFC:** brak nowych danych w tym przebiegu.
-- **Jakość danych:** piłka, NBA, NHL z jednego źródła (ESPN); e-sport i PSG - Lyon nierozliczone (uzupełnić po dostępności wyników, wtedy dodać prefiks `ZWERYFIKOWANE_` do `Analiza_dnia_2026-10-25_wieczor.md`).
+- **Jakość danych:** piłka, NBA, NHL z jednego źródła (ESPN); e-sport i PSG - Lyon nierozliczone (uzupełnić po dostępności wyników, wtedy dodać prefiks `ZWERYFIKOWANE_` do `ZWERYFIKOWANE_Analiza_dnia_2026-10-25_wieczor.md`).
 
 Propozycja commita: "Weryfikacja kuponów z 25.10.2026 wieczór (bez zmian w skillach)".
 

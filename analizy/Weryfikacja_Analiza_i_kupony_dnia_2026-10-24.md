@@ -1,12 +1,12 @@
 # Weryfikacja analiz i kuponów z 24.10.2026 (weryfikacja 25.10 ok. 09:00)
 
-**Zweryfikowane pliki (po weryfikacji z prefiksem):** `ZWERYFIKOWANE_Kupony_10_2026-10-24.md` (10 kuponów), `ZWERYFIKOWANE_Analiza_dnia_2026-10-24.md`, `ZWERYFIKOWANE_Analiza_dnia_2026-10-24_wieczor.md`, `ZWERYFIKOWANE_Analiza_dnia_2026-10-23_wieczor.md` (domknięty Li - Krueger z weryfikacji 23.10). Niezweryfikowane: `Analiza_dnia_2026-10-25_wieczor.md` i `ZWERYFIKOWANE_Kupony_10_2026-10-25_wieczor.md` (zweryfikowane 26.10; mecze jeszcze się nie odbyły).
+**Zweryfikowane pliki (po weryfikacji z prefiksem):** `ZWERYFIKOWANE_Kupony_10_2026-10-24.md` (10 kuponów), `ZWERYFIKOWANE_Analiza_dnia_2026-10-24.md`, `ZWERYFIKOWANE_Analiza_dnia_2026-10-24_wieczor.md`, `ZWERYFIKOWANE_Analiza_dnia_2026-10-23_wieczor.md` (domknięty Li - Krueger z weryfikacji 23.10). Niezweryfikowane: `ZWERYFIKOWANE_Analiza_dnia_2026-10-25_wieczor.md` i `ZWERYFIKOWANE_Kupony_10_2026-10-25_wieczor.md` (zweryfikowane 26.10; mecze jeszcze się nie odbyły).
 
 **Źródła wyników i jakość danych:**
 - Piłka (PL, La Liga, Serie A, Bundesliga, Ligue 1), NBA, NHL, tenis: ESPN scoreboard (**jedno źródło**). Tenis: ESPN miesza dni i rundy, więc wyniki półfinałów wzięto z wyników zawodników i sprawdzono z zaplanowanymi finałami (Fritz - Musetti, Griekspoor - Struff, Basilaszwili - Medwiediew, Fernandez - Rybakina, Siniakova - Krueger), które są spójne.
 - Ekstraklasa: kilka serwisów polskich zgodnych (sportowefakty.wp.pl, ekstraklasa.org, eska.pl; Wisła - Raków osobno: pilkanozna.pl, Interia, mecze24.pl).
 - UFC 333: **jedno źródło (Wikipedia)**; Sherdog 404, Tapology 403, MCP `ufc_*` zwróciło bot-challenge.
-- CS2 (PGL Masters Bucharest R1): HLTV, skin.club, offstage.ru (zgodne); G2 - NAVI i FURIA - DENDELE dodatkowo potwierdzone w `Analiza_dnia_2026-10-25_wieczor.md` (inne źródła tamtego przebiegu).
+- CS2 (PGL Masters Bucharest R1): HLTV, skin.club, offstage.ru (zgodne); G2 - NAVI i FURIA - DENDELE dodatkowo potwierdzone w `ZWERYFIKOWANE_Analiza_dnia_2026-10-25_wieczor.md` (inne źródła tamtego przebiegu).
 - LoL Worlds Swiss R2: GosuGamers, Dot Esports, Hotspawn, Liquipedia-opisy (zgodne). **Streszczenie z Wikipedii (model) odrzucone**; patrz błąd z weryfikacji 23.10.
 - **Nierozliczone:** Miedwiediew - Bublik (Almaty SF): Bublik kreczował w trakcie 1. seta (ESPN: gem 3 do 6), reguły bukmacherów różne, noga p 62% poza bilansem. Rożne, kartki, faule i rynki zawodnika (m.in. McDavid O0,5 pkt, kartki Wisła/Atlético) nie sprawdzano (brak źródła/linii w dokumentach).
 - Typy dokumentów mają różne p dla tego samego rynku (np. dzienna i wieczorna analiza). Dla nóg kuponów użyto p z `Kupony_10_2026-10-24.md`; dla reszty puli p z analizy, a przy duplikacie (ten sam mecz i rynek w obu plikach) jednego wpisu (dziennej).
