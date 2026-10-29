@@ -3,8 +3,8 @@
 **Pliki:**
 - `Kupony_10_2026-10-25.md` (10 kuponów DC, wszystkie rozstrzygnięte; po weryfikacji z prefiksem `ZWERYFIKOWANE_`);
 - `Kupony_ElClasico_2026-10-25.md` (single'e rozstrzygnięte; po weryfikacji z prefiksem);
-- `Analiza_dnia_2026-10-25.md` - **weryfikacja częściowa, bez prefiksu**: brakuje 3 meczów Ekstraklasy (Śląsk - Wieczysta, Jagiellonia - Wisła Płock, Legia - Lech); WebSearch nie zwrócił wyników z 25.10.2026, ESPN nie obsługuje ligi. Uzupełnić po znalezieniu wyniku (Flashscore/ekstraklasa.org), wtedy dodać prefiks;
-- `ElClasico_Barcelona_RealMadryt_2026-10-25.md` - rozliczono tylko rynki z kuponów; rynki kartek, fauli i strzałów meczowych nie były sprawdzane, **bez prefiksu**.
+- `ZWERYFIKOWANE_Analiza_dnia_2026-10-25.md` - **weryfikacja częściowa, bez prefiksu**: brakuje 3 meczów Ekstraklasy (Śląsk - Wieczysta, Jagiellonia - Wisła Płock, Legia - Lech); WebSearch nie zwrócił wyników z 25.10.2026, ESPN nie obsługuje ligi. Uzupełnić po znalezieniu wyniku (Flashscore/ekstraklasa.org), wtedy dodać prefiks;
+- `ZWERYFIKOWANE_ElClasico_Barcelona_RealMadryt_2026-10-25.md` - rozliczono tylko rynki z kuponów; rynki kartek, fauli i strzałów meczowych nie były sprawdzane, **bez prefiksu**.
 
 **Źródła wyników:** ESPN scoreboard i summary (**jedno źródło**) dla 19 meczów piłkarskich i boxscore Clásico (rożne, celne strzały Mbappé). Nie rozliczano rożnych, kartek i fauli poza Clásico; nie liczono nóg `DNB` (zwroty przy remisie/porażce nie były osobno oznaczone).
 Mecze wieczorne (Lecce, Real Sociedad, Udinese, Barcelona) były już rozliczone w `Weryfikacja_Kupony_i_analiza_dnia_2026-10-25_wieczor.md`; tu wchodzą ponownie tylko jako nogi kuponów DC (kupony nie były tam weryfikowane), więc bilansów obu raportów **nie sumować**.
@@ -78,7 +78,7 @@ Pasma p: 50-60%: 11/18 (10,30); 60-70%: 28/41 (26,64); 70-80%: 31/42 (31,62); 80
 - **Faworyt/1X w kryzysie trenerskim (MU 25.10):** pierwszy przypadek; warunek zmiany: ≥ 2 podobne pudła z różnych meczów w kolejnych weryfikacjach (wtedy rozważyć obniżenie p o 3-5 pp dla faworyta z kryzysem trenerskim).
 - **Rożne w meczach wysokiej stawki (Clásico 12 rożnych vs średnia 10,3):** 1 przypadek; zapisać licznik przy kolejnych meczach prestiżowych.
 - **Mecze bezbramkowe 25.10 (4 z 22):** wysoka częstość, ale to dzień; sprawdzić, czy Over 1,5 wycenione na 73-80% w meczach z niską produkcją goli nie jest zawyżone (próba ≥ 30).
-- **Jakość danych:** wszystko z ESPN (jedno źródło); Ekstraklasa nierozliczona (3 mecze); uzupełnić i dodać prefiks `ZWERYFIKOWANE_` do `Analiza_dnia_2026-10-25.md` oraz `ElClasico_Barcelona_RealMadryt_2026-10-25.md` (po sprawdzeniu pozostałych rynków).
+- **Jakość danych:** wszystko z ESPN (jedno źródło); Ekstraklasa nierozliczona (3 mecze); uzupełnić i dodać prefiks `ZWERYFIKOWANE_` do `ZWERYFIKOWANE_Analiza_dnia_2026-10-25.md` oraz `ZWERYFIKOWANE_ElClasico_Barcelona_RealMadryt_2026-10-25.md` (po sprawdzeniu pozostałych rynków).
 
 Propozycja commita: "Weryfikacja kuponów DC i Clásico z 25.10.2026 (bez zmian w skillach)".
 

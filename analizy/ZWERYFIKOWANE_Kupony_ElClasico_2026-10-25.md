@@ -1,6 +1,6 @@
 # Kupony El Clásico: FC Barcelona – Real Madryt, 25.10.2026, 21:00 CET
 
-**Analiza:** `analizy/ElClasico_Barcelona_RealMadryt_2026-10-25.md` (`football-analyst`, aktualizacja z popołudnia 25.10). λ Barcelona 2,65, Real 1,60. Courtois wypada (grypa), w bramce Lunin. Sędzia Juan Martínez Munuera. Składy niepotwierdzone.
+**Analiza:** `analizy/ZWERYFIKOWANE_ElClasico_Barcelona_RealMadryt_2026-10-25.md` (`football-analyst`, aktualizacja z popołudnia 25.10). λ Barcelona 2,65, Real 1,60. Courtois wypada (grypa), w bramce Lunin. Sędzia Juan Martínez Munuera. Składy niepotwierdzone.
 **Kursy:** Betclic.pl i gg397.bet są niedostępne z tego środowiska (CloudFront 403). Fallback to **BettingPros API**, książki FanDuel (FD), BetMGM i Fanatics (FAN), pobrane 25.10 o 15:10 CET. To kursy rynku USA, nie Betclic. Przed postawieniem sprawdź kurs na Betclic.
 **Status:** zaktualizowane po składach (ESPN, 20:06 CET). Kursy odświeżone o 20:06 CET (BettingPros).
 

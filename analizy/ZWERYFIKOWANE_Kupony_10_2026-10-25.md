@@ -1,6 +1,6 @@
 # Kupony 25.10.2026, piłka nożna: Top 5 lig + Ekstraklasa (czas polski CET)
 
-**Analizy:** `analizy/Analiza_dnia_2026-10-25.md` (21 meczów, 12:15-17:30) i sekcje piłkarskie `analizy/ZWERYFIKOWANE_Analiza_dnia_2026-10-25_wieczor.md` (4 mecze wieczorne).
+**Analizy:** `analizy/ZWERYFIKOWANE_Analiza_dnia_2026-10-25.md` (21 meczów, 12:15-17:30) i sekcje piłkarskie `analizy/ZWERYFIKOWANE_Analiza_dnia_2026-10-25_wieczor.md` (4 mecze wieczorne).
 **Kursy:** Betclic.pl i gg397.bet odrzucają połączenia z tego środowiska (CloudFront 403). Fallback:
 - **BettingPros API** dla Premier League, La Liga, Serie A i Bundesligi (DraftKings, a gdy brak, FanDuel lub BetMGM);
 - **DraftKings przez ESPN API** dla Ligue 1.
