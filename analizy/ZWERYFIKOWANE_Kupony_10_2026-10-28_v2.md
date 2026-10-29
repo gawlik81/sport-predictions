@@ -1,6 +1,6 @@
 # Kupony 28.10.2026, poziom -2 (pojedyncze, tryb EV)
 
-Uzupełnienie `Kupony_10_2026-10-28.md` (kupony 1-4, poziomy 0-1). Poziom -2 użyty **za zgodą użytkownika** (27.10.2026). To osobna ścieżka: kupon = jedna noga, EV > 0 z kursem rynku, fair nogi > 1,15, p i limity kursu nie są progiem, ranking po EV, stawka 1/4 Kelly.
+Uzupełnienie `ZWERYFIKOWANE_Kupony_10_2026-10-28.md` (kupony 1-4, poziomy 0-1). Poziom -2 użyty **za zgodą użytkownika** (27.10.2026). To osobna ścieżka: kupon = jedna noga, EV > 0 z kursem rynku, fair nogi > 1,15, p i limity kursu nie są progiem, ranking po EV, stawka 1/4 Kelly.
 
 ## Źródło i zasady wyboru
 - Kursy: **BettingPros (konsensus), NIE Betclic i NIE gg397.bet**; pobrane 27.10 ok. 20:30-20:45 CET. Na Betclic kursy będą niższe, więc EV spadnie, możliwe że poniżej zera.
