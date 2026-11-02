@@ -65,6 +65,7 @@ Brak jeszcze zweryfikowanych typów NHL w `analizy/`, więc korzystaj z ogólnyc
 - **Forma faworyta jest już w kursie.** Nie obniżaj p faworyta za serię słabych meczów; zmienić p może konkretna informacja (bramkarz, kontuzja). Korekta "kryzysowa" dotyczy tylko underdoga. Zwróć uwagę na PDO: seria zwycięstw przy PDO > 102 to szczęście, nie siła.
 - **Puck line -1.5 nie jest "bezpieczniejszą wygraną":** faworyt wygrywa o 2+ gole tylko w ok. 30-40% meczów (gole w pustą bramkę zawyżają różnice); +1.5 ma wysokie p, ale krótki kurs - sprawdź fair odds ≤ 1.15.
 - **Bramkarz niepotwierdzony = pewność najwyżej średnia** dla zwycięzcy i totalu, a rynek bramkarza bez potwierdzenia dostaje niską pewność i nie wchodzi do kuponu.
+- **Under 4,5 z modelu Poissona bez konkretu nie jest przewagą:** nie schodź z p poniżej rynku o >3 pp (Poisson z λ z kilku ostatnich meczów zaniża ogon wysokich wyników). (Weryfikacja 29-30.10.2026: 8 nóg Under 4,5 przy p modelu 26-35% i rynku 20-27% padło 0/8, wyniki 5, 5, 5, 7, 7, 7, 7, 13 goli; wcześniej nogi z "przewagą niepotwierdzoną" 53% przy p ok. 65%.)
 - **Total goli:** Over/Under wymaga konkretu (bramkarz, absencje, back-to-back obu drużyn); ceny ukrywają dogrywkę, więc sprawdź, czy rynek liczy gole w OT (gol z karnych zwykle nie liczy się do totalu).
 - **Rynki zawodnika:** pułap pewności "wysoka" tylko przy potwierdzonym składzie, linii i roli na PP; kolejne rynki tego samego zawodnika (strzały + punkty) są skorelowane.
 - **Typy z fair odds ≤ 1.15** pomijaj w rankingach.

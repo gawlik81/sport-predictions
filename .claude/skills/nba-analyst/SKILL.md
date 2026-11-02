@@ -66,6 +66,7 @@ Brak jeszcze zweryfikowanych typów NBA w `analizy/`, więc korzystaj z ogólnyc
 - **Wyrównane mecze** (p 45-55%, spread poniżej 3 pkt) oznacz jako "brak mocnego typu" - to uczciwa informacja, nie porażka analizy.
 - **Early season i pierwszy mecz po zmianie składu:** podnieś SD i obniż pewność; nie wyciągaj mocnych wniosków z 3-5 meczów.
 - **Wolne tempo + dwie świetne obrony** nie wystarczą do Under, jeśli rynek już to uwzględnia; potrzebujesz konkretu (brak strzelca, back-to-back obu drużyn, sędzia o niskiej liczbie rzutów wolnych).
+- **Total drużyny Under poniżej linii rynku o >2 pkt bez konkretu (nieobecny strzelec, b2b obu drużyn) to przesunięcie modelu, nie przewaga:** ściągnij p do rynku +3 pp. (Weryfikacja 30-31.10.2026: 6 nóg total drużyny Under z p 55-61% przy rynku ok. 50% padło 2/6; MIA 145, ORL 121, MIN 127, PHX 120 pkt; próba 3-6 meczów na drużynę.)
 - **Rynki zawodnika:** pułap pewności "wysoka" tylko przy potwierdzonym składzie i minutach; spread ≥ 10 = ryzyko blowoutu, który obniża minuty; kolejne rynki tego samego zawodnika (punkty + PRA) są skorelowane, nie traktuj ich jak niezależnych.
 - **Typy z fair odds ≤ 1.15** pomijaj w rankingach.
 
