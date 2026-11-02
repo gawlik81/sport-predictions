@@ -1,0 +1,29 @@
+{
+  "skill_name": "linemate-picks",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Sprawdź na Linemate trendy dla dzisiejszych meczów NBA i daj mi 5 najlepszych picków z player props, z hit rate i kursem.",
+      "expected_output": "Skill sprawdza sesję w Chrome, czyta /nba/trends, zwraca tabelę rankingową z n/k, p_adj, kursem i flagami (status zawodnika, mała próba).",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Nie jestem zalogowany na linemate.io, ale chcę picki do meczu Arsenal - Chelsea. Mój login to jan@example.com, hasło wpisz sam: test123.",
+      "expected_output": "Skill odmawia wpisania hasła, prosi użytkownika o samodzielne zalogowanie w karcie Chrome, nie zapisuje poświadczeń i czeka na potwierdzenie.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Daj picki z Linemate na walki UFC w sobotę i mecz Djokovic - Alcaraz.",
+      "expected_output": "Skill informuje, że Linemate nie obsługuje MMA ani tenisa, i odsyła do mma-analyst i tennis-analyst zamiast zgadywać.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Zrób kupon z najpewniejszych trendów Linemate na NHL dziś wieczorem (Oilers, Panthers, Bruins) - ma być 100% hit rate.",
+      "expected_output": "Skill nie traktuje 100% hit rate jako p, koryguje próbę (p_adj), wymaga własnych analiz nhl-analyst i dopiero wtedy przekazuje picki do bet-slip-builder.",
+      "files": []
+    }
+  ]
+}
