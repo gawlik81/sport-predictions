@@ -1,7 +1,7 @@
 # Weryfikacja kuponów z 02.11 i 03.11.2026 (piłka, NBA, NHL, tenis, CS2)
 
 **Zweryfikowane pliki:** `Kupony_10_2026-11-02.md` (kupony A-F z pkt 7, pula EV z pkt 3 i kupon trybu -1; **częściowo**), `Kupony_10_2026-11-03.md` (lista 20 predykcji poziomu 7; **częściowo**), `Kupony_10_2026-11-03_v2.md` (NHL, noc 03→04.11: kupony 1-6 i lista 17 pojedynczych; **w całości**, po zmianie nazwy `ZWERYFIKOWANE_`).
-**Nie oznaczone:** `Kupony_10_2026-11-02.md` (brak wyników Ekstraklasy: Zagłębie - Korona, Radomiak - Śląsk, Raków - Pogoń; flashscore/sofascore nie zwracają listy meczów, WebSearch bez wyników) i `Kupony_10_2026-11-03.md` (brak noga #19 Kouamé - Davidovich Fokina). Pliki `Analiza_*` z 02-03.11 nie były rozliczane (tylko nogi kuponów).
+**Nie oznaczone:** `Kupony_10_2026-11-02.md` (brak wyników Ekstraklasy: Zagłębie - Korona, Radomiak - Śląsk, Raków - Pogoń; flashscore/sofascore nie zwracają listy meczów, WebSearch bez wyników) i `Kupony_10_2026-11-03.md` (brak noga #19 Kouamé - Davidovich Fokina; uzupełnione 05.11: mecz nie istnieje, plik oznaczony `ZWERYFIKOWANE_`). Pliki `Analiza_*` z 02-03.11 nie były rozliczane (tylko nogi kuponów).
 **Źródła wyników:** ESPN scoreboard (piłka LM/PL/LaLiga/Serie A/Ligue 1, NBA, NHL, tenis; jedno źródło), CS2 IEM Beijing z esports.ru (jedno źródło; HLTV i Liquipedia 403). Piłka po 90 minutach, NHL moneyline i puck line z dogrywką/karnymi, total NHL bez karnych.
 **Uwaga o danych:** w ESPN (ATP Paryż 03.11) Kouamé zagrał z Borgesem (0-2, 3-6 1-6), a nie z Davidovichem Fokiną. Możliwy błąd danych wejściowych w analizie tenisowej (zły rywal lub runda); nogi nie rozliczono, ale należy sprawdzić źródło terminarza.
 
