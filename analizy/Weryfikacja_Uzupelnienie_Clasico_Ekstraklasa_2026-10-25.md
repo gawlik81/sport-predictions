@@ -34,7 +34,7 @@ Bez zmian: brak ustalonego błędu procesu, wszystkie pudła blisko oczekiwań l
 ## Do obserwacji
 - **Kryzys underdoga (football-analyst):** Śląsk (kryzys, p wygranej 33,5%) wygrał 2-0. Zapisać jako jeden przypadek; zmieniać regułę dopiero po ≥ 3 podobnych przypadkach w kolejnych weryfikacjach.
 - **Rożne/faule w meczach o wysokiej stawce (Clásico):** wszystkie linie Over trafione. Warunek: sprawdzić na kolejnych 3-5 meczach top-ligi, czy średnie rożnych/fauli w analizie są systematycznie za niskie.
-- **Nadal nierozliczone:** Osaka - Pohankova (WTA Tokio, 29.10 05:45 UTC, w chwili sprawdzenia "Scheduled") i Morrow - VIT.A (ESEA bo1, 28.10; brak w PandaScore, Profilerr i esports.ru). Dopóki ich brak, `Analiza_dnia_2026-10-28.md` i `Analiza_dnia_2026-10-28_v2.md` zostają bez prefiksu.
+- **Nadal nierozliczone:** Osaka - Pohankova (WTA Tokio, 29.10 05:45 UTC, w chwili sprawdzenia "Scheduled") i Morrow - VIT.A (ESEA bo1, 28.10; brak w PandaScore, Profilerr i esports.ru). Dopóki ich brak, `ZWERYFIKOWANE_Analiza_dnia_2026-10-28.md` i `ZWERYFIKOWANE_Analiza_dnia_2026-10-28_v2.md` zostają bez prefiksu.
 
 Propozycja commita: "Uzupełnienie weryfikacji 25.10.2026 (El Clásico, Ekstraklasa) i oznaczenie plików".
 

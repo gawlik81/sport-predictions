@@ -2,8 +2,8 @@
 
 **Pliki:**
 - `ZWERYFIKOWANE_Kupony_10_2026-10-28.md` (kupony 1-4, puck line NHL; nogi rozliczone już 28.10, uzupełnione singlami), `ZWERYFIKOWANE_Kupony_10_2026-10-28_v2.md` (singles poziomu -2; brakowały nr 5, 6, 14, teraz rozliczone), `ZWERYFIKOWANE_Kupony_10_2026-10-28_v3.md` (8 kuponów, puchary, Serie A, kursy Betclic), `ZWERYFIKOWANE_Kupony_10_2026-10-28_v4.md` (NBA, kursy Betclic) oraz `ZWERYFIKOWANE_Analiza_nocy_2026-10-28.md` (NBA 12, NHL 4, LoL IG - LYON): wszystko rozstrzygnięte, **po weryfikacji z prefiksem `ZWERYFIKOWANE_`**. W analizie nocnej rynków zawodnika NBA sprawdzono tylko dla meczu IND - PHI (Maxey, Siakam, Embiid), reszty nie rozliczano.
-- `Analiza_dnia_2026-10-28_v2.md`: rozliczona (Serie A, Carabao, DFB-Pokal, Puchar Polski, ATP Wiedeń i Bazylea, CS2, LoL, Dota 2), ale **bez prefiksu**: brak Morrow - VIT.A (ESEA bo1, nie ma w PandaScore) i nie sprawdzono rożnych/kartek/fauli ani total gemów.
-- `Analiza_dnia_2026-10-28.md` (wersja z 27.10): **bez prefiksu**. Osaka - Pohankova (WTA Tokio, 1/8) przełożona na 29.10, 05:40 UTC (ESPN: Scheduled), więc nierozegrana. Reszta jej meczów pokrywa się z `_v2`.
+- `ZWERYFIKOWANE_Analiza_dnia_2026-10-28_v2.md`: rozliczona (Serie A, Carabao, DFB-Pokal, Puchar Polski, ATP Wiedeń i Bazylea, CS2, LoL, Dota 2), ale **bez prefiksu**: brak Morrow - VIT.A (ESEA bo1, nie ma w PandaScore) i nie sprawdzono rożnych/kartek/fauli ani total gemów.
+- `ZWERYFIKOWANE_Analiza_dnia_2026-10-28.md` (wersja z 27.10): **bez prefiksu**. Osaka - Pohankova (WTA Tokio, 1/8) przełożona na 29.10, 05:40 UTC (ESPN: Scheduled), więc nierozegrana. Reszta jej meczów pokrywa się z `_v2`.
 - Ekstraklasa 25.10 i El Clásico zostały uzupełnione później: patrz `Weryfikacja_Uzupelnienie_Clasico_Ekstraklasa_2026-10-25.md` (oba pliki mają już prefiks).
 
 **Źródła wyników:** ESPN scoreboard (**jedno źródło**) dla Serie A, Carabao Cup, DFB-Pokal, NBA, NHL, ATP i boxscore'u IND - PHI; PandaScore (MCP `sportsdata`, **jedno źródło**) dla CS2, LoL, Dota 2; Puchar Polski z WebSearch (igol.pl, gol24.pl, sportowefakty.wp.pl, interia.pl; wyniki spójne w kilku źródłach). Wynik po 90 minutach dla Tychy - Siedlce (2-2, dogrywka 4-2) i Puszcza - Wisła (1-1, dogrywka 1-2) z relacji. Kiel - Hoffenheim: 1-1 (karne 4-3), wyniku po 90' nie ustalono, rozliczono tylko awans.
@@ -98,7 +98,7 @@ Zestawy v3 K3-K8 i v4 miały EV ujemne (od -11% do -20% względem Betclic) i sta
 - **DFB-Pokal, gole:** 28.10 bramek 2, 5, 1, 2, 7, 7, 2, 2 (w sumie 28 w 8 meczach), bez porównania z λ modelu; powiązanie z uwagą z poprzedniej weryfikacji (+1,0 odch. std.) do dalszego śledzenia po kolejnych rundach.
 - **NHL puck line +1,5:** ok. 21/32 przy ok. 22,5; ostatnie 4: 1/4. Bez sygnału (zasięg próby).
 - **NBA zwycięzca:** 9/11 (7,6) w tej kolejce; razem z poprzednią 16/22 przy 15,1. Bez zmian.
-- **Osaka - Pohankova (29.10) i Morrow - VIT.A:** uzupełnić i dopiero wtedy dodać prefiks do `Analiza_dnia_2026-10-28.md` i `Analiza_dnia_2026-10-28_v2.md`.
+- **Osaka - Pohankova (29.10) i Morrow - VIT.A:** uzupełnić i dopiero wtedy dodać prefiks do `ZWERYFIKOWANE_Analiza_dnia_2026-10-28.md` i `ZWERYFIKOWANE_Analiza_dnia_2026-10-28_v2.md`.
 - **Jakość danych:** piłka, NBA, NHL, tenis z jednego źródła (ESPN), e-sport z jednego źródła (PandaScore). Puchar Polski z kilku portali (WebSearch). Kursy v3/v4 z Betclic (przeglądarka), singles i kupony 1-4 z BettingPros; gg397.bet nie sprawdzano.
 
 Propozycja commita: "Weryfikacja kuponów i analiz z 28.10.2026 (puchary, tenis, NBA/NHL, e-sport)".
