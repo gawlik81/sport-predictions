@@ -26,7 +26,7 @@ Skill obsługuje cztery sporty (identyfikatory `sport_id` w Superbet sprawdzone 
 | Piłka nożna | 5 | wszystkie ligi i puchary oraz **mecze reprezentacji seniorskich** (pomiń juniorskie, rezerwowe, wirtualne) | `football-analyst` | `poisson.py`, `markets.py` |
 | Koszykówka NBA + reprezentacje | 4 | NBA: `tournament_id` 164; **mecze reprezentacji seniorskich** (kwalifikacje, turnieje FIBA); inne ligi klubowe tylko na prośbę | `nba-analyst` | `nba_model.py`, `nba_props.py` |
 | Hokej NHL + reprezentacje | 3 | NHL: `tournament_id` 139; **mecze reprezentacji seniorskich** (turnieje międzynarodowe, np. Euro Hockey Tour; widziano turniej 1888); inne ligi klubowe tylko na prośbę | `nhl-analyst` | `nhl_model.py`, `nhl_props.py` |
-| Siatkówka | 1 | ligi seniorskie (np. PlusLiga, SuperLega) **i mecze reprezentacji seniorskich** (Liga Narodów, kwalifikacje, turnieje); mecze (K) to kobiety | **brak dedykowanego skilla** (patrz niżej) | `esports-analyst/scripts/series.py <p_seta...> --bo 3\|5` |
+| Siatkówka | 1 | ligi seniorskie (np. PlusLiga, SuperLega) **i mecze reprezentacji seniorskich** (Liga Narodów, kwalifikacje, turnieje); mecze (K) to kobiety | `volleyball-analyst` | `volleyball-analyst/scripts/volleyball_model.py` |
 
 **Mecze reprezentacyjne.** We wszystkich czterech dyscyplinach na listę wchodzą także mecze **reprezentacji seniorskich** (kobiecych i męskich), a filtr "tylko NBA/NHL" dotyczy wyłącznie lig klubowych. Rozpoznajesz je po tym, że obie strony to nazwy państw (np. "Łotwa · Austria", "Czechy · Szwajcaria"); wydarzenia juniorskie i młodzieżowe reprezentacji (U18, U20, U21, olimpijskie U23) nadal odrzucaj. Zasady analizy:
 - **Piłka nożna:** `football-analyst` ma osobne korekty dla reprezentacji (λ drużyny nie niżej niż ok. 0,7, łączne korekty kadrowe w dół nie więcej niż ok. 15%, Under 2.5 przy łącznym λ ≤ 2,0 najwyżej średnia pewność); nie obchodź ich.
@@ -40,7 +40,7 @@ Tenis, MMA i e-sport: tylko gdy użytkownik wyraźnie o nie poprosi (mają skill
 
 **NBA i NHL.** Wydarzenia nocne (start 00:00-04:00 czasu polskiego) mają w ofercie rynki dopiero po ich otwarciu i znikają po starcie; sprawdzaj `liczba_rynkow` > 0. Rynki NBA/NHL (spread, total, rynki zawodnika, puck line) wyceniaj skryptami z skilla analitycznego, a kupon składaj z rynków, które Superbet faktycznie ma (nie zakładaj, że rynek zawodnika istnieje).
 
-**Siatkówka (brak skilla analitycznego).** Zrób analizę według czterech filarów jak w pozostałych skillach: statystyki drużyn (miejsce w tabeli, bilans setów, siła serwisu i ataku, forma z ostatnich 5-8 meczów), H2H z ostatnich ~3 lat, informacje medialne (skład, kontuzje rozgrywającego/atakującego, rotacja, mecze europejskie w środku tygodnia, wypoczynek) i kursy Superbet. Policz p seta z ocen siły drużyn (z rynku i własnych danych), a rozkład wyniku meczu (3:0, 3:1, 3:2 / 2:0, 2:1, handicap setowy, total setów) skryptem `esports-analyst/scripts/series.py` (`--bo 3` w większości lig, `--bo 5` PlusLiga/SuperLega/liga światowa). Ponieważ nie ma zweryfikowanych reguł kalibracji dla siatkówki, **pewność tej analizy to najwyżej "średnia"**, a "niska" przy braku danych o składach lub formie (wtedy kuponu nie przygotowuj, patrz krok 3). Rynki totalu punktów i rynki zawodnika w siatkówce pomijaj. Po pierwszej weryfikacji typów dopisz lekcje do tego skilla albo utwórz `volleyball-analyst`.
+**Siatkówka.** Analizę robi `volleyball-analyst` (cztery filary, p seta z rynku przez `volleyball_model.py --from-match`, wynik w setach, handicap setowy, total setów). Skill jest nowy i **nie ma jeszcze zweryfikowanych typów**, a statystyki atak/blok/zagrywka są dostępne tylko dla topowych lig, więc pewność "wysoka" jest tam rzadka, a "niska" przy braku danych o składach i formie (wtedy kuponu nie przygotowuj, patrz krok 3). Rynki totalu punktów i rynki zawodnika w siatkówce pomijaj. Po pierwszej weryfikacji typów dopisz lekcje do `volleyball-analyst`.
 
 ## Krok 0a: lista wydarzeń o najbliższym starcie (przed pierwszym pytaniem)
 
@@ -73,7 +73,7 @@ Kursy z API publicznego bywają inne niż w interfejsie: **kurs z API to tylko s
 
 ## Krok 2: pełna analiza (skill analityczny)
 
-Wywołaj skill analityczny właściwy dla sportu (piłka: `football-analyst`, NBA: `nba-analyst`, NHL: `nhl-analyst`; siatkówka nie ma skilla, więc analizę robisz sam według "Zakresu sportów"). Zbierz składy, absencje, formę, H2H, sędziego, kursy (Superbet i inne). Zapisz analizę do `analizy/Analiza_<Mecz>_<RRRR-MM-DD>.md` (jak w repo) i dodaj kopię jako notatkę `superbet_add_note` (kind `analysis`). Przy rozbieżności z rynkiem >5 pp opisz, czego możesz nie wiedzieć, i podaj zakres p dla kilku wariantów λ (czułość), a nie jedną liczbę.
+Wywołaj skill analityczny właściwy dla sportu (piłka: `football-analyst`, NBA: `nba-analyst`, NHL: `nhl-analyst`; siatkówka: `volleyball-analyst`). Zbierz składy, absencje, formę, H2H, sędziego, kursy (Superbet i inne). Zapisz analizę do `analizy/Analiza_<Mecz>_<RRRR-MM-DD>.md` (jak w repo) i dodaj kopię jako notatkę `superbet_add_note` (kind `analysis`). Przy rozbieżności z rynkiem >5 pp opisz, czego możesz nie wiedzieć, i podaj zakres p dla kilku wariantów λ (czułość), a nie jedną liczbę.
 
 ## Krok 3: złóż kupon pod zadany kurs
 

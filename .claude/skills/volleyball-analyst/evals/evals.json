@@ -1,0 +1,9 @@
+{
+  "skill_name": "volleyball-analyst",
+  "evals": [
+    {"id": 1, "prompt": "Resovia vs Jastrzębski Węgiel w PlusLidze, kto wygra i jaki handicap setowy?", "expected_output": "Raport z bilansem meczów i setów, p seta z rynku (volleyball_model.py --from-match), wynik w setach, handicap ±1.5/±2.5, fair odds, rozgrywający i kontuzje z sieci", "files": []},
+    {"id": 2, "prompt": "Perugia vs Civitanova w SuperLedze, bo5. daj typ na zwycięzcę i total setów", "expected_output": "Wynik meczu bo5 i total setów Over/Under 3.5/4.5 z fair odds; set decydujący wyceniony osobno (--p-decider); pewność niska przy braku danych o składach", "files": []},
+    {"id": 3, "prompt": "przegląd dzisiejszych meczów siatkarskich - top 3 typy, tylko z sensownymi kursami, pamiętaj że jedna drużyna gra bez podstawowego rozgrywającego", "expected_output": "Ściągnięcie p seta drużyny bez rozgrywającego i niska pewność, ranking bez typów z fair odds <=1.15, tabela kandydatów na kupon", "files": []},
+    {"id": 4, "prompt": "Polska - Brazylia w Lidze Narodów, daj typ na handicap setowy", "expected_output": "Uwzględnia powołania i rotację w kadrach, obniżoną o jeden poziom pewność, handicap setowy i fair odds", "files": []}
+  ]
+}
