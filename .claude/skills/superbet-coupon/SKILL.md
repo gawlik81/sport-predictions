@@ -1,15 +1,27 @@
 ---
 name: superbet-coupon
-description: Pojedynczy mecz od analizy do kuponu na superbet.pl - zawsze najpierw pyta użytkownika o mecz, oczekiwany kurs kuponu i stawkę, potem robi pełną analizę meczu skillem analitycznym, składa kupon Bet Builder z kursów Superbet (connector superbet-mcp), po wyraźnym potwierdzeniu stawia zakład w przeglądarce (Claude in Chrome) i publikuje pod kuponem analizę napisaną prostym językiem, bez stawki i kwoty wygranej. Używaj zawsze, gdy użytkownik prosi o "kupon na mecz X na Superbet", "postaw zakład na Superbet", "analiza i kupon z kursem > 2", "dodaj analizę pod kuponem" albo chce przejść ścieżkę mecz → analiza → zakład → post w Supersocial - także gdy nie pada słowo "kupon".
+description: Pojedynczy mecz od analizy do kuponu na superbet.pl - najpierw pobiera listę najlepszych wydarzeń z zadanego okresu i daje wybór meczu z listy, potem zawsze pyta użytkownika o oczekiwany kurs kuponu i stawkę, potem robi pełną analizę meczu skillem analitycznym, składa kupon Bet Builder z kursów Superbet (connector superbet-mcp), po wyraźnym potwierdzeniu stawia zakład w przeglądarce (Claude in Chrome) i publikuje pod kuponem analizę napisaną prostym językiem, bez stawki i kwoty wygranej. Używaj zawsze, gdy użytkownik prosi o "kupon na mecz X na Superbet", "postaw zakład na Superbet", "analiza i kupon z kursem > 2", "dodaj analizę pod kuponem" albo chce przejść ścieżkę mecz → analiza → zakład → post w Supersocial - także gdy nie pada słowo "kupon".
 ---
 
 # Superbet: mecz → analiza → kupon → zakład → analiza pod kuponem
 
 Orkiestrator dla jednego meczu na superbet.pl. Analizę robi skill analityczny (`football-analyst`, `tennis-analyst`, `nba-analyst`, ...), wywołany narzędziem Skill; ten skill nie wymyśla prawdopodobieństw. Dane zawsze z researchu w sieci i MCP, nie z pamięci. Język: polski.
 
-## Krok 0: zawsze zapytaj (AskUserQuestion), przed czymkolwiek
+## Krok 0a: lista najlepszych wydarzeń z okresu (przed pierwszym pytaniem)
 
-Nie zaczynaj analizy ani nie otwieraj przeglądarki, dopóki użytkownik nie poda wszystkich trzech rzeczy (nawet jeśli któraś padła w zapytaniu, potwierdź ją jako pierwszą opcję "(Recommended)"):
+Zanim zadasz pierwsze pytanie z kroku 0, **pobierz listę najlepszych wydarzeń z okresu** i pokaż ją użytkownikowi, żeby mógł wybrać mecz z listy.
+
+1. **Okres**: weź go z zapytania ("dziś", "jutro", "weekend", daty "od-do"). Gdy zapytanie go nie zawiera, przyjmij **dziś i najbliższe 24 h** (strefa Europe/Warsaw, data z kontekstu sesji), napisz to jednym zdaniem nad listą i pozwól zmienić okres w polu "Other" pytania poniżej. Zakres dłuższy niż ~3 dni zawęź (lista jest po to, żeby wybrać jeden mecz). Jeśli użytkownik podał konkretny mecz w zapytaniu, pomiń listę i przejdź do kroku 0, traktując mecz jako potwierdzony.
+2. **Pobierz wydarzenia** connectorem `superbet_events` (daty UTC `YYYY-MM-DD`, `date_to` = dzień po ostatnim dniu; wywołaj osobno dla każdego sportu przez `sport_id` albo z dużym `limit`, bo wirtualne i e-sportowe wydarzenia zasłaniają realne). Wyrzuć: wydarzenia bez rynków (`liczba_rynkow` = 0), wirtualne/symulowane (nazwy z nickiem w nawiasie, np. "(Kotkata)"), mecze juniorskie i rezerwowe, wydarzenia już rozpoczęte oraz takie, które zaczną się za mniej niż ~30 minut (nie zdążysz z analizą przed startem, patrz krok 6).
+3. **Wybierz najlepsze** (ok. 10, w tym co najmniej kilka z każdego dostępnego sportu): ranguj po randze rozgrywek (czołowe ligi, puchary europejskie, ATP/WTA 500+, NBA/NHL, UFC, turnieje CS2/LoL/Dota z top drużynami) i po liczbie rynków (`liczba_rynkow`, więcej = bogatsza oferta Bet Buildera). Dla każdego pobierz `superbet_event_odds` (z małym `max_markets`, np. rynek "Mecz") i podaj kursy 1X2/zwycięzcy. Ranking jest heurystyczny: powiedz to jednym zdaniem; nie udawaj, że to typy.
+4. **Pokaż listę** tabelą w odpowiedzi (numer, mecz, liga/sport, data i godzina czasu polskiego, kursy zwycięzcy, liczba rynków), posortowaną chronologicznie. AskUserQuestion przyjmuje tylko 2-4 opcje, więc po tabeli zadaj pytanie z **3 najlepszymi pozycjami jako opcjami** (pierwsza z "(Recommended)") i polem "Other": użytkownik wpisuje tam numer z tabeli, własny mecz lub inny okres.
+5. Wybrany mecz to odpowiedź na pytanie 1 z kroku 0; pozostałe pytania (kurs, stawka) zadaj dalej. Nie analizuj przed wyborem.
+
+Jeśli connector zwróci pustą listę (okres bez meczów, błąd API), powiedz to i poproś o mecz ręcznie.
+
+## Krok 0: zawsze zapytaj (AskUserQuestion), przed analizą
+
+Nie zaczynaj analizy ani nie otwieraj przeglądarki, dopóki użytkownik nie poda wszystkich trzech rzeczy (nawet jeśli któraś padła w zapytaniu, potwierdź ją jako pierwszą opcję "(Recommended)"). Mecz bierze się z wyboru w kroku 0a; w pozostałych przypadkach zapytaj o niego tutaj:
 
 1. **Mecz** (drużyny/zawodnicy, data; sport wynika z meczu).
 2. **Kurs kuponu**: oczekiwany (np. "> 2", "ok. 1.8", przedział). Jeśli użytkownik nie ma preferencji, zaproponuj domyślne progi z CLAUDE.md i `bet-slip-builder` (łączny kurs > 1.5 i < 2.5).
@@ -32,7 +44,8 @@ Wywołaj skill analityczny właściwy dla sportu. Zbierz składy, absencje, form
 Przeszukaj gotowe kombinacje (rynki z ";" w nazwie w `superbet_event_odds`) i pojedyncze rynki; wyceń je własnym rozkładem (EV = p × kurs − 1). Zasady:
 - Kupon z jednego meczu, nogi nie mogą się wykluczać; pomijaj typy z fair odds ≤ 1.15.
 - Wybierz kupon spełniający kurs z kroku 0, a przy kilku kandydatach ten z najwyższym EV i p. Domyślnie wymagane EV > 0 i p > 50% (CLAUDE.md).
-- **Jeśli żaden kupon nie spełnia kursu użytkownika albo EV > 0, powiedz to wprost** (z najlepszym kandydatem i jego EV) i zapytaj, czy grać mimo to; nie fabrykuj typu. Zagranie typu z ujemnym EV tylko na wyraźną zgodę użytkownika.
+- **Pewność minimum "średnia" (twarda reguła).** Każda noga kuponu musi mieć w analizie pewność co najmniej średnią (skala skilla analitycznego: niska / średnia / wysoka), a pewność kuponu to pewność jego najsłabszej nogi. **Nie przygotowuj kuponu, jeśli pewność wynosi "niska"**, także w wariancie awaryjnym poniżej i także gdy użytkownik chce kurs, którego nie da się osiągnąć w ten sposób; nie podnoś pewności samą narracją. Typowe powody niskiej pewności: nieznany sędzia przy kartkach/faulach, niepotwierdzony skład lub zawodnik, duża rozbieżność z rynkiem bez konkretnej informacji, wynik zależny od założeń (przewaga znika przy bliższych rynkowi λ). W takim razie powiedz, że kuponu nie przygotowano i dlaczego, podaj, co by pewność podniosło (np. potwierdzone składy), i zapytaj o inny mecz, rynek lub kurs. Nie zadawaj pytania o potwierdzenie stawki dla kuponu, którego nie ma.
+- **Jeśli nie da się ustalić kuponu z EV > 0 spełniającego kurs użytkownika, przygotuj kupon o najwyższym p** spośród kandydatów mieszczących się w kursie z kroku 0 **i mających pewność co najmniej średnią** (przy remisie p wybierz wyższe EV, czyli mniej ujemne). Powiedz to wprost: że to wariant awaryjny, jakie ma p (zakres), EV i ile traci względem rynku, oraz że przewaga bukmachera jest po jego stronie. Nie dobieraj nóg tylko po to, by dobić do kursu, i nie fabrykuj typu spoza analizy. Taki kupon, jak każdy, stawiasz tylko na wyraźną zgodę użytkownika w kroku 4 (z zaznaczeniem ujemnego EV w pytaniu); jeśli kurs się nie mieści w żadnej kombinacji, zapytaj, czy poluzować kurs, zamiast grać obok niego.
 - Podaj p (zakres), fair odds, kurs, EV, stawkę i możliwą wygraną.
 
 ## Krok 4: zbuduj kupon w przeglądarce i potwierdź
