@@ -44,7 +44,7 @@ Sporty: dokumentacja podaje m.in. `NFL`, `MLB`, `SOCCER`, `NBA`, `NHL`; dla inny
 
 ## Krok 2: Użyj w predykcjach
 
-- **Kursy do `bet-slip-builder`:** to kursy zagraniczne/amerykańskie (konwertuj: dodatni `1+x/100`, ujemny `1+100/|x|`; `odds` robi to automatycznie). Domyślne źródła kursów w repo zostają (Betclic → gg397.bet); BettingPros wchodzi jako trzecie źródło lub do rynków, których tam brak (np. player props), zawsze z jawnym oznaczeniem "BettingPros, book: <nazwa>". Nie podawaj go jako kursu polskiego bukmachera.
+- **Kursy do `bet-slip-builder`:** to kursy zagraniczne/amerykańskie (konwertuj: dodatni `1+x/100`, ujemny `1+100/|x|`; `odds` robi to automatycznie). Domyślnym źródłem kursów w repo jest `superbet-mcp`; BettingPros wchodzi jako źródło dodatkowe lub do rynków, których tam brak (np. player props), zawsze z jawnym oznaczeniem "BettingPros, book: <nazwa>". Nie podawaj go jako kursu polskiego bukmachera.
 - **Kontrola własnego p:** policz p bez marży z linii konsensusu (`odds`) i porównaj z własnym p. Różnica >10 pp = obniż pewność albo znajdź powód (kontuzja, skład), jak w kroku "Wyceń" z `bet-slip-builder`.
 - **Sygnał z `props`:** `probability`, `expected_value`, `bet_rating`, `recommended_side`, forma `last_N` to cudze modele. Traktuj zgodność z własną analizą jako wzmocnienie, a niezgodność jako flagę do sprawdzenia (status zawodnika, minuty, blowout), nie jako powód do zmiany p bez konkretów. Typ wyłącznie z rekomendacji BettingPros, bez własnej analizy, nie wchodzi do zestawów (reguła "zawsze pełna analiza").
 - **Best line:** przy typie player prop wskaż książkę z najlepszą linią i kursem; różnica linii o 0,5 pkt zmienia p, więc przelicz p dla linii, którą faktycznie bierzesz.

@@ -43,7 +43,7 @@ Same procenty są mylące, więc każdy pick przejdź przez poniższe filtry; li
 2. **Niezależność ramek.** Wiersze "last 5", "vs rywal", "home" zwykle dotyczą tych samych meczów; nie traktuj ich jako osobnych dowodów i nie mnóż. Najważniejsza jest największa próba.
 3. **Zgodność z dzisiejszą sytuacją.** Sprawdź status zawodnika (injury report, minuty, back-to-back, blowout w rynkach zawodnika NBA, potwierdzony bramkarz w NHL, skład w piłce). Wiersz "bez <zawodnika>" liczy się tylko wtedy, gdy ten zawodnik faktycznie dziś nie gra. Trend z sezonu poprzedniego lub przy innej roli to szum.
 4. **Matchup.** Ranking rywala (np. 26./30. na danym rynku) to dodatkowy argument, ale słabszy niż próba; używaj go do rozstrzygania remisów między pickami.
-5. **Linia i kurs.** Linia na Linemate może różnić się od linii w Betclic/gg397.bet. Przelicz p dla linii, którą realnie można wziąć; kurs z Linemate to orientacyjny kurs któregoś z książek, nie kurs polskiego bukmachera i tak go opisuj.
+5. **Linia i kurs.** Linia na Linemate może różnić się od linii w Superbet. Przelicz p dla linii, którą realnie można wziąć; kurs z Linemate to orientacyjny kurs któregoś z książek, nie kurs polskiego bukmachera i tak go opisuj.
 6. **Rynki unders / "100% Unders Only".** Często opierają się na rynkach, gdzie zawodnik rzadko się pojawia w statystyce (np. 1Q yards); sprawdź, czy kurs nie jest śmieciowy (fair odds ≤ 1.15 odpada zgodnie z regułami repo).
 
 ## Krok 4: połącz z analizami z repo

@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "przygotuj kupony na dziś",
-      "expected_output": "Najpierw pyta o okres (AskUserQuestion; \"dziś\" z datą jako pierwsza opcja do potwierdzenia), dopiero po odpowiedzi przechodzi terminarz → analizy → kursy Betclic → kupony; każdy kupon ma min. 2 nogi, nogi >1.2, kurs kuponu w (1.5; 2.5), p>50%, bez powtórzeń nóg i sprzeczności; podaje EV, p i % bankrolla; zapis w analizy/Kupony_10_<data>.md",
+      "expected_output": "Najpierw pyta o okres (AskUserQuestion; \"dziś\" z datą jako pierwsza opcja do potwierdzenia), dopiero po odpowiedzi przechodzi terminarz → analizy → kursy Superbet → kupony; każdy kupon ma min. 2 nogi, nogi >1.2, kurs kuponu w (1.5; 2.5), p>50%, bez powtórzeń nóg i sprzeczności; podaje EV, p i % bankrolla; zapis w analizy/Kupony_10_<data>.md",
       "files": []
     },
     {
@@ -21,7 +21,7 @@
     },
     {
       "id": 4,
-      "prompt": "kupony na dziś; Betclic nie ładuje się w przeglądarce",
+      "prompt": "kupony na dziś; connector superbet-mcp nie odpowiada",
       "expected_output": "Fallback na MCP sportsdata z jawnym oznaczeniem źródła kursów, bez kursów z pamięci; nogi bez kursu nie wchodzą do kuponów",
       "files": []
     },

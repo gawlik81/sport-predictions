@@ -34,10 +34,12 @@ Skrypty liczą rozkłady z parametrów wejściowych (uruchamiane z katalogu skil
 - `nhl-analyst/scripts/nhl_props.py <rynek> <średnia> [linie]` - strzały, punkty, strzelec gola, obrony bramkarza.
 - `volleyball-analyst/scripts/volleyball_model.py <p_seta...> [--bo 3|5] [--p-decider P] [--from-match P_meczu]` - zwycięzca meczu, wynik w setach, handicap setowy, total setów.
 - `bet-slip-builder/scripts/slip.py "opis" p kurs ...` - łączne p, fair odds, EV zestawu.
-- `bettingpros-odds/scripts/bettingpros.py <events|markets|counts|offers|props|books|odds> ...` - API BettingPros (kursy, linie, prop picks); klucz w `BETTINGPROS_API_KEY` (skill pyta o niego, jeśli brak). Skille analityczne, `sports-fixtures-finder`, `bet-slip-builder` i `daily-coupons` używają go jako dodatkowego źródła; nie zastępuje własnych p ani kursów Betclic/gg397.bet.
+- `bettingpros-odds/scripts/bettingpros.py <events|markets|counts|offers|props|books|odds> ...` - API BettingPros (kursy, linie, prop picks); klucz w `BETTINGPROS_API_KEY` (skill pyta o niego, jeśli brak). Skille analityczne, `sports-fixtures-finder`, `bet-slip-builder` i `daily-coupons` używają go jako dodatkowego źródła; nie zastępuje własnych p ani kursów Superbet (`superbet-mcp`).
 - `predictions-verifier/scripts/verify.py <plik.json>` - bilans trafień vs oczekiwane, Brier, kupony, zysk hipotetyczny (format JSON w nagłówku skryptu).
 
 **Używaj skilli, gdy zadanie ich wymaga.** Każde zadanie z zakresu flow (terminarz, analiza meczu, TOP/kupon, weryfikacja typów) realizuj przez odpowiedni skill (`sports-fixtures-finder`, `football-analyst`, `tennis-analyst`, `esports-analyst`, `mma-analyst`, `nba-analyst`, `nhl-analyst`, `volleyball-analyst`, `bet-slip-builder`, `predictions-verifier`), wywołując go narzędziem Skill, zamiast robić to ad hoc. Dotyczy to też próśb bez słów kluczowych (same nazwy drużyn/zawodników, data, "co grają"). Skilli nie uruchamiaj do zadań spoza flow (np. edycja CLAUDE.md, git).
+
+**Kursy do kuponów:** `superbet-mcp` → fallback (`sportsdata`, BettingPros, WebSearch lub kursy od użytkownika) z jawnym oznaczeniem źródła; nigdy z pamięci.
 
 **Używaj serwerów MCP, jeśli to możliwe.** Do researchu w sieci i pobierania danych (terminarze, statystyki, kursy, newsy) korzystaj w pierwszej kolejności z dostępnych narzędzi MCP (np. `mcp__claude-in-chrome__*` do stron wymagających przeglądarki), a dopiero potem z innych metod. Przed użyciem sprawdź, jakie serwery MCP są dostępne w sesji (deferred tools załaduj przez ToolSearch).
 

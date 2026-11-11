@@ -1,17 +1,17 @@
 ---
 name: daily-coupons
-description: Pełny pipeline dnia jednym poleceniem - najpierw zawsze pyta użytkownika o okres (dzień lub zakres dat), potem wyszukuje wydarzenia sportowe z tego okresu, robi dokładną analizę każdego z nich skillami analitycznymi, pobiera kursy z Betclic.pl i składa 10 najlepszych kuponów skillem bet-slip-builder, według jego progów i zasad spójności. Używaj zawsze, gdy użytkownik prosi o "kupony na dziś", "10 kuponów", "przygotuj kupony na jutro/weekend/od-do", "zrób cały research i kupony", "typy na dziś z Betclic" albo chce przejść całą ścieżkę terminarz → analiza → kupony bez prowadzenia jej krok po kroku - także gdy nie pada słowo "kupon".
+description: Pełny pipeline dnia jednym poleceniem - najpierw zawsze pyta użytkownika o okres (dzień lub zakres dat), potem wyszukuje wydarzenia sportowe z tego okresu, robi dokładną analizę każdego z nich skillami analitycznymi, pobiera kursy z Superbet (connector superbet-mcp) i składa 10 najlepszych kuponów skillem bet-slip-builder, według jego progów i zasad spójności. Używaj zawsze, gdy użytkownik prosi o "kupony na dziś", "10 kuponów", "przygotuj kupony na jutro/weekend/od-do", "zrób cały research i kupony", "typy na dziś z Superbet" albo chce przejść całą ścieżkę terminarz → analiza → kupony bez prowadzenia jej krok po kroku - także gdy nie pada słowo "kupon".
 ---
 
 # Dzienne kupony (terminarz → analiza → 10 kuponów)
 
-Orkiestrator flow z CLAUDE.md (kroki 1-3). Sam nie wyszukuje wydarzeń, nie analizuje meczów ani nie składa kuponów: każdy z tych kroków **musi** przejść przez istniejący skill, wywołany narzędziem Skill (`sports-fixtures-finder`, skille `*-analyst`, `bet-slip-builder`). Nie powielaj ich logiki ad hoc ani nie zastępuj ich własnymi obliczeniami. Ten skill pilnuje tylko kolejności, kompletności, źródła kursów (Betclic) i ograniczeń kuponu. Subagent uruchamiany do analizy też ma wywołać właściwy skill analityczny, a nie analizować samodzielnie. Dane zawsze z researchu w sieci i narzędzi MCP, nie z pamięci.
+Orkiestrator flow z CLAUDE.md (kroki 1-3). Sam nie wyszukuje wydarzeń, nie analizuje meczów ani nie składa kuponów: każdy z tych kroków **musi** przejść przez istniejący skill, wywołany narzędziem Skill (`sports-fixtures-finder`, skille `*-analyst`, `bet-slip-builder`). Nie powielaj ich logiki ad hoc ani nie zastępuj ich własnymi obliczeniami. Ten skill pilnuje tylko kolejności, kompletności, źródła kursów (Superbet) i ograniczeń kuponu. Subagent uruchamiany do analizy też ma wywołać właściwy skill analityczny, a nie analizować samodzielnie. Dane zawsze z researchu w sieci i narzędzi MCP, nie z pamięci.
 
 ## Parametry
 
 - **Okres**: **zawsze zapytaj o niego przed krokiem 1**, narzędziem AskUserQuestion, i nie zaczynaj terminarza przed odpowiedzią (wymaganie użytkownika z 22.10.2026; wcześniej domyślnie był dzień dzisiejszy). Opcje: dziś, jutro, najbliższy weekend, z konkretnymi datami (strefa Europe/Warsaw, data z kontekstu sesji); inny dzień lub zakres "od-do" użytkownik poda w polu "Other". Jeśli zapytanie zawiera już okres (np. "kupony na jutro", "weekend 24-25.10"), też zapytaj, ale jako potwierdzenie: ten okres z rozwiniętymi datami pokaż jako pierwszą opcję "(Recommended)". Zakres dłuższy niż ~3 dni zaproponuj zawęzić w tym samym pytaniu, bo pełna analiza każdego meczu jest kosztowna.
 - **Poziomy luzowania**: **zawsze zapytaj o nie przed krokiem 4** (budową kuponów), narzędziem AskUserQuestion, i nie wywołuj `bet-slip-builder` przed odpowiedzią (wymaganie użytkownika z 04.11.2026); pytanie można zadać razem z pytaniem o okres. Wybrane poziomy przekaż do `bet-slip-builder`. Jeśli użytkownik podał poziomy w zapytaniu, nie pytaj.
-- **Bukmacher**: Betclic.pl (https://www.betclic.pl/) jako źródło główne, https://gg397.bet/pl do weryfikacji/potwierdzenia kursów; chyba że użytkownik poda innego.
+- **Bukmacher**: Superbet przez connector `superbet-mcp` (serwer MCP `superbet`); chyba że użytkownik poda innego.
 - **Liczba kuponów**: 10, chyba że podano inną.
 - **Ograniczenia kuponu**: jeden zestaw warunków, zdefiniowany wyłącznie w `bet-slip-builder` (progi domyślne: kurs nogi, kurs zestawu, EV, p; zasady spójności; stawka Kelly'ego; poziomy luzowania, gdy progi nie dają kuponów). Ten skill nie ma własnych progów ani odstępstw i niczego nie nadpisuje. Zapytanie użytkownika nadpisuje progi domyślne. Zmiany progów wprowadzaj tylko w `bet-slip-builder/SKILL.md`.
 
@@ -26,25 +26,23 @@ Dla **każdego** wydarzenia z terminarza wywołaj właściwy skill analityczny (
 - Z każdej analizy zbierz **wszystkie rynki** z p i fair odds (wynik, gole, BTTS, rożne, kartki, total gemów, handicap, spread, total, puck line, rynki zawodnika), nie tylko zwycięzcę.
 - Zapisz analizy w `analizy/` jako `<Opis>_<RRRR-MM-DD>.md` (np. `Analiza_dnia_2026-10-18.md`, jeden plik zbiorczy z sekcją na mecz).
 
-## Krok 3: Kursy z Betclic.pl i weryfikacja na gg397.bet
+## Krok 3: Kursy z Superbet (superbet-mcp)
 
-Kursy bierz z Betclic.pl, w pierwszej kolejności przez MCP przeglądarki (`mcp__claude-in-chrome__*`, deferred - załaduj jednym ToolSearch, zacznij od `tabs_context_mcp`, otwórz nową kartę; czytaj stronę przez `get_page_text`/`read_page`). Betclic ładuje kursy dynamicznie, więc po nawigacji poczekaj i zweryfikuj, że widzisz właściwy mecz i rynek.
-- **Weryfikacja:** każdą kandydacką nogę, która przeszła wstępne filtry, sprawdź na https://gg397.bet/pl (ta sama metoda). Zapisz oba kursy; w EV liczy się Betclic. Rozbieżność > 0,10 oznacz w raporcie. Gdy nogi nie ma na Betclic, a jest na gg397.bet, użyj jej z jawnym oznaczeniem źródła.
-- Dla każdej kandydackiej nogi zapisz kurs dziesiętny dokładnie tak, jak jest na Betclic, wraz z rynkiem i linią. Rynki dodatkowe (BTTS, rożne, kartki, total gemów, handicap) otwieraj na stronie meczu.
-- **BettingPros:** dla rynków zawodnika i nóg bez kursu na Betclic/gg397.bet oraz do kontroli własnego p użyj skilla `bettingpros-odds` (pyta o klucz API, jeśli `BETTINGPROS_API_KEY` nie jest ustawiona; bez klucza pomiń). Kurs z jawnym oznaczeniem źródła "BettingPros, book: <nazwa>".
-- Jeśli ani Betclic, ani gg397.bet nie mają rynku lub są niedostępne (blokada, logowanie), użyj fallbacku: narzędzia `mcp__sportsdata__*` (Pinnacle, The Odds API, Unibet/Kambi) i **jawnie oznacz źródło** przy tej nodze (kurs nie-Betclic jest zwykle wyższy niż krajowy; nie przedstawiaj go jako Betclic). Brak kursu = noga nie wchodzi do kuponu, nigdy nie wpisuj kursu z pamięci.
-- Przy dłuższym pobieraniu pilnuj zasad przeglądarki: bez dialogów, po 2-3 nieudanych próbach tej samej akcji zatrzymaj się i zapytaj użytkownika.
+Kursy bierz z connectora `superbet-mcp` (narzędzia deferred - załaduj jednym ToolSearch: `superbet_events` do listy wydarzeń i `superbet_event_odds` do rynków i kursów danego meczu). Connector obsługuje piłkę nożną, NBA, NHL i siatkówkę.
+- Dla każdej kandydackiej nogi zapisz kurs dziesiętny dokładnie tak, jak zwraca `superbet_event_odds`, wraz z rynkiem i linią. Rynki dodatkowe (BTTS, rożne, kartki, handicap, total) bierz z pełnej listy rynków meczu.
+- **BettingPros:** dla rynków zawodnika i nóg bez kursu w Superbet oraz do kontroli własnego p użyj skilla `bettingpros-odds` (pyta o klucz API, jeśli `BETTINGPROS_API_KEY` nie jest ustawiona; bez klucza pomiń). Kurs z jawnym oznaczeniem źródła "BettingPros, book: <nazwa>".
+- Jeśli connector nie ma rynku lub sportu (tenis, MMA, e-sport) albo jest niedostępny, użyj fallbacku: narzędzia `mcp__sportsdata__*` (Pinnacle, The Odds API, Unibet/Kambi) i **jawnie oznacz źródło** przy tej nodze (kurs spoza Superbet jest zwykle wyższy niż krajowy; nie przedstawiaj go jako Superbet). Brak kursu = noga nie wchodzi do kuponu, nigdy nie wpisuj kursu z pamięci.
 
 ## Krok 4: Wycena, selekcja nóg i 10 kuponów (skill `bet-slip-builder`)
 
-Wywołaj narzędziem Skill `bet-slip-builder` i przekaż mu analizy (ścieżka pliku z kroku 2), kursy Betclic z kroku 3 (z rynkiem, linią i źródłem) oraz polecenie złożenia 10 kuponów (liczba kuponów z parametrów). Cała wycena (fair odds, EV), filtrowanie nóg, progi, zasady spójności i niepowtarzalności nóg między kuponami, wielkość stawki oraz skrypt `slip.py` należą do `bet-slip-builder`; nie licz ich ani nie filtruj ad hoc w tym skillu. Ranking kuponów, format prezentacji i postępowanie, gdy progi bazowe nie dają 10 kuponów, są takie, jak w `bet-slip-builder`: stosuj jego poziomy luzowania (poziomy 0-2 automatycznie, 3-7 tylko za zgodą użytkownika), oznacz poziom przy każdym kuponie i nie dobijaj do 10 na siłę.
+Wywołaj narzędziem Skill `bet-slip-builder` i przekaż mu analizy (ścieżka pliku z kroku 2), kursy Superbet z kroku 3 (z rynkiem, linią i źródłem) oraz polecenie złożenia 10 kuponów (liczba kuponów z parametrów). Cała wycena (fair odds, EV), filtrowanie nóg, progi, zasady spójności i niepowtarzalności nóg między kuponami, wielkość stawki oraz skrypt `slip.py` należą do `bet-slip-builder`; nie licz ich ani nie filtruj ad hoc w tym skillu. Ranking kuponów, format prezentacji i postępowanie, gdy progi bazowe nie dają 10 kuponów, są takie, jak w `bet-slip-builder`: stosuj jego poziomy luzowania (poziomy 0-2 automatycznie, 3-7 tylko za zgodą użytkownika), oznacz poziom przy każdym kuponie i nie dobijaj do 10 na siłę.
 
-Do wyniku `bet-slip-builder` dodaj przy każdym kuponie godzinę każdej nogi i źródło kursu (Betclic, potwierdzenie gg397.bet / fallback).
+Do wyniku `bet-slip-builder` dodaj przy każdym kuponie godzinę każdej nogi i źródło kursu (Superbet / fallback).
 
 ## Krok 5: Zapis i raport
 
 Zapisz wynik w `analizy/Kupony_10_<RRRR-MM-DD>.md` (dla zakresu dat: data początkowa). Jeśli plik już istnieje, nie nadpisuj go bez pytania - użyj sufiksu (`_v2`). Struktura pliku:
-1. Okres, źródło kursów (Betclic + gg397.bet / fallback), godzina pobrania kursów.
+1. Okres, źródło kursów (Superbet / fallback), godzina pobrania kursów.
 2. Skrót terminarza (liczba wydarzeń na sport, pominięte i dlaczego).
 3. Tabela pul nóg po filtrach (mecz, rynek, p, kurs, fair, EV, pewność).
 4. 10 (lub mniej) kuponów w formacie `bet-slip-builder`.
