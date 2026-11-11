@@ -1,6 +1,6 @@
 # Kupony NBA + NHL, noc 06->07.11.2026 (v2)
 
-Wersja v2, bo `Kupony_10_2026-11-06.md` już istnieje (inna sesja). Analizy: `Analiza_dnia_2026-11-06_v2.md`.
+Wersja v2, bo `ZWERYFIKOWANE_Kupony_10_2026-11-06.md` już istnieje (inna sesja). Analizy: `Analiza_dnia_2026-11-06_v2.md`.
 
 ## 1. Okres i źródło kursów
 - Okres: noc 06->07.11.2026 (czas polski), 9 meczów NBA + 3 mecze NHL; pozostałe sporty pominięte na prośbę użytkownika.

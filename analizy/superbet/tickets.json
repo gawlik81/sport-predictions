@@ -1,0 +1,18 @@
+{
+ "4eb13af514": {
+  "legs": [
+   {
+    "event_id": 14438712,
+    "odd_uuid": "516aa991-6996-580f-a103-382077a07bdd",
+    "kurs": 2,
+    "opis": "",
+    "rynek": "Poniżej 4.5 gola w meczu; Pogoń Szczecin wygra lub zremisuje",
+    "mecz": "Widzew Łódź·Pogoń Szczecin"
+   }
+  ],
+  "stake": 5,
+  "total_odds": 2.0,
+  "created": 1794077699.878681,
+  "placed": false
+ }
+}
