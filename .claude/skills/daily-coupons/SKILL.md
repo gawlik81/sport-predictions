@@ -17,7 +17,7 @@ Orkiestrator flow z CLAUDE.md (kroki 1-3). Sam nie wyszukuje wydarzeń, nie anal
 
 ## Krok 1: Terminarz
 
-Wywołaj skill `sports-fixtures-finder` dla okresu. Wymagaj pełnego zakresu sportów: piłka, tenis ATP/WTA, e-sport (CS2/LoL/Dota 2), MMA (UFC/KSW), NBA, NHL. Wynik: lista wydarzeń z godziną (czas polski) i rangą. Pomiń wydarzenia już rozegrane lub trwające (sprawdź godzinę względem teraz). Jeśli którejś kategorii nie ma w danym dniu, zapisz to jednym zdaniem.
+Wywołaj skill `sports-fixtures-finder` dla okresu. Wymagaj pełnego zakresu sportów: piłka, tenis ATP/WTA, e-sport (CS2/LoL/Dota 2), MMA (UFC/KSW), NBA, NHL. Wynik: lista wydarzeń z godziną (czas polski) i rangą. Pomiń wydarzenia już rozegrane lub trwające (sprawdź godzinę względem teraz). **Pomiń mecze towarzyskie** (reprezentacji i klubów; wymaganie użytkownika z 17.11.2026): nie przekazuj ich do analizy ani do kuponów, a w raporcie wymień je jako pominięte z powodem "towarzyski". Ustal rangę rozgrywek w drugim źródle, bo agregatory bywają niejednoznaczne. Jeśli którejś kategorii nie ma w danym dniu, zapisz to jednym zdaniem.
 
 ## Krok 2: Dokładna analiza każdego wydarzenia
 

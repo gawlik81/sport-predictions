@@ -5,6 +5,8 @@ description: Analiza meczów piłki nożnej na podstawie czterech filarów - sta
 
 # Analiza meczów piłkarskich
 
+**Mecze towarzyskie:** nie analizuj meczów towarzyskich (reprezentacji ani klubów; decyzja użytkownika z 17.11.2026). Jeśli dostaniesz taki mecz, napisz jednym zdaniem, że jest towarzyski i pomijany, i nie wyceniaj go; wyjątek tylko na wyraźną prośbę użytkownika w tym zapytaniu.
+
 Cel: dla każdego meczu zebrać aktualne dane z czterech źródeł, połączyć je w jedno oszacowanie prawdopodobieństwa i uczciwie powiedzieć, jak bardzo jest ono niepewne. Liczby bez świeżych danych są zgadywaniem, więc zawsze zaczynaj od researchu (WebSearch/WebFetch), nie z pamięci - składy, kontuzje i trenerzy zmieniają się co tydzień.
 
 ## Serwer MCP `sportsdata` (używaj w pierwszej kolejności)
